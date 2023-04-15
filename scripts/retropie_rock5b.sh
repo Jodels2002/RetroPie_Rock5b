@@ -67,7 +67,8 @@ clear
       sudo chmod -R 777 /etc/emulationstation
       sudo chmod -R 777 /opt   
       cp -rf /opt/AmiRock/retropie/Retropie.desktop /usr/share/applications/ 
-if [ ! -f ~/RetroPie/Romset.zip ]; then
+      
+      if [ ! -f ~/RetroPie/Romset.zip ]; then
       sudo chmod -R 777 /home/$USER/RetroPie
       cd /home/$USER/RetroPie
       wget https://archive.org/download/archive_20190819/Romset.zip
@@ -76,9 +77,10 @@ if [ ! -f ~/RetroPie/Romset.zip ]; then
       sudo unzip -o  /home/$USER/RetroPie/Romset.zip
       curl https://raw.githubusercontent.com/Shakz76/Eazy-Hax-RetroPie-Toolkit/master/cfg/Install%20Eazy%20Hax%20RetroPie%20Toolkit.sh | bash
       cd /home/pi/RetroPie/retropiemenu/
-      ##BezelProject
+      ##BezelProject. https://www.youtube.com/watch?v=uq8IecVQ6yY
       wget https://raw.githubusercontent.com/thebezelproject/BezelProject/master/bezelproject.sh
-      chmod +x "bezelproject.sh"fi
+      chmod +x "bezelproject.sh"
+      fi
 
 clear
 
