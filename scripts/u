@@ -46,7 +46,7 @@ sudo apt -f -y install
       echo " "
 sudo apt-get autoremove -y
  clear
-      toilet "RetroRock-OS" --metal
+      toilet "RetroRock" --metal
       echo -e "$BLUE RetroRock-OS ROM Operating System and Libraries" 
       echo -e "$GREY Version V2.0 2020-2023 RetroRock-OS "
       echo " No Rights Reserved.  "
