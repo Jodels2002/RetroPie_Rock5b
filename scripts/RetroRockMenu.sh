@@ -16,7 +16,7 @@ WIDTH=75
 CHOICE_HEIGHT=8
 BACKTITLE="Main"
 TITLE="RetroRock-OS ROM Operating System"
-MENU="RetroRock-OS for RockPie5b:"
+MENU="RetroRock-OS for Rock5b (rk3588):"
 
 OPTIONS=(e "EMULATIONSTATION (Retropie)                           "
          r "Retropie Setup                                        "
