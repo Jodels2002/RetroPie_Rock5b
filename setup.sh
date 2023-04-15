@@ -25,6 +25,7 @@ sudo systemctl daemon-reload
   sudo apt install -y csound-u*
   sudo apt install -y ntfs-3g 
   sudo apt install autofs -y
+  sudo apt install autoconf libtool intltool  -y
   sudo apt install raspi-config -y
   sudo raspi-config nonint do_expand_rootfs
   
