@@ -90,8 +90,15 @@ clear
       fi
 
 clear
+      sudo apt-get -y remove pulseaudio
+	sudo apt-get -y install pulseaudio
+	sudo /etc/init.d/alsa-utils reset
+	sudo apt-get -y install pi-bluetooth
+	sudo apt-get -y install bluez bluez-firmware baobab 
+	sudo usermod -G bluetooth -a pi
+ sudo usermod -G audio -a pi
+ sudo usermod -G video -a pi  
  
-      
 cd /opt/retropie/configs/all/retroarch-joypads/
 #unzip -u  /opt/AmiRock/retropie/Gamepad.zip
 #cp -f -R  /opt/retropie/configs/all/retroarch-joypads/Gamepad/* /opt/retropie/configs/all/retroarch-joypads/
