@@ -71,11 +71,14 @@ if [ ! -f ~/RetroPie/Romset.zip ]; then
       sudo chmod -R 777 /home/$USER/RetroPie
       cd /home/$USER/RetroPie
       wget https://archive.org/download/archive_20190819/Romset.zip
+      #Eazy-Hax-RetroPie-Toolkit
       cd ~/RetroPie/roms
       sudo unzip -o  /home/$USER/RetroPie/Romset.zip
       curl https://raw.githubusercontent.com/Shakz76/Eazy-Hax-RetroPie-Toolkit/master/cfg/Install%20Eazy%20Hax%20RetroPie%20Toolkit.sh | bash
-      
-fi
+      cd /home/pi/RetroPie/retropiemenu/
+      ##BezelProject
+      wget https://raw.githubusercontent.com/thebezelproject/BezelProject/master/bezelproject.sh
+      chmod +x "bezelproject.sh"fi
 
 clear
 
