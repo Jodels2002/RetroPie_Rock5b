@@ -1,0 +1,44 @@
+# Settings made here will only override settings in the global retroarch.cfg if placed above the #include line
+#input_remapping_directory = /opt/retropie/configs/megadrive/
+
+input_player1_joypad_index = 0
+input_player1_b_btn = 2
+input_player1_a_btn = 1
+input_player1_y_btn = 3
+input_player1_x_btn = 0
+input_player1_l_btn = 4
+input_player1_r_btn = 5
+input_player1_start_btn = 9
+input_player1_select_btn = 8
+input_player2_joypad_index = 1
+input_player2_b_btn = 2
+input_player2_a_btn = 1
+input_player2_y_btn = 3
+input_player2_x_btn = 0
+input_player2_l_btn = 4
+input_player2_r_btn = 5
+input_player2_start_btn = 9
+input_player2_select_btn = 8
+
+# Axis for RetroArch D-Pad.
+# Needs to be either '+' or '-' in the first character signaling either positive or negative direction of the axis, then the axis number.
+input_player1_up_axis = -1
+input_player1_down_axis = +1
+input_player1_left_axis = -0
+input_player1_right_axis = +0
+input_player2_up_axis = -1
+input_player2_down_axis = +1
+input_player2_left_axis = -0
+input_player2_right_axis = +0
+
+#Hotkeys- Hotkeys enable you to press a combination of buttons to do such things as exit emulators, save states,
+# and load states, as well as any other functionality in an emulator. (In the example below 8 is the select key
+# and 9 is the start key so when I hold down select and press start it will exit the emulator.)
+input_enable_hotkey_btn = 8
+input_exit_emulator_btn = 9
+input_save_state_btn = 5
+input_load_state_btn = 4
+input_menu_toggle_btn = 0
+input_state_slot_increase_axis = +0
+input_state_slot_decrease_axis = -0
+
