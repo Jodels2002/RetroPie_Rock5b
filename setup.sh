@@ -32,5 +32,11 @@ make package
 sudo dpkg -i fan-control*.deb
 sudo systemctl enable fan-control
 sudo systemctl start fan-control 
-
+#************************************************  Install RetroRock Tools       **************************************   
+ sudo cp -f -R ~/RetroPie_Rock5b/scripts/* /usr/local/bin
+      sudo cp -f -R ~/RetroPie_Rock5b/ /opt
+      sudo chmod -R 777 /usr/local/bin
+      sudo chmod -R 777 /opt/RetroPie_Rock5b/
+      
+      
 ~/RetroPie_Rock5b/scripts/retropie_rock5b.sh
