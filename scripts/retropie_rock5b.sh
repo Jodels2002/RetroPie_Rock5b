@@ -7,6 +7,9 @@
       GREY='\033[1;30m'
 power
 clear
+rm -rf /opt/retropie_rock5b
+sudo cp -rf ~/retropie_rock5b /opt/
+
 rm -rf ~/RetroPie-Setup
 clear
 mkdir -p /etc/emulationstation
@@ -41,15 +44,11 @@ git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
 cd ~
 
 sudo chmod -R 777 ~/RetroPie-Setup
-cp -f -R /opt/AmiRock/retropie/system.sh /home/$USER/RetroPie-Setup/scriptmodules/
+cp -f -R /opt/retropie_rock5b/retropie/system.sh /home/$USER/RetroPie-Setup/scriptmodules/
 cd RetroPie-Setup
 sudo chmod -R 777 /opt
 sudo __nodialog=1 __platform=rk3588 ./retropie_setup.sh basic_install
-cd /opt/retropie/configs/all/retroarch-joypads/
-unzip -u  /opt/AmiRock/retropie/Gamepad.zip
-cp -f -R  /opt/retropie/configs/all/retroarch-joypads/Gamepad/* /opt/retropie/configs/all/retroarch-joypads/
-mv /opt/retropie/configs/all/retroarch-joypads/es_input.cfg /opt/retropie/configs/all/emulationstation/
-rm -rf /opt/retropie/configs/all/retroarch-joypads/Gamepad 
+
 rm -rf ~/RetroPieBIOS 
 clear
       toilet "Retropie" --metal
@@ -76,8 +75,16 @@ fi
       sudo chmod -R 777 /etc/emulationstation
       sudo chmod -R 777 /opt
 cp -rf /opt/AmiRock/retropie/Retropie.desktop /usr/share/applications/ 
+
+
+
  
 clear
+cd /opt/retropie/configs/all/retroarch-joypads/
+#unzip -u  /opt/AmiRock/retropie/Gamepad.zip
+#cp -f -R  /opt/retropie/configs/all/retroarch-joypads/Gamepad/* /opt/retropie/configs/all/retroarch-joypads/
+#mv /opt/retropie/configs/all/retroarch-joypads/es_input.cfg /opt/retropie/configs/all/emulationstation/
+#rm -rf /opt/retropie/configs/all/retroarch-joypads/Gamepad 
 cd
 toilet "AmiRock-OS" --metal
       echo -e "$BLUE RetroRock ROM Operating System and Libraries" 
