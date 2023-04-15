@@ -27,6 +27,11 @@ sudo systemctl daemon-reload
   sudo apt install autofs -y
   sudo apt install raspi-config -y
   sudo raspi-config nonint do_expand_rootfs
+  
+ #************************************************  Install Desktop       **************************************   
+ sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput xini* 
+	sudo apt install -y xfce4-te*
+	sudo apt install -y chromium-b*  
 #************************************************  Fan Control by pymumu        **************************************   
 
 clear
