@@ -6,7 +6,7 @@ sudo chmod -R 777 /media/usb
 sudo mount /dev/sda1 /media/usb
 
 
-sudo dd if=/dev/nvme0n1 of=/mnt/RockPi.img bs=4M status=progress
+sudo dd if=/dev/nvme0n1 of=/media/usb/RockPi.img bs=4M status=progress
 #sudo dd if=/dev/nvme0n1 of=/mnt bs=128K conv=noerror,sync
 
 #sudo losetup -fP /dev/sda/Rockpi.img
