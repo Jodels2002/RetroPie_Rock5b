@@ -73,7 +73,7 @@ sudo apt-get upgrade
       echo " "
 
 
-      sudo rm -rf ~/RetroPie_Rock5b/
+      #sudo rm -rf ~/RetroPie_Rock5b/
       sudo rm -rf /opt/RetroPie_Rock5b/
 
 
