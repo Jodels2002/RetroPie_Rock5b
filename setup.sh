@@ -9,8 +9,7 @@ GREEN='\033[1;32m'
 RED='\033[1;31m'
 GREY='\033[1;30m'
 
-         sudo echo "bootlogo=true" >> /boot/armbianEnv.txt
-	 sudo echo "overlays=rk3588-i2c0-m1" >> /boot/armbianEnv.txt
+      
 #************************************************  usefull Tools        **************************************  
   sudo apt install -y dialog mc zip unzip wget toilet 
   sudo apt install -y ntfs-3g 
