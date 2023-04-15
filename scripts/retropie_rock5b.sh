@@ -68,7 +68,7 @@ clear
       sudo chmod -R 777 /opt   
       cp -rf /opt/AmiRock/retropie/Retropie.desktop /usr/share/applications/ 
       
-      if [ ! -f ~/RetroPie/Romset.zip ]; then
+      if [ ! -f ~/RetroPie/roms/gba/gamelist.xml ]; then
       #Install Basic Roms from archive.org
       sudo chmod -R 777 /home/$USER/RetroPie
       cd /home/$USER/RetroPie
