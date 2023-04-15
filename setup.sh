@@ -46,13 +46,6 @@ sudo systemctl start fan-control
       sudo chmod -R 777 /usr/local/bin
       sudo chmod -R 777 /opt/RetroPie_Rock5b/
  
- sudo apt-get -y remove pulseaudio
-	sudo apt-get -y install pulseaudio
-	sudo /etc/init.d/alsa-utils reset
-	sudo apt-get -y install pi-bluetooth
-	sudo apt-get -y install bluez bluez-firmware baobab 
-	sudo usermod -G bluetooth -a pi
- sudo usermod -G audio -a pi
- sudo usermod -G video -a pi
+
       
 ~/RetroPie_Rock5b/scripts/retropie_rock5b.sh
