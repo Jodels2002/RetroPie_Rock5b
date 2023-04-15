@@ -30,6 +30,16 @@ sudo systemctl daemon-reload
   sudo apt install raspi-config -y
   sudo raspi-config nonint do_expand_rootfs
   
+  
+        sudo apt-get -y remove pulseaudio
+	sudo apt-get -y install pulseaudio
+	sudo /etc/init.d/alsa-utils reset
+	sudo apt-get -y install pi-bluetooth
+	sudo apt-get -y install bluez bluez-firmware baobab 
+	sudo usermod -G bluetooth -a pi
+        sudo usermod -G audio -a pi
+        sudo usermod -G video -a pi  
+	
  #************************************************  Install Desktop       **************************************   
  sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput xini* 
 	sudo apt install -y xfce4-te*
