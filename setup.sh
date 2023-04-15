@@ -10,6 +10,12 @@ RED='\033[1;31m'
 GREY='\033[1;30m'
 
 
+
+echo '[Service]' | sudo tee -a /etc/systemd/system/getty@tty1.service.d/autologin.conf
+echo 'ExecStart=' | sudo tee -a /etc/systemd/system/getty@tty1.service.d/autologin.conf
+echo 'ExecStart=-/sbin/agetty --autologin pi --noclear %I $TERM' | sudo tee -a /etc/systemd/system/getty@tty1.service.d/autologin.conf
+sudo systemctl daemon-reload
+
 #************************************************  usefull Tools        **************************************  
  
   sudo apt install -y dialog mc zip unzip wget toilet 
