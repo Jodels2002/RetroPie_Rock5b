@@ -90,5 +90,5 @@ sudo apt-get upgrade -y
 
 
       
-      ~/RetroPie_Rock5b/scripts/RetroRockMenu.sh
+      ~/RetroPie_Rock5b/scripts/retropie_rock5b.sh
  
