@@ -55,6 +55,7 @@ clear
       
 #First install
 if [ ! -d /etc/emulationstation/themes/magazinemadness/ ]; then
+curl https://raw.githubusercontent.com/Shakz76/Eazy-Hax-RetroPie-Toolkit/master/cfg/Install%20Eazy%20Hax%20RetroPie%20Toolkit.sh | bash
 sudo chmod -R 777 /etc/emulationstation
 git clone --recursive --depth 1 --branch master "https://github.com/RetroHursty69/es-theme-magazinemadness.git" "/etc/emulationstation/themes/magazinemadness"
 fi
