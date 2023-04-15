@@ -15,7 +15,7 @@ cd
 clear
       toilet "RetroRock-OS" --metal
       echo -e "$BLUE RetroRock-OS ROM Operating System and Libraries" 
-      echo -e "$GREY Version V2.0 2020-2021 AmiRock-OS "
+      echo -e "$GREY Version V2.0 2020-2021 RetroRock-OS "
       echo " No Rights Reserved.  "
       echo " "
       echo -e "$GREY "
@@ -27,35 +27,35 @@ sudo dpkg --configure -a
  clear
       toilet "RetroRock-OS" --metal
       echo -e "$BLUE RetroRock-OS ROM Operating System and Libraries" 
-      echo -e "$GREY Version V2.0 2020-2021 AmiRock-OS "
+      echo -e "$GREY Version V2.0 2020-2021 RetroRock-OS "
       echo " No Rights Reserved.  "
       echo " "
 sudo apt -y --fix-broken install
  clear
       toilet "RetroRock-OS" --metal
       echo -e "$BLUE RetroRock-OS ROM Operating System and Libraries" 
-      echo -e "$GREY Version V2.0 2020-2021 AmiRock-OS "
+      echo -e "$GREY Version V2.0 2020-2021 RetroRock-OS "
       echo " No Rights Reserved.  "
       echo " "
 sudo apt -f -y install
  clear
       toilet "RetroRock-OS" --metal
       echo -e "$BLUE RetroRock-OS ROM Operating System and Libraries" 
-      echo -e "$GREY Version V2.0 2020-2021 AmiRock-OS "
+      echo -e "$GREY Version V2.0 2020-2021 RetroRock-OS "
       echo " No Rights Reserved.  "
       echo " "
 sudo apt-get autoremove -y
  clear
       toilet "RetroRock-OS" --metal
       echo -e "$BLUE RetroRock-OS ROM Operating System and Libraries" 
-      echo -e "$GREY Version V2.0 2020-2021 AmiRock-OS "
+      echo -e "$GREY Version V2.0 2020-2021 RetroRock-OS "
       echo " No Rights Reserved.  "
       echo " "
 sudo apt-get autoclean
  clear
       toilet "RetroRock-OS" --metal
       echo -e "$BLUE RetroRock-OS ROM Operating System and Libraries" 
-      echo -e "$GREY Version V2.0 2020-2021 AmiRock-OS "
+      echo -e "$GREY Version V2.0 2020-2021 RetroRock-OS "
       echo " No Rights Reserved.  "
       echo " "
 sudo apt-get clean
@@ -68,7 +68,7 @@ sudo apt-get upgrade
  clear
       toilet "RetroRock-OS" --metal
       echo -e "$BLUE RetroRock-OS ROM Operating System and Libraries" 
-      echo -e "$GREY Version V2.0 2020-2021 AmiRock-OS "
+      echo -e "$GREY Version V2.0 2020-2021 RetroRock-OS "
       echo " No Rights Reserved.  "
       echo " "
 
