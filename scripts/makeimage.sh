@@ -1,3 +1,4 @@
+#https://florianmuller.com/quickly-resize-and-shrink-raspberry-pi-sd-card-image-on-macos
 
 sudo fdisk -l
 sudo umount /dev/sda1
