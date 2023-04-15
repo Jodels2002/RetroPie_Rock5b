@@ -58,9 +58,9 @@ sudo apt-get autoclean
       echo -e "$GREY Version V2.0 2020-2023 RetroRock-OS "
       echo " No Rights Reserved.  "
       echo " "
-sudo apt-get clean
-sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get clean -y
+sudo apt-get update -y
+sudo apt-get upgrade -y
 
 
 #************************** Get update **********************************************************************
