@@ -90,9 +90,7 @@ clear
       fi
 
 clear
-      cd /home/pi/RetroPie/retropiemenu/
-      wget https://raw.githubusercontent.com/thebezelproject/BezelProject/master/bezelproject.sh
-      chmod +x "bezelproject.sh"
+ 
       
 cd /opt/retropie/configs/all/retroarch-joypads/
 #unzip -u  /opt/AmiRock/retropie/Gamepad.zip
