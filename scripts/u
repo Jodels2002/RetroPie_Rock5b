@@ -13,8 +13,8 @@ GREY='\033[1;30m'
  
 cd
 clear
-      toilet "AmiRock-OS" --metal
-      echo -e "$BLUE AmiRock-OS ROM Operating System and Libraries" 
+      toilet "RetroRock-OS" --metal
+      echo -e "$BLUE RetroRock-OS ROM Operating System and Libraries" 
       echo -e "$GREY Version V2.0 2020-2021 AmiRock-OS "
       echo " No Rights Reserved.  "
       echo " "
@@ -25,36 +25,36 @@ clear
        
 sudo dpkg --configure -a
  clear
-      toilet "AmiRock-OS" --metal
-      echo -e "$BLUE AmiRock-OS ROM Operating System and Libraries" 
+      toilet "RetroRock-OS" --metal
+      echo -e "$BLUE RetroRock-OS ROM Operating System and Libraries" 
       echo -e "$GREY Version V2.0 2020-2021 AmiRock-OS "
       echo " No Rights Reserved.  "
       echo " "
 sudo apt -y --fix-broken install
  clear
-      toilet "AmiRock-OS" --metal
-      echo -e "$BLUE AmiRock-OS ROM Operating System and Libraries" 
+      toilet "RetroRock-OS" --metal
+      echo -e "$BLUE RetroRock-OS ROM Operating System and Libraries" 
       echo -e "$GREY Version V2.0 2020-2021 AmiRock-OS "
       echo " No Rights Reserved.  "
       echo " "
 sudo apt -f -y install
  clear
-      toilet "AmiRock-OS" --metal
-      echo -e "$BLUE AmiRock-OS ROM Operating System and Libraries" 
+      toilet "RetroRock-OS" --metal
+      echo -e "$BLUE RetroRock-OS ROM Operating System and Libraries" 
       echo -e "$GREY Version V2.0 2020-2021 AmiRock-OS "
       echo " No Rights Reserved.  "
       echo " "
 sudo apt-get autoremove -y
  clear
-      toilet "AmiRock-OS" --metal
-      echo -e "$BLUE AmiRock-OS ROM Operating System and Libraries" 
+      toilet "RetroRock-OS" --metal
+      echo -e "$BLUE RetroRock-OS ROM Operating System and Libraries" 
       echo -e "$GREY Version V2.0 2020-2021 AmiRock-OS "
       echo " No Rights Reserved.  "
       echo " "
 sudo apt-get autoclean
  clear
       toilet "AmiRock-OS" --metal
-      echo -e "$BLUE AmiRock-OS ROM Operating System and Libraries" 
+      echo -e "$BLUE RetroRock-OS ROM Operating System and Libraries" 
       echo -e "$GREY Version V2.0 2020-2021 AmiRock-OS "
       echo " No Rights Reserved.  "
       echo " "
@@ -67,7 +67,7 @@ sudo apt-get upgrade
 
  clear
       toilet "AmiRock-OS" --metal
-      echo -e "$BLUE AmiRock-OS ROM Operating System and Libraries" 
+      echo -e "$BLUE RetroRock-OS ROM Operating System and Libraries" 
       echo -e "$GREY Version V2.0 2020-2021 AmiRock-OS "
       echo " No Rights Reserved.  "
       echo " "
