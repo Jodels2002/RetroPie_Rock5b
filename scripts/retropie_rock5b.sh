@@ -55,32 +55,30 @@ clear
       
 #First install
 if [ ! -d /etc/emulationstation/themes/magazinemadness/ ]; then
-curl https://raw.githubusercontent.com/Shakz76/Eazy-Hax-RetroPie-Toolkit/master/cfg/Install%20Eazy%20Hax%20RetroPie%20Toolkit.sh | bash
+
 sudo chmod -R 777 /etc/emulationstation
 git clone --recursive --depth 1 --branch master "https://github.com/RetroHursty69/es-theme-magazinemadness.git" "/etc/emulationstation/themes/magazinemadness"
 fi
 
 clear
       toilet "Retropie" --metal
-      
+      sudo chmod -R 777  /usr/share/applications/ 
+      sudo chmod -R 777 ~/RetroPie
+      sudo chmod -R 777 /etc/emulationstation
+      sudo chmod -R 777 /opt   
+      cp -rf /opt/AmiRock/retropie/Retropie.desktop /usr/share/applications/ 
 if [ ! -f ~/RetroPie/Romset.zip ]; then
       sudo chmod -R 777 /home/$USER/RetroPie
       cd /home/$USER/RetroPie
       wget https://archive.org/download/archive_20190819/Romset.zip
       cd ~/RetroPie/roms
       sudo unzip -o  /home/$USER/RetroPie/Romset.zip
+      curl https://raw.githubusercontent.com/Shakz76/Eazy-Hax-RetroPie-Toolkit/master/cfg/Install%20Eazy%20Hax%20RetroPie%20Toolkit.sh | bash
+      
 fi
 
-      sudo chmod -R 777  /usr/share/applications/ 
-      sudo chmod -R 777 ~/RetroPie
-      sudo chmod -R 777 /etc/emulationstation
-      sudo chmod -R 777 /opt
-cp -rf /opt/AmiRock/retropie/Retropie.desktop /usr/share/applications/ 
-
-
-
- 
 clear
+
 cd /opt/retropie/configs/all/retroarch-joypads/
 #unzip -u  /opt/AmiRock/retropie/Gamepad.zip
 #cp -f -R  /opt/retropie/configs/all/retroarch-joypads/Gamepad/* /opt/retropie/configs/all/retroarch-joypads/
