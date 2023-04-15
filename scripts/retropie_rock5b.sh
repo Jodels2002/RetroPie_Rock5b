@@ -73,11 +73,10 @@ clear
       sudo chmod -R 777 /home/$USER/RetroPie
       cd /home/$USER/RetroPie
       wget https://archive.org/download/archive_20190819/Romset.zip
-         
-      
+          
       cd ~/RetroPie/roms
       sudo unzip -o  /home/$USER/RetroPie/Romset.zip
-      
+      rm -rf /home/$USER/RetroPie/Romset.zip
       #BezelProject. https://www.youtube.com/watch?v=uq8IecVQ6yY
       cd /home/pi/RetroPie/retropiemenu/
       wget https://raw.githubusercontent.com/thebezelproject/BezelProject/master/bezelproject.sh
