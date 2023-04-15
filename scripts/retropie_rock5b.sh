@@ -69,17 +69,23 @@ clear
       cp -rf /opt/AmiRock/retropie/Retropie.desktop /usr/share/applications/ 
       
       if [ ! -f ~/RetroPie/Romset.zip ]; then
+      #Install Basic Roms from archive.org
       sudo chmod -R 777 /home/$USER/RetroPie
       cd /home/$USER/RetroPie
       wget https://archive.org/download/archive_20190819/Romset.zip
-      #Eazy-Hax-RetroPie-Toolkit
+         
+      
       cd ~/RetroPie/roms
       sudo unzip -o  /home/$USER/RetroPie/Romset.zip
-      curl https://raw.githubusercontent.com/Shakz76/Eazy-Hax-RetroPie-Toolkit/master/cfg/Install%20Eazy%20Hax%20RetroPie%20Toolkit.sh | bash
-      cd /home/pi/RetroPie/retropiemenu/
-      ##BezelProject. https://www.youtube.com/watch?v=uq8IecVQ6yY
+      
+      #BezelProject. https://www.youtube.com/watch?v=uq8IecVQ6yY
       wget https://raw.githubusercontent.com/thebezelproject/BezelProject/master/bezelproject.sh
       chmod +x "bezelproject.sh"
+      
+      #Eazy-Hax-RetroPie-Toolkit
+      curl https://raw.githubusercontent.com/Shakz76/Eazy-Hax-RetroPie-Toolkit/master/cfg/Install%20Eazy%20Hax%20RetroPie%20Toolkit.sh | bash
+      cd /home/pi/RetroPie/retropiemenu/
+      
       fi
 
 clear
