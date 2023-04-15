@@ -79,17 +79,21 @@ clear
       sudo unzip -o  /home/$USER/RetroPie/Romset.zip
       
       #BezelProject. https://www.youtube.com/watch?v=uq8IecVQ6yY
+      cd /home/pi/RetroPie/retropiemenu/
       wget https://raw.githubusercontent.com/thebezelproject/BezelProject/master/bezelproject.sh
       chmod +x "bezelproject.sh"
       
       #Eazy-Hax-RetroPie-Toolkit
       curl https://raw.githubusercontent.com/Shakz76/Eazy-Hax-RetroPie-Toolkit/master/cfg/Install%20Eazy%20Hax%20RetroPie%20Toolkit.sh | bash
-      cd /home/pi/RetroPie/retropiemenu/
+      
       
       fi
 
 clear
-
+      cd /home/pi/RetroPie/retropiemenu/
+      wget https://raw.githubusercontent.com/thebezelproject/BezelProject/master/bezelproject.sh
+      chmod +x "bezelproject.sh"
+      
 cd /opt/retropie/configs/all/retroarch-joypads/
 #unzip -u  /opt/AmiRock/retropie/Gamepad.zip
 #cp -f -R  /opt/retropie/configs/all/retroarch-joypads/Gamepad/* /opt/retropie/configs/all/retroarch-joypads/
