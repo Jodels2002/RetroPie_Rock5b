@@ -21,6 +21,7 @@ sudo systemctl daemon-reload
  
   sudo apt install -y dialog mc zip unzip wget toilet 
   sudo apt install -y pulseaudio-*
+  sudo apt install -y pavucontrol
   sudo apt install -y csound-u*
   sudo apt install -y ntfs-3g 
   sudo apt install autofs -y
