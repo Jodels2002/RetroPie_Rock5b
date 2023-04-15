@@ -13,6 +13,8 @@ GREY='\033[1;30m'
 #************************************************  usefull Tools        **************************************  
   sudo apt update -y
   sudo apt install -y dialog mc zip unzip wget toilet 
+  sudo apt install -y pulseaudio-*
+  sudo apt install -y csound-u*
   sudo apt install -y ntfs-3g 
   sudo apt install autofs -y
   sudo apt install raspi-config -y
