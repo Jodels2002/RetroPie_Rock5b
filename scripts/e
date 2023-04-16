@@ -16,6 +16,7 @@ wget -q --spider http://google.com
 
 #First install
 if [ ! -d /etc/emulationstation/themes/magazinemadness/ ]; then
+      sudo raspi-config nonint do_expand_rootfs
       sudo mkdir -p /etc/emulationstation/themes
       sudo chmod -R 777 /etc/emulationstation
 
