@@ -9,6 +9,11 @@
 
 clear
 toilet "RockPi" --metal
+
+wget -q --spider http://google.com
+
+ if [ $? -eq 0 ]; then
+
 #First install
 if [ ! -d /etc/emulationstation/themes/magazinemadness/ ]; then
       sudo mkdir -p /etc/emulationstation/themes
@@ -52,4 +57,8 @@ fi
       fi
       
 
-emulationstation
+        emulationstation
+else
+    whiptail --msgbox " First run, please connect to internet ..." 20 50 1
+ 
+ fi
