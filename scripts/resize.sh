@@ -6,20 +6,20 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
-# Get the last partition device name
-last_device=$(lsblk -lp | grep "part $" | tail -n 1 | awk '{print $1}')
+# Get the device name of the last partition
+device=$(lsblk -lp | grep "part $" | tail -n 1 | awk '{print $1}')
 
 # Get the current file system size
-current_size=$(df -h $(lsblk -lp | grep "part $" | tail -n 1 | awk '{print $1}') | awk 'NR==2{print $2}')
+current_size=$(df -h $device | awk 'NR==2{print $2}')
 
-# Resize the last partition to the maximum available size
-parted -s $last_device resizepart 100%
+# Resize the partition to the maximum available size
+parted -s $device resizepart $(parted $device print free | grep 'Free Space' | tail -n 1 | awk '{print $1}') 100%
 
-# Resize the file system on the last partition to the maximum available size
-resize2fs $(lsblk -lp | grep "part $" | tail -n 1 | awk '{print $1}')
+# Resize the file system on the partition to the maximum available size
+resize2fs $device
 
 # Get the new file system size
-new_size=$(df -h $(lsblk -lp | grep "part $" | tail -n 1 | awk '{print $1}') | awk 'NR==2{print $2}')
+new_size=$(df -h $device | awk 'NR==2{print $2}')
 
 # Print the current and new file system sizes
 echo "File system size before resize: $current_size"
