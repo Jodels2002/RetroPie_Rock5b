@@ -1,3 +1,13 @@
+
+      echo "deb http://archive.raspberrypi.org/debian/ buster main" | sudo tee -a /etc/apt/sources.list
+      curl -1sLf https://archive.raspberrypi.org/debian/raspberrypi.gpg.key | sudo apt-key add -
+      sudo apt update -y
+      sudo apt install raspi-config -y
+      sudo raspi-config nonint do_expand_rootfs
+      line="deb http://archive.raspberrypi.org/debian/ buster main"
+      sed -i "/$line/d" /etc/apt/sources.list
+
+
 #!/bin/bash
 
 # Check if the script is running as root
