@@ -17,18 +17,7 @@ sudo chmod -R 777 /etc/emulationstation
 mkdir -p /opt/retropie/emulators
 sudo chmod -R 777 /opt
 
-if [ ! -d ~/RetroPie/BIOS/mame2003/ ]; then
-mkdir ~/RetroPie
-mkdir -p ~/RetroPie/BIOS
 
-sudo chmod -R 777 /home/$USER/RetroPie
-sudo apt install feh -y
-clear
-      toilet "Retropie" --metal
-cd ~ 
-git clone --depth=1 https://github.com/archtaurus/RetroPieBIOS.git
-sudo cp -rf ~/RetroPieBIOS/BIOS/* /home/$USER/RetroPie/BIOS
-fi
 
 if [ ! -d /etc/emulationstation/themes/magazinemadness/ ]; then
 
@@ -53,12 +42,7 @@ rm -rf ~/RetroPieBIOS
 clear
       toilet "RetroRock" --metal
       
-#First install
-if [ ! -d /etc/emulationstation/themes/magazinemadness/ ]; then
 
-sudo chmod -R 777 /etc/emulationstation
-git clone --recursive --depth 1 --branch master "https://github.com/RetroHursty69/es-theme-magazinemadness.git" "/etc/emulationstation/themes/magazinemadness"
-fi
 
 clear
       toilet "RetroRock" --metal
@@ -68,25 +52,7 @@ clear
       sudo chmod -R 777 /opt   
       cp -rf /opt/AmiRock/retropie/Retropie.desktop /usr/share/applications/ 
       
-      if [ ! -f ~/RetroPie/roms/gba/gamelist.xml ]; then
-      #Install Basic Roms from archive.org
-      sudo chmod -R 777 /home/$USER/RetroPie
-      cd /home/$USER/RetroPie
-      wget https://archive.org/download/archive_20190819/Romset.zip
-          
-      cd ~/RetroPie/roms
-      sudo unzip -o  /home/$USER/RetroPie/Romset.zip
-      rm -rf /home/$USER/RetroPie/Romset.zip
-      #BezelProject. https://www.youtube.com/watch?v=uq8IecVQ6yY
-      cd /home/pi/RetroPie/retropiemenu/
-      wget https://raw.githubusercontent.com/thebezelproject/BezelProject/master/bezelproject.sh
-      chmod +x "bezelproject.sh"
-      
-      #Eazy-Hax-RetroPie-Toolkit
-      curl https://raw.githubusercontent.com/Shakz76/Eazy-Hax-RetroPie-Toolkit/master/cfg/Install%20Eazy%20Hax%20RetroPie%20Toolkit.sh | bash
-      
-      
-      fi
+
 
 clear
  
