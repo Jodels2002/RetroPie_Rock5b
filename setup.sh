@@ -1,5 +1,5 @@
 #!/bin/bash
-# Install Retrorock
+# RetroRock
 # B.Titze 2023
 
 
