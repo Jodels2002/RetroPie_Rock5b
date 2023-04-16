@@ -6,28 +6,45 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
-# Set the Ubuntu release name and version you want to add
-release="focal"
-version="20.04"
+# Get the device name of the disk
+device=$(lsblk -lp | grep "disk" | awk '{print $1}')
 
-# Create a new source list file for the Ubuntu repository
-echo "deb http://archive.ubuntu.com/ubuntu/ ${release} main restricted universe multiverse" > /etc/apt/sources.list.d/ubuntu-${release}.list
-echo "deb http://archive.ubuntu.com/ubuntu/ ${release}-updates main restricted universe multiverse" >> /etc/apt/sources.list.d/ubuntu-${release}.list
-echo "deb http://archive.ubuntu.com/ubuntu/ ${release}-backports main restricted universe multiverse" >> /etc/apt/sources.list.d/ubuntu-${release}.list
-echo "deb http://security.ubuntu.com/ubuntu/ ${release}-security main restricted universe multiverse" >> /etc/apt/sources.list.d/ubuntu-${release}.list
+# Get the mountpoint of the root file system
+root_mount=$(df / | tail -n 1 | awk '{print $6}')
 
-# Import the Ubuntu repository keyring
-apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 40976EAF437D05B5
-apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 3B4FE6ACC0B21F32
+# Get the name of the last partition on the device
+last_part=$(lsblk -lp | grep "part $" | tail -n 1 | awk '{print $1}')
 
-# Update the package cache
-apt update
-This script adds an Ubuntu source list for the specified release and version to the /etc/apt/sources.list.d directory, which is the recommended location for adding custom sources.
+# Get the start and end positions of the largest free space
+largest_free=$(parted $device print free | awk '/Free Space/ {print $1,$3}' | sort -n -k 2 | tail -n 1)
 
-The script also imports the Ubuntu repository keyring using apt-key, which is required for the package manager to verify the integrity of the packages downloaded from the repository.
+# Get the start position and size of the last partition
+last_part_start=$(parted $device print | grep "^ *[0-9]" | tail -n 1 | awk '{print $2}')
+last_part_size=$(parted $device print | grep "^ *[0-9]" | tail -n 1 | awk '{print $4}')
 
-Finally, the script updates the package cache using apt update, which makes the new Ubuntu packages available for installation alongside the existing Debian packages.
+# Check if the last partition is already using the largest free space
+if [[ "$largest_free" =~ "$last_part_start" ]] && [[ "$largest_free" =~ "$last_part_size" ]]
+then
+    echo "The last partition is already using the largest free space."
+    exit
+fi
 
+# Calculate the end position of the largest free space
+largest_free_end=$(echo $largest_free | awk '{print $2}')
 
+# Calculate the new end position and size of the last partition
+new_last_part_end=$((largest_free_end - 1))
+new_last_part_size=$((new_last_part_end - last_part_start + 1))
 
+# Resize the last partition to the new size
+parted -s $device resizepart $(lsblk -lp | grep "part $" | tail -n 1 | awk '{print $1}') ${new_last_part_size}s
 
+# Resize the file system on the partition to the maximum available size
+resize2fs $last_part
+
+# Get the new file system size
+new_size=$(df -h $root_mount | awk 'NR==2{print $2}')
+
+# Print the current and new file system sizes
+echo "File system size before resize: $last_part_size"
+echo "File system size after resize: $new_size"
