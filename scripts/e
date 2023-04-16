@@ -26,8 +26,12 @@ if [ ! -d /etc/emulationstation/themes/magazinemadness/ ]; then
       # Update the package index
       sudo apt update
       sudo apt install raspi-config -y
-      
       sudo raspi-config nonint do_expand_rootfs
+      line="deb http://archive.raspberrypi.org/debian/ buster main"
+      sed -i "/$line/d" /etc/apt/sources.list
+     
+      
+
       sudo mkdir -p /etc/emulationstation/themes
       sudo chmod -R 777 /etc/emulationstation
 
