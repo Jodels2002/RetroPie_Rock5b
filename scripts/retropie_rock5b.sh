@@ -37,7 +37,7 @@ if [ ! -d /etc/emulationstation/themes/magazinemadness/ ]; then
 fi
 
 clear
-      toilet "Retropie" --metal
+      toilet "RetroRock" --metal
 cd ~
 git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
 
@@ -51,7 +51,7 @@ sudo __nodialog=1 __platform=rk3588 ./retropie_setup.sh basic_install
 
 rm -rf ~/RetroPieBIOS 
 clear
-      toilet "Retropie" --metal
+      toilet "RetroRock" --metal
       
 #First install
 if [ ! -d /etc/emulationstation/themes/magazinemadness/ ]; then
@@ -61,7 +61,7 @@ git clone --recursive --depth 1 --branch master "https://github.com/RetroHursty6
 fi
 
 clear
-      toilet "Retropie" --metal
+      toilet "RetroRock" --metal
       sudo chmod -R 777  /usr/share/applications/ 
       sudo chmod -R 777 ~/RetroPie
       sudo chmod -R 777 /etc/emulationstation
@@ -96,15 +96,16 @@ cd /opt/retropie/configs/all/retroarch-joypads/
 #mv /opt/retropie/configs/all/retroarch-joypads/es_input.cfg /opt/retropie/configs/all/emulationstation/
 #rm -rf /opt/retropie/configs/all/retroarch-joypads/Gamepad 
 cd
-toilet "AmiRock-OS" --metal
+toilet "RetroRock" --metal
       echo -e "$BLUE RetroRock ROM Operating System and Libraries" 
       echo -e "$GREY Version V2.0 2020-2021 RetroRock-OS "
 echo " No Rights Reserved.  "
 echo -e "$BLACK "
-echo " Type 'e' start Emulationstation"
+echo " Type 'e' start Emulationstation (RetroPie)"
 echo -e "$BLUE "
 echo " 1.>  "
+echo -e " 1.>  ( d ) Linux Desktop                    "
 echo -e " 1.>  ( r ) Retropie setup                   "
-echo " 1.>  ( m ) Retropie Menu                      " 
+echo " 1.>  ( m ) Config Menu                      " 
 echo " 1.>  ( s ) Shutdown                                "  
 echo -e "$GREY "
