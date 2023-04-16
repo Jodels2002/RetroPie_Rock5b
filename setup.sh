@@ -1,5 +1,5 @@
 #!/bin/bash
-# Install AmiRock
+# Install Retrorock
 # B.Titze 2023
 
 
