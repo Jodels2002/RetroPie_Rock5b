@@ -10,27 +10,19 @@ RED='\033[1;31m'
 GREY='\033[1;30m'
 
       sudo echo "pi ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
-
-
       sudo apt update -y
-
-
 #************************************************  usefull Tools        **************************************  
  
-  sudo apt install -y dialog mc zip unzip wget toilet 
-  sudo apt install -y pulseaudio-*
-  sudo apt install -y pavucontrol
-  sudo apt install -y csound-u*
-  sudo apt install -y ntfs-3g 
-  sudo apt install autofs -y
-  sudo apt install -y autoconf 
-  sudo apt install -y build-essential 
-  sudo apt install raspi-config -y
-  sudo raspi-config nonint do_expand_rootfs
-  
-  
-        sudo apt-get -y remove pulseaudio
-	sudo apt-get -y install pulseaudio
+        sudo apt install -y dialog mc zip unzip wget toilet 
+        
+        sudo apt install -y ntfs-3g 
+        sudo apt install autofs -y
+        sudo apt install -y autoconf 
+        sudo apt install -y build-essential 
+        sudo apt install raspi-config -y
+       	sudo apt install -y pulseaudio-*
+        sudo apt install -y pavucontrol
+        sudo apt install -y csound-u*
 	sudo /etc/init.d/alsa-utils reset
 	sudo apt-get -y install pi-bluetooth
 	sudo apt-get -y install bluez bluez-firmware baobab 
@@ -56,11 +48,12 @@ sudo dpkg -i fan-control*.deb
 sudo systemctl enable fan-control
 sudo systemctl start fan-control 
 #************************************************  Install RetroRock Tools       **************************************   
- sudo cp -f -R ~/RetroPie_Rock5b/scripts/* /usr/local/bin
+ 
+      sudo cp -f -R ~/RetroPie_Rock5b/scripts/* /usr/local/bin
       sudo cp -f -R ~/RetroPie_Rock5b/ /opt
       sudo chmod -R 777 /usr/local/bin
       sudo chmod -R 777 /opt/RetroPie_Rock5b/
- 
+      sudo raspi-config nonint do_expand_rootfs
 
       
 ~/RetroPie_Rock5b/scripts/retropie_rock5b.sh
