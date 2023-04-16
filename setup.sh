@@ -9,13 +9,19 @@ GREEN='\033[1;32m'
 RED='\033[1;31m'
 GREY='\033[1;30m'
 
+ # Add the Raspberry Pi software repository to the sources.list file
+      echo "deb http://archive.raspberrypi.org/debian/ buster main" | sudo tee -a /etc/apt/sources.list
 
-# Update package list
-sudo apt update -y
-echo '[Service]' | sudo tee -a /etc/systemd/system/getty@tty1.service.d/autologin.conf
-echo 'ExecStart=' | sudo tee -a /etc/systemd/system/getty@tty1.service.d/autologin.conf
-echo 'ExecStart=-/sbin/agetty --autologin pi --noclear %I $TERM' | sudo tee -a /etc/systemd/system/getty@tty1.service.d/autologin.conf
-sudo systemctl daemon-reload
+   
+      curl -1sLf https://archive.raspberrypi.org/debian/raspberrypi.gpg.key | sudo apt-key add -
+      sudo apt update -y
+      sudo apt install raspi-config -y
+      sudo raspi-config nonint do_expand_rootfs
+      line="deb http://archive.raspberrypi.org/debian/ buster main"
+      sed -i "/$line/d" /etc/apt/sources.list
+
+      sudo apt update -y
+
 
 #************************************************  usefull Tools        **************************************  
  
