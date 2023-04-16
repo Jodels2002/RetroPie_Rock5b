@@ -9,6 +9,9 @@ fi
 # Get the device name of the disk
 device=$(lsblk -lp | grep "disk" | awk '{print $1}')
 
+# Get the mountpoint of the root file system
+root_mount=$(df / | tail -n 1 | awk '{print $6}')
+
 # Get the name of the last partition on the device
 last_part=$(lsblk -lp | grep "part $" | tail -n 1 | awk '{print $1}')
 
@@ -40,7 +43,7 @@ parted -s $device resizepart $(lsblk -lp | grep "part $" | tail -n 1 | awk '{pri
 resize2fs $last_part
 
 # Get the new file system size
-new_size=$(df -h $last_part | awk 'NR==2{print $2}')
+new_size=$(df -h $root_mount | awk 'NR==2{print $2}')
 
 # Print the current and new file system sizes
 echo "File system size before resize: $last_part_size"
