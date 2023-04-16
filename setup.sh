@@ -9,6 +9,7 @@ GREEN='\033[1;32m'
 RED='\033[1;31m'
 GREY='\033[1;30m'
       sudo update-locale LANG=en_US.UTF-8
+      setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,gb,de,fr,it,gr,dk
       sudo echo "pi ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 sudo systemctl disable getty@tty1.service
 sudo tee /etc/systemd/system/autologin@.service > /dev/null <<EOT
