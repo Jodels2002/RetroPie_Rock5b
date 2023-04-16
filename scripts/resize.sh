@@ -1,7 +1,7 @@
 
 
-echo "deb http://archive.raspberrypi.org/debian/ buster main" >> /etc/apt/sources.list
-apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 7FA3303E
+sudo echo "deb http://archive.raspberrypi.org/debian/ buster main" >> /etc/apt/sources.list
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 7FA3303E
 sudo apt install raspi-config
 sudo /etc/init.d/resize2fs start
 
