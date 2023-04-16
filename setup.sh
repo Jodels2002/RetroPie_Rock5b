@@ -10,6 +10,21 @@ RED='\033[1;31m'
 GREY='\033[1;30m'
       sudo update-locale LANG=en_US.UTF-8
       sudo echo "pi ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
+sudo systemctl disable getty@tty1.service
+sudo tee /etc/systemd/system/autologin@.service > /dev/null <<EOT
+[Unit]
+Description=Autologin to console as %I
+After=getty.target
+
+[Service]
+ExecStart=-/sbin/agetty --autologin pi --noclear %I 38400 linux
+
+[Install]
+WantedBy=multi-user.target
+EOT
+sudo systemctl daemon-reload
+sudo systemctl enable autologin@tty1.service
+echo "Autologin enabled for user pi"
       sudo apt update -y
 #************************************************  usefull Tools        **************************************  
  
