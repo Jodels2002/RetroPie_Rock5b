@@ -17,20 +17,6 @@ wget -q --spider http://google.com
 #First install
 if [ ! -d /etc/emulationstation/themes/magazinemadness/ ]; then
 
-      # Add the Raspberry Pi software repository to the sources.list file
-      echo "deb http://archive.raspberrypi.org/debian/ buster main" | sudo tee -a /etc/apt/sources.list
-
-      # Import the repository's GPG key
-      curl -1sLf https://archive.raspberrypi.org/debian/raspberrypi.gpg.key | sudo apt-key add -
-
-      # Update the package index
-      sudo apt update
-      sudo apt install raspi-config -y
-      sudo raspi-config nonint do_expand_rootfs
-      line="deb http://archive.raspberrypi.org/debian/ buster main"
-      sed -i "/$line/d" /etc/apt/sources.list
-     
-      
 
       sudo mkdir -p /etc/emulationstation/themes
       sudo chmod -R 777 /etc/emulationstation
