@@ -9,7 +9,7 @@ GREEN='\033[1;32m'
 RED='\033[1;31m'
 GREY='\033[1;30m'
       sudo update-locale LANG=en_US.UTF-8
-      sudo echo "pi ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
+      #sudo echo "pi ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
       sudo apt update -y
 #************************************************  usefull Tools        **************************************  
  
