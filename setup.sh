@@ -47,10 +47,7 @@ echo "Autologin enabled for user pi"
 	sudo usermod -G bluetooth -a pi
         sudo usermod -G audio -a pi
         sudo usermod -G video -a pi 
-	wget https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/raspi-config_20230214_all.deb -P 
-  	sudo apt install -y libnewt0.52 whiptail parted triggerhappy lua5.1 alsa-utils
-  	#apt-get install -fy
-  	sudo dpkg -i raspi-config_20230214_all.deb
+	sudo dpkg -i raspi-config_20230214_all.deb
 	#sudo dpkg -i --force-overwrite /opt/RetroPie_Rock5b/config/linux-gpu-mali-wayland_1.1-g6p0-20230406_arm64.deb 
 	rm -rf raspi-config_20230214_all.deb
 	
