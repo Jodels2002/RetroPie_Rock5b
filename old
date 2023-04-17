@@ -1,7 +1,7 @@
 #!/bin/bash
 # RetroRock
 # B.Titze 2023
-sudo apt install libegl-mesa0 libegl1-mesa-dev libgbm-dev libgl1-mesa-dev libgles2-mesa-dev libglx-mesa0 mesa-common-dev mesa-vulkan-drivers
+sudo apt install libegl-mesa0 libegl1-mesa-dev libgbm-dev libgl1-mesa-dev libgles2-mesa-dev libglx-mesa0 mesa-common-dev mesa-vulkan-drivers -y
 
 BLACK='\033[0;39m'
 BLUE='\033[1;34m'
