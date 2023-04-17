@@ -10,7 +10,7 @@ clear
 rm -rf /opt/RetroPie_Rock5b
 sudo cp -rf ~/RetroPie_Rock5b /opt/
 
-rm -rf ~/RetroPie-Setup
+
 clear
 mkdir -p /etc/emulationstation
 sudo chmod -R 777 /etc/emulationstation
@@ -29,6 +29,7 @@ clear
       toilet "RetroRock" --metal
       
 if [ ! -d /opt/retropie/emulators/retroarch/ ]; then
+rm -rf ~/RetroPie-Setup
 cd ~
 git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
 sudo chmod -R 777 ~/RetroPie-Setup
