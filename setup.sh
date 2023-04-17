@@ -47,8 +47,7 @@ sudo apt-get update -y
   #sudo apt install autofs -y
   #sudo apt install -y autoconf 
   #sudo apt install -y build-essential 
-
-  
+  sudo apt install libegl-mesa0 libegl1-mesa-dev libgbm-dev libgl1-mesa-dev libgles2-mesa-dev libglx-mesa0 mesa-common-dev mesa-vulkan-drivers -y  
   
     
 	sudo apt-get -y install pi-bluetooth
