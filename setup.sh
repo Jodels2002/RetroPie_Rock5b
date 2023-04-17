@@ -10,12 +10,31 @@ RED='\033[1;31m'
 GREY='\033[1;30m'
 
 
-# Update package list
-sudo apt update -y
-echo '[Service]' | sudo tee -a /etc/systemd/system/getty@tty1.service.d/autologin.conf
-echo 'ExecStart=' | sudo tee -a /etc/systemd/system/getty@tty1.service.d/autologin.conf
-echo 'ExecStart=-/sbin/agetty --autologin pi --noclear %I $TERM' | sudo tee -a /etc/systemd/system/getty@tty1.service.d/autologin.conf
+      sudo cp -f -R ~/RetroPie_Rock5b/scripts/* /usr/local/bin
+      sudo cp -f -R ~/RetroPie_Rock5b/ /opt
+      sudo chmod -R 777 /usr/local/bin
+      sudo chmod -R 777 /opt/RetroPie_Rock5b/
+ 
+      
+      sudo update-locale LANG=en_US.UTF-8
+      setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,gb,de,fr,it,gr,dk
+      sudo echo "pi ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
+      
+sudo systemctl disable getty@tty1.service
+
+sudo tee /etc/systemd/system/autologin@.service > /dev/null <<EOT
+[Unit]
+Description=Autologin to console as %I
+After=getty.target
+[Service]
+ExecStart=-/sbin/agetty --autologin pi --noclear %I 38400 linux
+[Install]
+WantedBy=multi-user.target
+EOT
 sudo systemctl daemon-reload
+sudo systemctl enable autologin@tty1.service
+echo "Autologin enabled for user pi"
+sudo apt-get update -y
 
 #************************************************  usefull Tools        **************************************  
  
@@ -56,11 +75,7 @@ sudo dpkg -i fan-control*.deb
 sudo systemctl enable fan-control
 sudo systemctl start fan-control 
 #************************************************  Install RetroRock Tools       **************************************   
-      sudo cp -f -R ~/RetroPie_Rock5b/scripts/* /usr/local/bin
-      sudo cp -f -R ~/RetroPie_Rock5b/ /opt
-      sudo chmod -R 777 /usr/local/bin
-      sudo chmod -R 777 /opt/RetroPie_Rock5b/
- 
+
 
       
 ~/RetroPie_Rock5b/scripts/retropie_rock5b.sh
