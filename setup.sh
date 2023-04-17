@@ -26,7 +26,8 @@ EOT
 sudo systemctl daemon-reload
 sudo systemctl enable autologin@tty1.service
 echo "Autologin enabled for user pi"
-      sudo apt update -y
+sudo apt update -y
+cd
 #************************************************  usefull Tools        **************************************  
  
         sudo apt install -y dialog mc zip unzip wget toilet 
