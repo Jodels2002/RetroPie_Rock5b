@@ -27,26 +27,21 @@ fi
 
 clear
       toilet "RetroRock" --metal
+      
 if [ ! -d /opt/retropie/emulators/retroarch/ ]; then
 cd ~
 git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
-
-cd ~
-
 sudo chmod -R 777 ~/RetroPie-Setup
 cp -f -R /opt/retropie_rock5b/retropie/system.sh /home/$USER/RetroPie-Setup/scriptmodules/
 cd RetroPie-Setup
 sudo chmod -R 777 /opt
-sudo __nodialog=1 __platform=rk3588 ./retropie_setup.sh basic_install
-
-rm -rf ~/RetroPieBIOS 
+sudo __nodialog=1  ./retropie_setup.sh basic_install
+#sudo __nodialog=1 __platform=rk3588 ./retropie_setup.sh basic_install
 
 fi
 clear
       toilet "RetroRock" --metal
       
-
-
 clear
       toilet "RetroRock" --metal
       sudo chmod -R 777  /usr/share/applications/ 
@@ -60,11 +55,6 @@ clear
 
 clear
  
-cd /opt/retropie/configs/all/retroarch-joypads/
-#unzip -u  /opt/AmiRock/retropie/Gamepad.zip
-#cp -f -R  /opt/retropie/configs/all/retroarch-joypads/Gamepad/* /opt/retropie/configs/all/retroarch-joypads/
-#mv /opt/retropie/configs/all/retroarch-joypads/es_input.cfg /opt/retropie/configs/all/emulationstation/
-#rm -rf /opt/retropie/configs/all/retroarch-joypads/Gamepad 
 cd
 toilet "RetroRock" --metal
       echo -e "$BLUE RetroRock ROM Operating System and Libraries" 
