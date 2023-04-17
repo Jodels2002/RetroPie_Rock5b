@@ -58,6 +58,7 @@ fi
       
       fi
         sudo chmod -R 777 ~/RetroPie
+        sudo chmod -R 777 ~/RetroPie-Setup
         sudo chmod -R 777 /opt/retropie
 
         emulationstation
