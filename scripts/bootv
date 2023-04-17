@@ -8,7 +8,9 @@ sudo cp /opt/RetroPie_Rock5b/config/boot-video.mp4 /usr/share/boot-video/
 
 # Install necessary packages for playing video
 sudo apt-get update
-sudo apt-get install mplayer -y
+sudo apt-get install mplayer xorg -y
+sudo apt-get install mesa-utils libgl1-mesa-dev -y
+
 
 # Create the script that plays the video
 sudo tee /etc/init.d/boot-video.sh > /dev/null << EOF
