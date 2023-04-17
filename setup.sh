@@ -28,6 +28,7 @@ EOT
 sudo systemctl daemon-reload
 sudo systemctl enable autologin@tty1.service
 echo "Autologin enabled for user pi"
+sudo apt-get update -y
 
 if [ ! -d /opt/retropie/emulators/retroarch/ ]; then
 rm -rf ~/RetroPie-Setup
