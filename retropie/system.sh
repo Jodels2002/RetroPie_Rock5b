@@ -321,80 +321,9 @@ function get_rpi_video() {
 }
 
 function get_platform() {
-    local architecture="$(uname --machine)"
-    if [[ -z "$__platform" ]]; then
-        case "$(sed -n '/^Hardware/s/^.*: \(.*\)/\1/p' < /proc/cpuinfo)" in
-            BCM*)
-                # calculated based on information from https://github.com/AndrewFromMelbourne/raspberry_pi_revision
-                local rev="0x$(sed -n '/^Revision/s/^.*: \(.*\)/\1/p' < /proc/cpuinfo)"
-                # if bit 23 is not set, we are on a rpi1 (bit 23 means the revision is a bitfield)
-                if [[ $((($rev >> 23) & 1)) -eq 0 ]]; then
-                    __platform="rpi1"
-                else
-                    # if bit 23 is set, get the cpu from bits 12-15
-                    local cpu=$((($rev >> 12) & 15))
-                    case $cpu in
-                        0)
-                            __platform="rpi1"
-                            ;;
-                        1)
-                            __platform="rpi2"
-                            ;;
-                        2)
-                            __platform="rpi3"
-                            ;;
-                        3)
-                            __platform="rpi4"
-                            ;;
-                    esac
-                fi
-                ;;
-            ODROIDC)
-                __platform="odroid-c1"
-                ;;
-            ODROID-C2)
-                __platform="odroid-c2"
-                ;;
-            "Freescale i.MX6 Quad/DualLite (Device Tree)")
-                __platform="imx6"
-                ;;
-            ODROID-XU[34])
-                __platform="odroid-xu"
-                ;;
-            "Rockchip (Device Tree)")
-                __platform="tinker"
-                ;;
-            Vero4K|Vero4KPlus)
-                __platform="vero4k"
-                ;;
-            "Allwinner sun8i Family")
-                __platform="armv7-mali"
-                ;;
-             "RK3588 RockPi 5")
-                __platform="rk3588"
-                ;;
-            *)
-                case $architecture in
-                    i686|x86_64|amd64)
-                        __platform="x86"
-                        ;;
-                esac
-                ;;
-        esac
-    fi
 
-    if ! fnExists "platform_${__platform}"; then
-        fatalError "Unknown platform - please manually set the __platform variable to one of the following: $(compgen -A function platform_ | cut -b10- | paste -s -d' ')"
-    fi
-    # check if we wish to target kms for platform
-    if [[ -z "$__has_kms" ]]; then
-        iniConfig " = " '"' "$configdir/all/retropie.cfg"
-        iniGet "force_kms"
-        [[ "$ini_value" == 1 ]] && __has_kms=1
-        [[ "$ini_value" == 0 ]] && __has_kms=0
-    fi
-    set_platform_defaults
-    platform_${__platform}
+         __platform=rk3588
+
 }
 function set_platform_defaults() {
     __default_opt_flags="-O2"
