@@ -39,6 +39,7 @@ cp -f -R /opt/RetroPie_Rock5b/retropie/retropie_setup.sh /home/$USER/RetroPie-Se
 cd RetroPie-Setup
 sudo chmod -R 777 /opt
 sudo __nodialog=1 __platform=rk3588 ./retropie_setup.sh basic_install
+sudo  ./retropie_setup.sh basic_install
 
 
 fi
