@@ -7,8 +7,8 @@
       GREY='\033[1;30m'
 power
 clear
-rm -rf /opt/retropie_rock5b
-sudo cp -rf ~/retropie_rock5b /opt/
+rm -rf /opt/RetroPie_Rock5b
+sudo cp -rf ~/RetroPie_Rock5b /opt/
 
 rm -rf ~/RetroPie-Setup
 clear
@@ -27,6 +27,7 @@ fi
 
 clear
       toilet "RetroRock" --metal
+if [ ! -d /opt/retropie/emulators/retroarch/ ]; then
 cd ~
 git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
 
@@ -39,6 +40,8 @@ sudo chmod -R 777 /opt
 sudo __nodialog=1 __platform=rk3588 ./retropie_setup.sh basic_install
 
 rm -rf ~/RetroPieBIOS 
+
+fi
 clear
       toilet "RetroRock" --metal
       
@@ -52,7 +55,8 @@ clear
       sudo chmod -R 777 /opt   
       cp -rf /opt/AmiRock/retropie/Retropie.desktop /usr/share/applications/ 
       
-
+      rm -rf ~/RetroPie_Rock5b
+     
 
 clear
  
