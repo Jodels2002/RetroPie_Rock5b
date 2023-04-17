@@ -29,13 +29,13 @@ if [ ! -d ~/RetroPie/BIOS/mame2003/ ]; then
     mkdir ~/RetroPie
     mkdir -p ~/RetroPie/BIOS
 
-    sudo chmod -R 777 /home/$USER/RetroPie
+    sudo chmod -R 777 ~/RetroPie
     sudo apt install feh -y
     clear
     toilet "RockPi" --metal
     cd ~ 
     git clone --depth=1 https://github.com/archtaurus/RetroPieBIOS.git
-    sudo cp -rf ~/RetroPieBIOS/BIOS/* /home/$USER/RetroPie/BIOS
+    sudo cp -rf ~/RetroPieBIOS/BIOS/* ~/RetroPie/BIOS
     rm -rf ~/RetroPieBIOS 
 fi
 
@@ -57,7 +57,8 @@ fi
       curl https://raw.githubusercontent.com/Shakz76/Eazy-Hax-RetroPie-Toolkit/master/cfg/Install%20Eazy%20Hax%20RetroPie%20Toolkit.sh | bash
       
       fi
-      
+        sudo chmod -R 777 ~/RetroPie
+        sudo chmod -R 777 /opt/retropie
 
         emulationstation
 else
