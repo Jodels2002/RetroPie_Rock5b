@@ -58,8 +58,8 @@ sudo apt-get update -y
         sudo usermod -G video -a pi  
 	
  #************************************************  Install Desktop       **************************************   
-        #sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput xini* 
-	#sudo apt install -y xfce4-te*
+        sudo apt install -y xserver-xorg xini* 
+	#sudo apt install -y xfce4-te* xfce4 xfce4-goodies lxinput
 	#sudo apt install -y chromium gparted
 #************************************************  Fan Control by pymumu        **************************************   
 
