@@ -8,6 +8,10 @@ BLUE='\033[1;34m'
 GREEN='\033[1;32m'
 RED='\033[1;31m'
 GREY='\033[1;30m'
+      
+      sudo cp -f -R ~/RetroPie_Rock5b/scripts/* /usr/local/bin
+      sudo cp -f -R ~/RetroPie_Rock5b/ /opt
+      
       sudo update-locale LANG=en_US.UTF-8
       setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,gb,de,fr,it,gr,dk
       sudo echo "pi ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
@@ -45,8 +49,7 @@ sudo  ./retropie_setup.sh
 
 fi
 #************************************************  usefull Tools        **************************************  
-         sudo cp -f -R ~/RetroPie_Rock5b/scripts/* /usr/local/bin
-         sudo cp -f -R ~/RetroPie_Rock5b/ /opt
+        
          sudo chmod -R 777 /usr/local/bin
          sudo chmod -R 777 /opt/RetroPie_Rock5b/
 	sudo apt install -y dialog mc zip unzip wget toilet 
