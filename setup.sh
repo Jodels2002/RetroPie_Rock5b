@@ -11,7 +11,9 @@ GREY='\033[1;30m'
       sudo update-locale LANG=en_US.UTF-8
       setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,gb,de,fr,it,gr,dk
       sudo echo "pi ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
+      
 sudo systemctl disable getty@tty1.service
+
 sudo tee /etc/systemd/system/autologin@.service > /dev/null <<EOT
 [Unit]
 Description=Autologin to console as %I
@@ -27,7 +29,20 @@ sudo systemctl daemon-reload
 sudo systemctl enable autologin@tty1.service
 echo "Autologin enabled for user pi"
 
+if [ ! -d /opt/retropie/emulators/retroarch/ ]; then
+rm -rf ~/RetroPie-Setup
+cd ~
+git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
+sudo chmod -R 777 ~/RetroPie-Setup
+cp -f -R /opt/RetroPie_Rock5b/retropie/system.sh ~/RetroPie-Setup/scriptmodules/
+cp -f -R /opt/RetroPie_Rock5b/retropie/retropie_setup.sh /home/$USER/RetroPie-Setup/
 
+cd RetroPie-Setup
+sudo chmod -R 777 /opt
+sudo  ./retropie_setup.sh 
+
+
+fi
 #************************************************  usefull Tools        **************************************  
          sudo cp -f -R ~/RetroPie_Rock5b/scripts/* /usr/local/bin
          sudo cp -f -R ~/RetroPie_Rock5b/ /opt
