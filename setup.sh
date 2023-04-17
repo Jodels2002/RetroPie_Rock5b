@@ -27,18 +27,7 @@ sudo systemctl daemon-reload
 sudo systemctl enable autologin@tty1.service
 echo "Autologin enabled for user pi"
 
-cd
 
-cd /lib/firmware/
-  sudo apt install build-essential meson git python3-mako libexpat1-dev bison flex libwayland-egl-backend-dev libxext-dev libxfixes-dev libxcb-glx0-dev libxcb-shm0-dev libxcb-dri2-0-dev libxcb-dri3-dev libxcb-present-dev libxshmfence-dev libxxf86vm-dev libxrandr-dev -y
-  sudo wget https://github.com/JeffyCN/rockchip_mirrors/blob/libmali/firmware/g610/mali_csffw.bin
-  cd
-sudo add-apt-repository ppa:liujianfeng1994/panfork-mesa -y
-sudo add-apt-repository ppa:liujianfeng1994/rockchip-multimedia -y
-
-sudo apt update -y
-sudo apt dist-upgrade -y
-sudo apt install kodi -y
 #************************************************  usefull Tools        **************************************  
          sudo cp -f -R ~/RetroPie_Rock5b/scripts/* /usr/local/bin
          sudo cp -f -R ~/RetroPie_Rock5b/ /opt
@@ -63,7 +52,7 @@ sudo apt install kodi -y
   	sudo apt install -y libnewt0.52 whiptail parted triggerhappy lua5.1 alsa-utils
   	#apt-get install -fy
   	sudo dpkg -i raspi-config_20230214_all.deb
-	sudo dpkg -i --force-overwrite /opt/RetroPie_Rock5b/config/linux-gpu-mali-wayland_1.1-g6p0-20230406_arm64.deb 
+	#sudo dpkg -i --force-overwrite /opt/RetroPie_Rock5b/config/linux-gpu-mali-wayland_1.1-g6p0-20230406_arm64.deb 
 	rm -rf raspi-config_20230214_all.deb
 	
 	#************************************************  Install Desktop       **************************************   
