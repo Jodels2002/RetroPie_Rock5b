@@ -76,4 +76,4 @@ echo " 1.>  ( m ) Config Menu                      "
 echo " 1.>  ( s ) Shutdown                                "  
 echo -e "$GREY "
 cd
-e
+emulationstation
