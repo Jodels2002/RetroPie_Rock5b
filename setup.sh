@@ -38,7 +38,6 @@ echo "Autologin enabled for user pi"
         sudo apt install autofs -y
         sudo apt install -y autoconf 
         #sudo apt install -y build-essential 
-        sudo apt install raspi-config -y
        	sudo apt install -y pulseaudio-*
         sudo apt install -y pavucontrol
         sudo apt install -y csound-u*
