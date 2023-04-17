@@ -12,9 +12,9 @@ sudo apt install kodi
 sudo apt update -y
 
 sudo apt-get autoremove -y
-sudo apt install mali-g610-firmware -y
 sudo apt install malirun -y
 
+sudo dpkg -i --force-overwrite /opt/RetroPie_Rock5b/config/linux-gpu-mali-wayland_1.1-g6p0-20230406_arm64.deb 
 #sudo apt install glmark2 glmark2-es2 glmark2-es2-wayland -y
 sudo apt install mesa-utils -y
 #sudo apt install kodi -y# Create directory to store the video
