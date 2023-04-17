@@ -37,7 +37,7 @@ echo "Autologin enabled for user pi"
         sudo apt install -y ntfs-3g 
         sudo apt install autofs -y
         sudo apt install -y autoconf 
-        sudo apt install -y build-essential 
+        #sudo apt install -y build-essential 
         sudo apt install raspi-config -y
        	sudo apt install -y pulseaudio-*
         sudo apt install -y pavucontrol
