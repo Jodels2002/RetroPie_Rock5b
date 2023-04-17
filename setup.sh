@@ -51,8 +51,8 @@ echo "Autologin enabled for user pi"
 	#sudo dpkg -i --force-overwrite /opt/RetroPie_Rock5b/config/linux-gpu-mali-wayland_1.1-g6p0-20230406_arm64.deb 
 	rm -rf raspi-config_20230214_all.deb
 	
-	#************************************************  Install Desktop       **************************************   
- sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput xini* 
+#************************************************  Install Desktop       **************************************   
+ 	sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput xini* 
 	sudo apt install -y xfce4-te*
 	sudo apt install -y chromium gparted
 #************************************************  Fan Control by pymumu        **************************************   
@@ -62,12 +62,12 @@ clear
       		echo " "
       		echo " Fan-Control by pymumu"
           
-git clone https://github.com/pymumu/fan-control-rock5b
-cd fan-control-rock5b
-make package
-sudo dpkg -i fan-control*.deb
-sudo systemctl enable fan-control
-sudo systemctl start fan-control 
+	git clone https://github.com/pymumu/fan-control-rock5b
+	cd fan-control-rock5b
+	make package
+	sudo dpkg -i fan-control*.deb
+	sudo systemctl enable fan-control
+	sudo systemctl start fan-control 
 #************************************************  Install RetroRock Tools       **************************************   
  
     
