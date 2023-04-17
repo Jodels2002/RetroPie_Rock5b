@@ -41,7 +41,7 @@ fi
 
  if [ ! -f ~/RetroPie/roms/gba/gamelist.xml ]; then
       #Install Basic Roms from archive.org
-      sudo chmod -R 777 /home/$USER/RetroPie
+      sudo chmod -R 777 ~/RetroPie
       cd /home/$USER/RetroPie
       wget https://archive.org/download/archive_20190819/Romset.zip
           
