@@ -33,7 +33,7 @@ rm -rf ~/RetroPie-Setup
 cd ~
 git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
 sudo chmod -R 777 ~/RetroPie-Setup
-cp -f -R /opt/RetroPie_Rock5b/retropie/system.sh /home/$USER/RetroPie-Setup/scriptmodules/
+cp -f -R /opt/RetroPie_Rock5b/retropie/system.sh ~/RetroPie-Setup/scriptmodules/
 cp -f -R /opt/RetroPie_Rock5b/retropie/retropie_setup.sh /home/$USER/RetroPie-Setup/
 
 cd RetroPie-Setup
