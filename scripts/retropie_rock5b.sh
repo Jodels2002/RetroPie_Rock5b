@@ -47,10 +47,13 @@ clear
       
 clear
       toilet "RetroRock" --metal
-      sudo chmod -R 777  /usr/share/applications/ 
-      sudo chmod -R 777 ~/RetroPie
+      sudo chmod -R 777  /usr/share/applications/  
       sudo chmod -R 777 /etc/emulationstation
-      sudo chmod -R 777 /opt   
+      sudo chmod -R 777 /opt 
+      sudo chmod -R 777 ~/RetroPie
+      sudo chmod -R 777 ~/RetroPie-Setup
+        
+          
       cp -rf /opt/AmiRock/retropie/Retropie.desktop /usr/share/applications/ 
       
       rm -rf ~/RetroPie_Rock5b
