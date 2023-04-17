@@ -32,7 +32,7 @@ if [ ! -d /opt/retropie/emulators/retroarch/ ]; then
 cd ~
 git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
 sudo chmod -R 777 ~/RetroPie-Setup
-cp -f -R /opt/retropie_rock5b/retropie/system.sh /home/$USER/RetroPie-Setup/scriptmodules/
+cp -f -R /opt/RetroPie_Rock5b/retropie/system.sh /home/$USER/RetroPie-Setup/scriptmodules/
 cd RetroPie-Setup
 sudo chmod -R 777 /opt
 sudo __nodialog=1  ./retropie_setup.sh basic_install
