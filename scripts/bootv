@@ -18,7 +18,7 @@ sudo tee /etc/init.d/boot-video.sh > /dev/null << EOF
 EOF
 
 # Make the script executable
-sudo chmod +x /etc/init.d/boot-video.mp4
+sudo chmod +x /etc/init.d/boot-video.sh
 
 # Register the script to run at boot time
 sudo update-rc.d boot-video.sh defaults
