@@ -12,10 +12,21 @@ GREY='\033[1;30m'
 
 # Update package list
 sudo apt update -y
-echo '[Service]' | sudo tee -a /etc/systemd/system/getty@tty1.service.d/autologin.conf
-echo 'ExecStart=' | sudo tee -a /etc/systemd/system/getty@tty1.service.d/autologin.conf
-echo 'ExecStart=-/sbin/agetty --autologin pi --noclear %I $TERM' | sudo tee -a /etc/systemd/system/getty@tty1.service.d/autologin.conf
+
+sudo systemctl disable getty@tty1.service
+
+sudo tee /etc/systemd/system/autologin@.service > /dev/null <<EOT
+[Unit]
+Description=Autologin to console as %I
+After=getty.target
+[Service]
+ExecStart=-/sbin/agetty --autologin pi --noclear %I 38400 linux
+[Install]
+WantedBy=multi-user.target
+EOT
 sudo systemctl daemon-reload
+sudo systemctl enable autologin@tty1.service
+echo "Autologin enabled for user pi"
 
 #************************************************  usefull Tools        **************************************  
  
@@ -40,8 +51,8 @@ sudo systemctl daemon-reload
         sudo usermod -G audio -a pi
         sudo usermod -G video -a pi  
 	
- #************************************************  Install Desktop       **************************************   
- sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput xini* 
+#************************************************  Install Desktop       **************************************   
+        sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput xini* 
 	sudo apt install -y xfce4-te*
 	sudo apt install -y chromium gparted
 #************************************************  Fan Control by pymumu        **************************************   
@@ -58,7 +69,7 @@ sudo dpkg -i fan-control*.deb
 sudo systemctl enable fan-control
 sudo systemctl start fan-control 
 #************************************************  Install RetroRock Tools       **************************************   
- sudo cp -f -R ~/RetroPie_Rock5b/scripts/* /usr/local/bin
+      sudo cp -f -R ~/RetroPie_Rock5b/scripts/* /usr/local/bin
       sudo cp -f -R ~/RetroPie_Rock5b/ /opt
       sudo chmod -R 777 /usr/local/bin
       sudo chmod -R 777 /opt/RetroPie_Rock5b/
