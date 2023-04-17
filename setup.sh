@@ -24,9 +24,9 @@ GREY='\033[1;30m'
         sudo apt install -y dialog mc zip unzip wget toilet 
         
         sudo apt install -y ntfs-3g 
-        sudo apt install autofs -y
-        sudo apt install -y autoconf 
-        sudo apt install -y build-essential 
+        #sudo apt install autofs -y
+        #sudo apt install -y autoconf 
+        #sudo apt install -y build-essential 
         sudo apt install -y pulseaudio-*
         sudo apt install -y pavucontrol
         sudo apt install -y csound-u*
