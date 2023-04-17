@@ -16,7 +16,7 @@ GREY='\033[1;30m'
       setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,gb,de,fr,it,gr,dk
       sudo echo "pi ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
       
-
+      power
 
       sudo apt update -y
 #************************************************  usefull Tools        **************************************  
