@@ -1,43 +1,14 @@
 #!/bin/bash
-   cd /lib/firmware/
-  sudo apt install build-essential meson git python3-mako libexpat1-dev bison flex libwayland-egl-backend-dev libxext-dev libxfixes-dev libxcb-glx0-dev libxcb-shm0-dev libxcb-dri2-0-dev libxcb-dri3-dev libxcb-present-dev libxshmfence-dev libxxf86vm-dev libxrandr-dev -y
-  sudo wget https://github.com/JeffyCN/rockchip_mirrors/blob/libmali/firmware/g610/mali_csffw.bin
-  cd
-sudo add-apt-repository ppa:liujianfeng1994/panfork-mesa -y
-sudo add-apt-repository ppa:liujianfeng1994/rockchip-multimedia -y
 
-sudo apt update
-sudo apt dist-upgrade
-sudo apt install kodi
-sudo apt update -y
-
-sudo apt-get autoremove -y
-sudo apt install malirun -y
-
-sudo dpkg -i --force-overwrite /opt/RetroPie_Rock5b/config/linux-gpu-mali-wayland_1.1-g6p0-20230406_arm64.deb 
-#sudo apt install glmark2 glmark2-es2 glmark2-es2-wayland -y
-sudo apt install mesa-utils -y
-#sudo apt install kodi -y# Create directory to store the video
 sudo mkdir /usr/share/boot-video
-
-# Copy the video file to the directory
 sudo cp /opt/RetroPie_Rock5b/config/boot-video.mp4 /usr/share/boot-video/
+sudo apt-get update -y
+sudo apt-get install mpv -y
 
-# Install necessary packages for playing video
-sudo apt-get update
-sudo apt-get install mplayer xorg -y
-sudo apt-get install mesa-utils libgl1-mesa-dev -y
-
-
-# Create the script that plays the video
 sudo tee /etc/init.d/boot-video.sh > /dev/null << EOF
-#!/bin/bash
-# Play boot video using mplayer
-/usr/bin/mplayer -fs -quiet /usr/share/boot-video/boot-video.mp4 &
+/usr/bin/mpv --no-audio --no-osc --no-input-default-bindings --fs /usr/share/boot-video/boot-video.mp4 &
 EOF
 
-# Make the script executable
 sudo chmod +x /etc/init.d/boot-video.sh
-
-# Register the script to run at boot time
 sudo update-rc.d boot-video.sh defaults
+
