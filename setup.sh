@@ -29,9 +29,11 @@ echo "Autologin enabled for user pi"
 sudo apt update -y
 cd
 #************************************************  usefull Tools        **************************************  
- 
-        sudo apt install -y dialog mc zip unzip wget toilet 
-        
+         sudo cp -f -R ~/RetroPie_Rock5b/scripts/* /usr/local/bin
+         sudo cp -f -R ~/RetroPie_Rock5b/ /opt
+         sudo chmod -R 777 /usr/local/bin
+         sudo chmod -R 777 /opt/RetroPie_Rock5b/
+	sudo apt install -y dialog mc zip unzip wget toilet 
         sudo apt install -y ntfs-3g 
         sudo apt install autofs -y
         sudo apt install -y autoconf 
@@ -50,6 +52,7 @@ cd
   	sudo apt install -y libnewt0.52 whiptail parted triggerhappy lua5.1 alsa-utils
   	#apt-get install -fy
   	sudo dpkg -i raspi-config_20230214_all.deb
+	sudo dpkg -i --force-overwrite /opt/RetroPie_Rock5b/config/linux-gpu-mali-wayland_1.1-g6p0-20230406_arm64.deb 
 	rm -rf raspi-config_20230214_all.deb
 	
 	#************************************************  Install Desktop       **************************************   
@@ -71,10 +74,8 @@ sudo systemctl enable fan-control
 sudo systemctl start fan-control 
 #************************************************  Install RetroRock Tools       **************************************   
  
-      sudo cp -f -R ~/RetroPie_Rock5b/scripts/* /usr/local/bin
-      sudo cp -f -R ~/RetroPie_Rock5b/ /opt
-      sudo chmod -R 777 /usr/local/bin
-      sudo chmod -R 777 /opt/RetroPie_Rock5b/
+    
+      
       sudo raspi-config nonint do_expand_rootfs
 
       
