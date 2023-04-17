@@ -46,11 +46,13 @@ cd
 	sudo usermod -G bluetooth -a pi
         sudo usermod -G audio -a pi
         sudo usermod -G video -a pi 
-	wget https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/raspi-config_20230214_all.deb -P /tmp
+	wget https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/raspi-config_20230214_all.deb -P 
   	sudo apt install -y libnewt0.52 whiptail parted triggerhappy lua5.1 alsa-utils
   	#apt-get install -fy
-  	dpkg -i /tmp/raspi-config_20230214_all.deb	
- #************************************************  Install Desktop       **************************************   
+  	sudo dpkg -i raspi-config_20230214_all.deb
+	rm -rf raspi-config_20230214_all.deb
+	
+	#************************************************  Install Desktop       **************************************   
  sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput xini* 
 	sudo apt install -y xfce4-te*
 	sudo apt install -y chromium gparted
