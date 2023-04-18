@@ -15,13 +15,11 @@ fi
 
 sudo umount /dev/sda1
 sudo mkdir /media/sda1
-sudo umount /dev/sdb1
-sudo mkdir /media/sdb1
 
 sudo chmod -R 777 /media/usb
 sudo mount /dev/sda1 /media/usb
-sudo dd if=/dev/nvme0n1 of=/media/sdb1/nvme0n1.img bs=4M status=progr
-#sudo dd if=/dev/mmcblk1 of=/media/usb/mmcblk1.img bs=4M status=progress
+sudo dd if=/dev/nvme0n1 of=/media/sda1/nvme0n1.img bs=4M status=progr
+#sudo dd if=/dev/mmcblk1 of=/media/sda1/mmcblk1.img bs=4M status=progress
 
 
 
