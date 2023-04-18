@@ -66,9 +66,11 @@ fi
 	sudo usermod -G bluetooth -a pi
         sudo usermod -G audio -a pi
         sudo usermod -G video -a pi 
+	wget https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/raspi-config_20230214_all.deb
 	sudo dpkg -i raspi-config_20230214_all.deb
-	#sudo dpkg -i --force-overwrite /opt/RetroPie_Rock5b/config/linux-gpu-mali-wayland_1.1-g6p0-20230406_arm64.deb 
 	rm -rf raspi-config_20230214_all.deb
+	#sudo dpkg -i --force-overwrite /opt/RetroPie_Rock5b/config/linux-gpu-mali-wayland_1.1-g6p0-20230406_arm64.deb 
+	
 	
 #************************************************  Install Desktop       **************************************   
  	sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput xini* 
