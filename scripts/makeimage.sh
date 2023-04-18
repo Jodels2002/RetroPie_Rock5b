@@ -12,4 +12,4 @@ sudo mkdir /media/usb
 sudo chmod -R 777 /media/usb
 sudo mount /dev/sda1 /media/usb
 sudo dd if=/dev/nvme0n1 of=/media/usb/nvme0n1.img bs=4M status=progress
-sudo dd if=/dev/mmcblk1 of=/media/usb/mmcblk1.img bs=4M status=progress
+#sudo dd if=/dev/mmcblk1 of=/media/usb/mmcblk1.img bs=4M status=progress
