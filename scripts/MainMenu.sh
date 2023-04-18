@@ -1,40 +1,38 @@
 #!/bin/bash
 
-# Set terminal colors
-BG_GRAY='\033[48;5;240m'
-TXT_DARK_GRAY='\033[38;5;240m'
-RESET_COLOR='\033[0m'
+# Set up colors
+bg_color="#444444"
+text_color="#333333"
 
-# Display menu using dialog with Font Awesome font
-dialog --backtitle "Debian Game Emulators" \
-       --title "Main Menu" \
-       --nocancel \
-       --menu "\nPlease select an option:" 10 40 3 \
-       --font /usr/share/fonts/truetype/fontawesome-webfont.ttf \
-       1 "\uf11b  Start Amiga AGS" \
-       2 "\uf11b  Start Emulationstation" \
-       3 "\uf00d  Quit" \
-       2> /tmp/menu.tmp
+# Set up Font Awesome icons
+icon_amiberry="\uF2A1"
+icon_emu="\uF11B"
 
-# Get user input from temporary file
-choice=$(cat /tmp/menu.tmp)
+# Define menu options
+options=("Start Amiberry $icon_amiberry" "Start EMU $icon_emu" "Quit")
 
-# Execute selected option
-case $choice in
-  1)
-    ./MegaAGS_run
-    ;;
-  2)
-    ./e
-    ;;
-  3)
-    exit 0
-    ;;
-  *)
-    printf "Invalid choice\n"
-    ;;
-esac
+# Define menu function
+function show_menu {
+    echo -e "\033[0;44m\033[0;37m"
+    echo "------------------------------"
+    echo "     MENU                     "
+    echo "------------------------------"
+    echo -e "\033[0m"
 
+    # Loop through options and print them
+    for i in "${!options[@]}"; do
+        printf "%s) %s\n" "$i" "${options[$i]}"
+    done
+}
 
-
-
+# Define menu loop
+while true; do
+    show_menu
+    read -rp "Enter option: " selection
+    case $selection in
+        0) /path/to/amiberry.sh ;;
+        1) /path/to/emu.sh ;;
+        2) exit ;;
+        *) echo "Invalid option." ;;
+    esac
+done
