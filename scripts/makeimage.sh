@@ -13,10 +13,10 @@ if [ ! -f /media/sdb1/nvme0n1.img ]; then
 echo 
 fi
 
-#sudo umount /dev/sda1
-#sudo mkdir /media/sda1
+sudo umount /dev/sda1
+sudo mkdir /media/sda1
 sudo umount /dev/sdb1
-#sudo mkdir /media/sdb1
+sudo mkdir /media/sdb1
 
 sudo chmod -R 777 /media/usb
 sudo mount /dev/sda1 /media/usb
