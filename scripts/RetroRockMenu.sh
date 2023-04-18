@@ -48,29 +48,29 @@ clear
 
 case $CHOICE in
           e)
-           #***********************************************  #AmiRock-OS install script  ***********************************
-             #************************************************  Armbian-config    **************************************
+           #***********************************************  #RetroRock-OS install script  ***********************************
+             #************************************************  "Emulationstation"    **************************************
             clear
             echo "Emulationstation"
-            emulationstation
+            e
             ;; 
         
           r)
-           #***********************************************  #AmiRock-OS install script  ***********************************
-             #************************************************  Armbian-config    **************************************
+           #***********************************************  #RetroRock-OS install script  ***********************************
+             #************************************************  RetroPie-Setup    **************************************
             clear
             cd ~/RetroPie-Setup
-            sudo __platform=rk3588 ./retropie_setup.sh 
+            sudo  ./retropie_setup.sh 
             ;; 
                  
          s)
-             #***********************************************  #AmiRock-OS install script  ***********************************
+             #***********************************************  #RetroRock-OS install script  ***********************************
              #************************************************  Shootdown    **************************************
             clear
             s
             ;; 
          o)
-             #***********************************************  #AmiRock-OS install script  ***********************************
+             #***********************************************  #RetroRock-OS install script  ***********************************
              #************************************************  Install OLED SSD1306    **************************************
             clear
                 cd
@@ -81,7 +81,7 @@ case $CHOICE in
 		./setup.sh		
 	     ;; 
          i)
-             #***********************************************  #AmiRock-OS install script  ***********************************
+             #***********************************************  #RetroRock-OS install script  ***********************************
              #************************************************  Install ClassicWB     **************************************
             clear
             
@@ -125,7 +125,7 @@ case $CHOICE in
             
           n)
        
-              #***********************************************  #AmiRock-OS install script  ***********************************
+              #***********************************************  #RetroPie_Rock5b install script  ***********************************
               #************************************************  Compile Amiberry         ************************************** 
             clear
            
@@ -135,7 +135,7 @@ case $CHOICE in
 	    clear
             
            clear
-      		toilet "AmiRock" --metal
+      		toilet "RetroRock-OS" --metal
       		echo " "
       		echo " "
        		echo "Compiling now ...Amiberry :-)"
@@ -150,8 +150,8 @@ case $CHOICE in
 	    sudo chmod -R 777 $HOME/amiberry
 	    
 	    mkdir /opt/Amiga/
-            cp -rf $HOME/Amiga/amiberry  /opt/Amiga/amiberry_old
-            cp -rf $HOME/amiberry/*  /opt/Amiga/
+            cp -rf /opt/Amiga/amiberry  /opt/Amiga/amiberry_old
+            cp -rf /opt/amiberry/*  /opt/Amiga/
              sudo rm -rf $HOME/amiberry
 	     sudo rm -rf /opt/Amiga/abr
 	     sudo rm -rf /opt/Amiga/cmake
@@ -185,7 +185,7 @@ case $CHOICE in
             ;;  
        
        p)
-           #***********************************************  #AmiRock-OS install script  ***********************************
+           #***********************************************  #RetroRock-OS install script  ***********************************
            #************************************************  Compile Amiberry DEV        ************************************** 
 	        sudo apt install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libserialport0
 		sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev	   clear
@@ -204,8 +204,8 @@ case $CHOICE in
 	    sudo chmod -R 777 $HOME/amiberry
 	    
 	    mkdir /opt/Amiga/
-            cp -rf $HOME/Amiga/amiberry  /opt/Amiga/amiberry_old
-            cp -rf $HOME/amiberry/*  /opt/Amiga/
+            cp -rf /opt/Amiga/amiberry  /opt/Amiga/amiberry_old
+            cp -rf /opt/amiberry/*  /opt/Amiga/
              sudo rm -rf $HOME/amiberry
 	     sudo rm -rf /opt/Amiga/abr
 	     sudo rm -rf /opt/Amiga/cmake
@@ -244,16 +244,17 @@ case $CHOICE in
 
 cd
 clear
-toilet "AmiRock" --metal
-echo -e "$BLUE AmiRock-OS ROM Operating System and Libraries" 
-echo " Version V2.0 2020-2021 KickPi-OS "
+toilet "RetroRock-OS" --metal
+echo -e "$BLUE RetroRock-OS ROM Operating System and Libraries" 
+echo " Version V2.0 2020-2021 RetroRock-OS "
 echo " No Rights Reserved.  "
 echo -e "$BLACK "
-echo " Type 'd' to boot into AmiRock Workbench"
+echo " Type 'd' to boot into RetroRock-OS Desktop"
 echo ""
 echo " 1.>  "
-echo -e " 1.>  ( u ) AmiRock-OS Update                     "
-echo " 1.>  ( m ) ArmRock-OS Config                       " 
+echo -e " 1.>  ( e ) Emulationstation                    "
+echo -e " 1.>  ( u ) RetroRock-OS Update                     "
+echo " 1.>  ( m ) RetroRock-OS Config                       " 
 echo -e " 1.>  ( c ) Armbian-Config                       "
 echo " 1.>  ( s ) Shutdown                                "  
 echo ""
