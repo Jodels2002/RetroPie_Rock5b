@@ -1,8 +1,22 @@
+# Create directory to store the video
+sudo mkdir /usr/share/boot-video
+
+# Copy the video file to the directory
+sudo cp boot-video.mp4 /usr/share/boot-video/
+
+# Install necessary packages for playing video
 sudo apt-get update
-sudo apt-get install git build-essential libpcre3-dev libboost-dev libboost-thread-dev libboost-system-dev libavcodec-dev libavformat-dev libswscale-dev libpcrecpp0v5 libasound2-dev
+sudo apt-get install mpv
 
-cd
-git clone https://github.com/popcornmix/omxplayer.git
-cd omxplayer
+# Create the script that plays the video
+sudo tee /etc/init.d/boot-video.sh > /dev/null << EOF
+#!/bin/bash
+# Play boot video using mpv
+/usr/bin/mpv --no-audio --no-osc --no-input-default-bindings --fs /usr/share/boot-video/boot-video.mp4 &
+EOF
 
-make -j4
+# Make the script executable
+sudo chmod +x /etc/init.d/boot-video.sh
+
+# Register the script to run at boot time
+sudo update-rc.d boot-video.sh defaults
