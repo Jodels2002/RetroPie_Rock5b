@@ -11,8 +11,8 @@ dialog --backtitle "Debian Game Emulators" \
        --nocancel \
        --menu "\nPlease select an option:" 10 40 3 \
        --font /usr/share/fonts/truetype/fontawesome-webfont.ttf \
-       1 "\uf11b  Start Amiberry" \
-       2 "\uf11b  Start Emu" \
+       1 "\uf11b  Start Amiga AGS" \
+       2 "\uf11b  Start Emulationstation" \
        3 "\uf00d  Quit" \
        2> /tmp/menu.tmp
 
@@ -22,10 +22,10 @@ choice=$(cat /tmp/menu.tmp)
 # Execute selected option
 case $choice in
   1)
-    ./amiberry.sh
+    ./MegaAGS_run
     ;;
   2)
-    ./emu.sh
+    ./e
     ;;
   3)
     exit 0
