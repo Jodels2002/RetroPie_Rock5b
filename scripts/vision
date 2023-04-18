@@ -9,9 +9,9 @@ BLACK='\033[0;39m'
       sudo python3 -m pip install -U amitools         
 
 clear
-      toilet "AmiRock-OS" --metal
-      echo -e "$GREY AmiRock-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 AmiRock-OS "
+      toilet "RetroRock-OS" --metal
+      echo -e "$GREY RetroRock-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 RetroRock-OS "
       echo " No Rights Reserved.  "
       echo " "
       echo -e "$BLUE"
@@ -75,7 +75,7 @@ fi
 if [ -d /opt/AmigaVision/games/Amiga/ ]; then
 clear
  toilet "AmiRock-OS" --metal
-      echo -e "$GREY AmiRock-OS ROM Operating System and Libraries" 
+      echo -e "$GREY RetroRock-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 AmiRock-OS "
       echo " No Rights Reserved.  "
       echo " "
@@ -85,8 +85,8 @@ clear
       echo -e "$GREY "
       echo " "
       sudo chmod -R 777 /usr/share/applications/
-      cp -rf /opt/AmiRock/Amiga/AmigaVision/AmigaVision.desktop /usr/share/applications/ 
-      cp -rf /opt/AmiRock/Amiga/AmigaVision/AmigaVision.uae /opt/Amiga/conf/
+      cp -rf /opt/RetroPie_Rock5b/Amiga/AmigaVision/AmigaVision.desktop /usr/share/applications/ 
+      cp -rf /opt/RetroPie_Rock5b/Amiga/AmigaVision/AmigaVision.uae /opt/Amiga/conf/
      
       
       cp -rf /opt/AmigaVision/games/Amiga/*.rom /opt/Amiga/kickstarts/
