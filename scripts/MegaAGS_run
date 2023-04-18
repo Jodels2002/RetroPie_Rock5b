@@ -11,13 +11,21 @@
       echo " No Rights Reserved.  "
       echo " "
       
+        if [ ! -d /opt/Amiga/ ]; then
+ 
+         cd /user/local/bin/
+         ./Amiga.sh
+ 
+        fi
+      
       if [ ! -d /opt/MegaAGS/ ]; then
  
          cd /user/local/bin/
- 
          ./ags
  
- fi
+        fi
+        
+        
        echo "Starting MegaAGS"
       
  cd /opt/Amiga/
