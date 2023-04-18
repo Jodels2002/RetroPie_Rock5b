@@ -74,8 +74,14 @@ make package
 sudo dpkg -i fan-control*.deb
 sudo systemctl enable fan-control
 sudo systemctl start fan-control 
-#************************************************  Install RetroRock Tools       **************************************   
+#************************************************  Install RetroRock        **************************************   
 
-
-      
-~/RetroPie_Rock5b/scripts/retropie_rock5b.sh
+sudo chmod -R 775 /usr/share/plymouth/
+	 sudo rm -rf /usr/share/plymouth/themes/spinner/watermark.png
+	 sudo cp -rf /opt/RetroPie_Rock5b/config/Retrorock.bmp /usr/share/plymouth/themes/spinner/watermark.png
+	 sudo cp -rf /opt/RetroPie_Rock5b/config/Retrorock.bmp /usr/share/plymouth/ubuntu-logo.png
+  	sudo cp -rf /opt/RetroPie_Rock5b/config/plymouth/AmigaKickstart /usr/share/plymouth/themes/
+  	sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/spinner/spinner.plymouth 500
+	sudo update-initramfs -u
+	
+	~/RetroPie_Rock5b/scripts/retropie_rock5b.sh
