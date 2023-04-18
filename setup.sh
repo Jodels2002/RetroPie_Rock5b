@@ -38,7 +38,8 @@ sudo apt-get update -y
 
 #************************************************  usefull Tools        **************************************  
  
-  sudo apt install -y dialog mc zip unzip wget toilet 
+  sudo apt install -y dialog mc zip unzip wget toilet
+  sudo apt install arqiver geany -y
   sudo apt-get -y install pulseaudio
   sudo apt install -y pulseaudio-*
   sudo apt install -y pavucontrol
