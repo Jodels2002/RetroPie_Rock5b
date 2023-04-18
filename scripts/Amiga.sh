@@ -1,8 +1,11 @@
 #************************************************  Amiga        ************************************** 
-cd
-	     sudo rm -rf /opt/Amiga
+ 
+ if [ ! -d /opt/Amiga/ ]; then
+ 
+	     
 	     sudo mkdir /opt/Amiga
-	     sudo ln -s /opt/Amiga/ Amiga
+	     chmod -R 777 /opt/Amiga
+	     ln -s /opt/Amiga/ ~/Amiga
 	     cd /opt/
              unzip -u  /opt/RetroPie_Rock5b/Amiga/Amiga.zip
        clear
@@ -16,7 +19,7 @@ cd
        sudo rm -rf /opt/Amiga/conf/amiberry-osx.conf
       
       sudo apt install worker unadf xdms fonts-amiga -y
-      sudo apt install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libserialport0
+      sudo apt install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 
 	clear
       
         toilet „Amiga“ --metal
@@ -55,3 +58,4 @@ cd
       echo "  First installation "
       echo " "
       sudo ln -s /opt/vc/lib/libbcm_host.so /usr/lib/aarch64-linux-gnu/libbcm_host.so.0
+fi
