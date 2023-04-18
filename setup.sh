@@ -1,7 +1,7 @@
 #!/bin/bash
 # Install Retrorock
 # B.Titze 2023
-
+#extraargs="console=tty3 consoleblank=0 loglevel=1 quiet"
 
 BLACK='\033[0;39m'
 BLUE='\033[1;34m'
