@@ -17,7 +17,7 @@
       sudo rm -rf /usr/share/icons/default
       sudo cp -rf /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
       clear
-      toilet "AmiRock-OS" --metal
+      toilet "RetroPie_Rock5b" --metal
       echo " "
       echo " "
       echo "  First installation "
@@ -26,8 +26,10 @@
       git clone --depth=1 https://github.com/x64k/amitk
       clear
       sudo cp -rf /opt/RetroPie_Rock5b/amitk /usr/share/themes
-          # sudo rm -rf $HOME/.config/
-      unzip -o  $HOME/AmiRock/config/config.zip
+      
+      # sudo rm -rf $HOME/.config/
+      #unzip -o  $HOME/AmiRock/config/config.zip
+      
       cd /opt/RetroPie_Rock5b/
       git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
       clear
