@@ -22,7 +22,7 @@
       echo " "
       echo "  First installation "
       echo " "
-      cd $HOME/AmiRock/
+      cd /opt/RetroPie_Rock5b/
       git clone --depth=1 https://github.com/x64k/amitk
       clear
       sudo cp -rf /opt/RetroPie_Rock5b/amitk /usr/share/themes
