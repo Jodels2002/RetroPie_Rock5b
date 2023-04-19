@@ -3,15 +3,12 @@
 	rm -rf raspi-config_20230214_all.deb
   
   clear
-      toilet "AmiRock-OS" --metal
+      toilet "prepare" --metal
       echo " "
       echo " "
       echo "  First installation "
       echo " "
       
-    
-      
-
 
       cd /usr/share/icons
       sudo cp -rf /opt/RetroPie_Rock5b/config/AMIGAOSLINUX.zip /usr/share/icons
