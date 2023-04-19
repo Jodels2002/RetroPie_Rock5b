@@ -1,3 +1,16 @@
+   sudo apt install -y dialog mc zip unzip wget toilet ksnip
+  sudo apt install -y gparted ntfs-3g nemo
+  #sudo apt install build-essential -y
+  sudo apt install arqiver geany -y
+  sudo apt install 7zip -y
+  #sudo apt install cockpit -y
+  sudo apt install pt2-clone -y
+  clear
+  sudo apt install -y synaptic chromium 
+  sudo apt install -y chromium-b* 
+  clear
+  sudo apt install autofs -y
+  
   wget https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/raspi-config_20230214_all.deb
 	sudo dpkg -i raspi-config_20230214_all.deb
 	sudo raspi-config nonint do_expand_rootfs
