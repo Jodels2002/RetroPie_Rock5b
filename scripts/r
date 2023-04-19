@@ -1,1 +1,1 @@
-retropie_rock5b.sh
+sudo __platform=rk3588 ./retropie_setup.sh 
