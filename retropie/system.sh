@@ -321,80 +321,9 @@ function get_rpi_video() {
 }
 
 function get_platform() {
-    local architecture="$(uname --machine)"
-    if [[ -z "$__platform" ]]; then
-        case "$(sed -n '/^Hardware/s/^.*: \(.*\)/\1/p' < /proc/cpuinfo)" in
-            BCM*)
-                # calculated based on information from https://github.com/AndrewFromMelbourne/raspberry_pi_revision
-                local rev="0x$(sed -n '/^Revision/s/^.*: \(.*\)/\1/p' < /proc/cpuinfo)"
-                # if bit 23 is not set, we are on a rpi1 (bit 23 means the revision is a bitfield)
-                if [[ $((($rev >> 23) & 1)) -eq 0 ]]; then
-                    __platform="rpi1"
-                else
-                    # if bit 23 is set, get the cpu from bits 12-15
-                    local cpu=$((($rev >> 12) & 15))
-                    case $cpu in
-                        0)
-                            __platform="rpi1"
-                            ;;
-                        1)
-                            __platform="rpi2"
-                            ;;
-                        2)
-                            __platform="rpi3"
-                            ;;
-                        3)
-                            __platform="rpi4"
-                            ;;
-                    esac
-                fi
-                ;;
-            ODROIDC)
-                __platform="odroid-c1"
-                ;;
-            ODROID-C2)
-                __platform="odroid-c2"
-                ;;
-            "Freescale i.MX6 Quad/DualLite (Device Tree)")
-                __platform="imx6"
-                ;;
-            ODROID-XU[34])
-                __platform="odroid-xu"
-                ;;
-            "Rockchip (Device Tree)")
-                __platform="tinker"
-                ;;
-            Vero4K|Vero4KPlus)
-                __platform="vero4k"
-                ;;
-            "Allwinner sun8i Family")
-                __platform="armv7-mali"
-                ;;
-             "RK3588 RockPi 5")
-                __platform="rk3588"
-                ;;
-            *)
-                case $architecture in
-                    i686|x86_64|amd64)
-                        __platform="x86"
-                        ;;
-                esac
-                ;;
-        esac
-    fi
 
-    if ! fnExists "platform_${__platform}"; then
-        fatalError "Unknown platform - please manually set the __platform variable to one of the following: $(compgen -A function platform_ | cut -b10- | paste -s -d' ')"
-    fi
-    # check if we wish to target kms for platform
-    if [[ -z "$__has_kms" ]]; then
-        iniConfig " = " '"' "$configdir/all/retropie.cfg"
-        iniGet "force_kms"
-        [[ "$ini_value" == 1 ]] && __has_kms=1
-        [[ "$ini_value" == 0 ]] && __has_kms=0
-    fi
-    set_platform_defaults
-    platform_${__platform}
+         __platform=rk3588
+
 }
 function set_platform_defaults() {
     __default_opt_flags="-O2"
@@ -402,93 +331,7 @@ function set_platform_defaults() {
     __platform_flags=("$__platform" "$(getconf LONG_BIT)bit")
     __platform_arch=$(uname -m)
 }
-function platform_rpi1() {
-    __default_cpu_flags="-mcpu=arm1176jzf-s -mfpu=vfp -mfloat-abi=hard"
-    __platform_flags+=(arm armv6 rpi gles)
-    # if building in a chroot, what cpu should be set by qemu
-    # make chroot identify as arm6l
-    __qemu_cpu=arm1176
-}
-function platform_rpi2() {
-    __default_cpu_flags="-mcpu=cortex-a7 -mfpu=neon-vfpv4 -mfloat-abi=hard"
-    __platform_flags+=(arm armv7 neon rpi gles)
-    __qemu_cpu=cortex-a7
-}
-# note the rpi3 currently uses the rpi2 binaries - for ease of maintenance - rebuilding from source
-# could improve performance with the compiler options below but needs further testing
-function platform_rpi3() {
-    if isPlatform "32bit"; then
-        __default_cpu_flags="-march=armv8-a+crc -mtune=cortex-a53 -mfpu=neon-fp-armv8 -mfloat-abi=hard"
-        __platform_flags+=(arm armv8 neon)
-    else
-        __default_cpu_flags="-mcpu=cortex-a53"
-        __platform_flags+=(aarch64)
-    fi
-    __platform_flags+=(rpi gles)
-    __qemu_cpu=cortex-a53
-}
-function platform_rpi4() {
-    if isPlatform "32bit"; then
-        __default_cpu_flags="-march=armv8-a+crc -mtune=cortex-a72 -mfpu=neon-fp-armv8 -mfloat-abi=hard"
-        __platform_flags+=(arm armv8 neon)
-    else
-        __default_cpu_flags="-mcpu=cortex-a72"
-        __platform_flags+=(aarch64)
-    fi
-    __platform_flags+=(rpi gles gles3)
-}
-function platform_odroid-c1() {
-    __default_cpu_flags="-mcpu=cortex-a5 -mfpu=neon-vfpv4 -mfloat-abi=hard"
-    __platform_flags+=(arm armv7 neon mali gles)
-    __qemu_cpu=cortex-a9
-}
-function platform_odroid-c2() {
-    if isPlatform "32bit"; then
-        __default_cpu_flags="-march=armv8-a+crc -mtune=cortex-a53 -mfpu=neon-fp-armv8"
-        __platform_flags+=(arm armv8 neon)
-    else
-        __default_cpu_flags="-march=native"
-        __platform_flags+=(aarch64)
-    fi
-    __platform_flags+=(mali gles)
-}
-function platform_odroid-xu() {
-    __default_cpu_flags="-mcpu=cortex-a7 -mfpu=neon-vfpv4 -mfloat-abi=hard"
-    # required for mali-fbdev headers to define GL functions
-    __default_cflags=" -DGL_GLEXT_PROTOTYPES"
-    __platform_flags="arm armv7 neon mali gles"
-}
-function platform_tinker() {
-    __default_cpu_flags="-marm -march=armv7-a -mtune=cortex-a17 -mfpu=neon-vfpv4 -mfloat-abi=hard"
-    # required for mali headers to define GL functions
-    __default_cflags=" -DGL_GLEXT_PROTOTYPES"
-    __platform_flags+=(arm armv7 neon kms gles)
-}
-function platform_x86() {
-    __default_cpu_flags="-march=native"
-    __platform_flags+=(gl)
-    if [[ "$__has_kms" -eq 1 ]]; then
-        __platform_flags+=(kms)
-    else
-        __platform_flags+=(x11)
-    fi
-}
-function platform_generic-x11() {
-    __platform_flags="x11 gl"
-}
-function platform_armv7-mali() {
-    __default_cpu_flags="-march=armv7-a -mfpu=neon-vfpv4 -mfloat-abi=hard"
-    __platform_flags+=(arm armv7 neon mali gles)
-}
-function platform_imx6() {
-    __default_cpu_flags="-march=armv7-a -mfpu=neon -mtune=cortex-a9 -mfloat-abi=hard"
-    __platform_flags+=(arm armv7 neon)
-}
-function platform_vero4k() {
-    __default_cpu_flags="-mcpu=cortex-a7 -mfpu=neon-vfpv4"
-    __default_cflags="-I/opt/vero3/include -L/opt/vero3/lib"
-    __platform_flags+=(arm armv7 neon mali gles)
-}
+
 function platform_rk3588() {
     __default_cpu_flags="-mcpu=cortex-a76+fp"
     __platform_flags+=(aarch64)
