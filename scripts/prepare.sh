@@ -26,7 +26,7 @@
       git clone --depth=1 https://github.com/x64k/amitk
       clear
       sudo cp -rf /opt/RetroPie_Rock5b/amitk /usr/share/themes
-      sudo cp -rf /opt/RetroPie_Rock5b/config/Logo/* /usr/share/
+     
   
 
     
