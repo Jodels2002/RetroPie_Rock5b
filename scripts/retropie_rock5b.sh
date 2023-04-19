@@ -32,19 +32,9 @@ if [  -f /lib/armbian/armbian-allwinner-battery ]; then
        mv /lib/armbian/armbian-led-state-restore.sh /lib/armbian/deaktiv
        mv /lib/armbian/armbian-ramlog /lib/armbian/deaktiv
 fi
-      sudo mkdir -p /etc/emulationstation/themes
-      sudo chmod -R 777 /etc/emulationstation
-fi
-if [ ! -d /etc/emulationstation/themes/magazinemadness/ ]; then
 
-clear
-      toilet "RetroRock" --metal
-      
 if [ ! -d /opt/retropie/emulators/retroarch/ ]; then
 rm -rf ~/RetroPie-Setup
-
-
-
 
 cd ~
 git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
