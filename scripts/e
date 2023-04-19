@@ -6,7 +6,7 @@
       RED='\033[1;31m'
       GREY='\033[1;30m'
 
-
+mpv  --no-osc --no-input-default-bindings --fs /usr/share/boot-video/boot-video.mp4 > /dev/null 2>&1 &
 clear
 toilet "RockPi" --metal
 
@@ -60,7 +60,7 @@ fi
         sudo chmod -R 777 ~/RetroPie
         sudo chmod -R 777 ~/RetroPie-Setup
         sudo chmod -R 777 /opt/retropie
-        mpv  --no-osc --no-input-default-bindings --fs /usr/share/boot-video/boot-video.mp4 
+       
         emulationstation
 else
     whiptail --msgbox " First run, please connect to internet ..." 20 50 1
