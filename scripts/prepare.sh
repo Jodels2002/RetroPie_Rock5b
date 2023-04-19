@@ -28,6 +28,11 @@ sudo apt-get -y install grafx2 protracker worker
       unzip -o  /opt/RetroPie_Rock5b/config/worker.zip
       sudo chmod -R 777 /home/$USER/.worker/
       sudo mkdir /media/pi
+	sudo mkdir /media/pi
+	sudo mkdir /media/pi/USB1
+	sudo mkdir /media/pi/USB2
+	sudo mkdir /media/pi/USB3
+	sudo mkdir /media/pi/USB4
 
 
   clear
