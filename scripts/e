@@ -61,7 +61,7 @@ fi
         sudo chmod -R 777 ~/RetroPie
         sudo chmod -R 777 ~/RetroPie-Setup
         sudo chmod -R 777 /opt/retropie
-       sleep 8
+       sleep 3
         emulationstation
 else
     whiptail --msgbox " First run, please connect to internet ..." 20 50 1
