@@ -1,0 +1,2 @@
+2023-04-01|Check what's new in Armbian 23.02 Quoll https://docs.armbian.com/Release_Changelog/
+2023-04-30|Check what is new from Armbian https://www.armbian.com/newsflash/armbian-leaflet-3/
