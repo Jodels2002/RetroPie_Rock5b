@@ -22,15 +22,15 @@ sudo chmod -R 777 /opt/
 
 if [  -f /lib/armbian/armbian-allwinner-battery ]; then
       sudo chmod -R 777 /lib/armbian/
-      sudo mkdir -p /lib/armbian/deaktiv
-      sudo mv  /lib/armbian/armbian-allwinner-battery /lib/armbian/deaktiv
-      sudo mv -rf /lib/armbian/armbian-common sudo /lib/armbian/deaktiv
-      sudo mv -rf /lib/armbian/armbian-hardware-monitor /lib/armbian/deaktiv
-      sudo mv -rf /lib/armbian/armbian-hardware-optimization /lib/armbian/deaktiv
-      sudo mv -rf /lib/armbian/armbian-truncate-logs /lib/armbian/deaktiv
-      sudo mv -rf /lib/armbian/armbian-zram-config /lib/armbian/deaktiv
-      sudo mv -rf /lib/armbian/armbian-led-state-restore.sh /lib/armbian/deaktiv
-      sudo mv -rf /lib/armbian/armbian-ramlog /lib/armbian/deaktiv
+      mkdir -p /lib/armbian/deaktiv
+       mv /lib/armbian/armbian-allwinner-battery /lib/armbian/deaktiv
+       mv /lib/armbian/armbian-common sudo /lib/armbian/deaktiv
+       mv /lib/armbian/armbian-hardware-monitor /lib/armbian/deaktiv
+       mv  /lib/armbian/armbian-hardware-optimization /lib/armbian/deaktiv
+       mv /lib/armbian/armbian-truncate-logs /lib/armbian/deaktiv
+       mv /lib/armbian/armbian-zram-config /lib/armbian/deaktiv
+       mv /lib/armbian/armbian-led-state-restore.sh /lib/armbian/deaktiv
+       mv /lib/armbian/armbian-ramlog /lib/armbian/deaktiv
 fi
       sudo mkdir -p /etc/emulationstation/themes
       sudo chmod -R 777 /etc/emulationstation
