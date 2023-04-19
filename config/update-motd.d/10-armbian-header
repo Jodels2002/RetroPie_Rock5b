@@ -1,4 +1,0 @@
-#!/bin/bash
-
-echo -e "Welcome to \e[0;91mRetroPie \n"
-
