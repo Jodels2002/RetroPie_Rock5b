@@ -30,7 +30,7 @@ if [  -f /lib/armbian/armbian-allwinner-battery ]; then
  
       
       
-       #mv /lib/armbian/armbian-allwinner-battery /lib/armbian/deaktiv
+       mv /lib/armbian/armbian-allwinner-battery /lib/armbian/deaktiv
        #mv /lib/armbian/armbian-common sudo /lib/armbian/deaktiv
        #mv /lib/armbian/armbian-hardware-monitor /lib/armbian/deaktiv
        #mv  /lib/armbian/armbian-hardware-optimization /lib/armbian/deaktiv
