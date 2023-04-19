@@ -23,14 +23,21 @@ sudo chmod -R 777 /opt/
 if [  -f /lib/armbian/armbian-allwinner-battery ]; then
       sudo chmod -R 777 /lib/armbian/
       mkdir -p /lib/armbian/deaktiv
-       mv /lib/armbian/armbian-allwinner-battery /lib/armbian/deaktiv
-       mv /lib/armbian/armbian-common sudo /lib/armbian/deaktiv
-       mv /lib/armbian/armbian-hardware-monitor /lib/armbian/deaktiv
-       mv  /lib/armbian/armbian-hardware-optimization /lib/armbian/deaktiv
-       mv /lib/armbian/armbian-truncate-logs /lib/armbian/deaktiv
-       mv /lib/armbian/armbian-zram-config /lib/armbian/deaktiv
-       mv /lib/armbian/armbian-led-state-restore.sh /lib/armbian/deaktiv
-       mv /lib/armbian/armbian-ramlog /lib/armbian/deaktiv
+      sudo systemctl disable armbian-zram-config 
+      sudo systemctl disable armbian-ramlog
+      sudo systemctl disable console-setup
+      sudo systemctl disable openvpn
+ 
+      
+      
+       #mv /lib/armbian/armbian-allwinner-battery /lib/armbian/deaktiv
+       #mv /lib/armbian/armbian-common sudo /lib/armbian/deaktiv
+       #mv /lib/armbian/armbian-hardware-monitor /lib/armbian/deaktiv
+       #mv  /lib/armbian/armbian-hardware-optimization /lib/armbian/deaktiv
+       #mv /lib/armbian/armbian-truncate-logs /lib/armbian/deaktiv
+       #mv /lib/armbian/armbian-zram-config /lib/armbian/deaktiv
+       #mv /lib/armbian/armbian-led-state-restore.sh /lib/armbian/deaktiv
+       #mv /lib/armbian/armbian-ramlog /lib/armbian/deaktiv
 fi
 
 if [ ! -d /opt/retropie/emulators/retroarch/ ]; then
