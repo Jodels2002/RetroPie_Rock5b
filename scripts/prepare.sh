@@ -5,6 +5,7 @@
 
 
 sudo mkdir /usr/share/boot-video
+sudo mkdir /usr/share/boot-video
 sudo cp /opt/RetroPie_Rock5b/config/boot-video.mp4 /usr/share/boot-video/
 sudo apt-get update -y
 sudo apt-get install mpv -y
@@ -12,9 +13,8 @@ sudo apt-get install mpv -y
 sudo apt-get -y install grafx2 protracker worker 
       cd ~
       unzip -o  /opt/RetroPie_Rock5b/config/worker.zip
-     
       sudo chmod -R 777 /home/$USER/.worker/
-
+      sudo mkdir /media/pi
 
 
   clear
