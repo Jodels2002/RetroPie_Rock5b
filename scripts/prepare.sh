@@ -1,5 +1,6 @@
   wget https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/raspi-config_20230214_all.deb
 	sudo dpkg -i raspi-config_20230214_all.deb
+	sudo raspi-config nonint do_expand_rootfs
 	rm -rf raspi-config_20230214_all.deb
   
   clear
