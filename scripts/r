@@ -11,7 +11,7 @@ cp -f -R /opt/RetroPie_Rock5b/retropie/system.sh ~/RetroPie-Setup/scriptmodules/
 cp -f -R /opt/RetroPie_Rock5b/retropie/retropie_setup.sh ~/RetroPie-Setup/
 
 cd  ~/RetroPie-Setup
-sudo __platform=rk3588 ./retropie_setup.sh 
+sudo __platform=rk3588 ./retropie_setup.sh gui
  
 cd
 toilet "RetroRock" --metal
