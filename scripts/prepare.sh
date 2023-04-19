@@ -10,8 +10,8 @@ sudo apt-get update -y
 sudo apt-get install mpv -y
 
 sudo apt-get -y install grafx2 protracker worker 
-      cd ~/
-      unzip -o  /opt/RetroPie_Rock5b/config/.worker.zip
+      cd ~
+      unzip -o  /opt/RetroPie_Rock5b/config/worker.zip
      
       sudo chmod -R 777 /home/$USER/.worker/
 
