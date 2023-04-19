@@ -2,7 +2,13 @@
 	sudo dpkg -i raspi-config_20230214_all.deb
 	sudo raspi-config nonint do_expand_rootfs
 	rm -rf raspi-config_20230214_all.deb
-  
+
+
+sudo mkdir /usr/share/boot-video
+sudo cp /opt/RetroPie_Rock5b/config/boot-video.mp4 /usr/share/boot-video/
+sudo apt-get update -y
+sudo apt-get install mpv -y
+
   clear
       toilet "prepare" --metal
       echo " "
