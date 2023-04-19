@@ -1,9 +1,0 @@
-[Unit]
-Description=RetroRock
-
-[Service]
-Type=oneshot
-ExecStart=nohup /usr/bin/mpv  --no-osc --no-input-default-bindings --fs /usr/share/boot-video/boot-video.mp4 > /dev/null 2>&1 &
-
-[Install]
-WantedBy=graphical.target
