@@ -8,6 +8,7 @@
 power
 clear
 rm -rf /opt/RetroPie_Rock5b
+sudo rm -rf /etc/update-motd.d/*
 sudo cp -rf ~/RetroPie_Rock5b /opt/
 sudo cp -rf ~/RetroPie_Rock5b/config/rc.local /etc/
 cp -rf ~/RetroPie_Rock5b/config/.bashrc ~/
