@@ -63,6 +63,10 @@ if [ ! -f /opt/Amiga/amiberry ]; then
       echo "  First installation "
       echo " "
       sudo ln -s /opt/vc/lib/libbcm_host.so /usr/lib/aarch64-linux-gnu/libbcm_host.so.0
+      sudo apt install python3-pip  python3-dev  -y
+      sudo python3 -m pip install -U setuptools
+      sudo python3 -m pip install -U amitools       
+
 fi
       
       
