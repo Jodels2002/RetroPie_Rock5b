@@ -4,7 +4,7 @@
       RED='\033[1;31m'
       GREY='\033[1;30m'
       
-if [ ! -d /opt/Amiga/ ]; then
+if [ ! -f /opt/Amiga/amiberry ]; then
  
 	     
 	     sudo mkdir /opt/Amiga
