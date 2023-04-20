@@ -12,8 +12,8 @@ if [ ! -d /opt/Amiga/ ]; then
 	     ln -s /opt/Amiga/ ~/Amiga
 	     cd /opt/
              unzip -u  /opt/RetroPie_Rock5b/Amiga/Amiga.zip
-       clear
-       toilet „Amiga“ --metal
+      clear
+      toilet Amiga --metal
       echo " "
       echo " "
       echo "  First installation "
@@ -26,7 +26,8 @@ if [ ! -d /opt/Amiga/ ]; then
       sudo apt install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 
 	clear
       
-        toilet „Amiga“ --metal
+      clear
+      toilet Amiga --metal
       echo " "
       echo " "
       echo "  First installation "
@@ -40,8 +41,8 @@ if [ ! -d /opt/Amiga/ ]; then
       sudo cp -R /opt/Amiga/data/amiberry_dev.png /usr/share/applications/
       
       
-            clear
-      toilet „Amiga“ --metal
+      clear
+      toilet Amiga --metal
       echo " "
       echo " "
       echo "  First installation "
@@ -56,7 +57,7 @@ if [ ! -d /opt/Amiga/ ]; then
 
      
       clear
-        toilet „Amiga“ --metal
+      toilet Amiga --metal
       echo " "
       echo " "
       echo "  First installation "
@@ -103,9 +104,11 @@ if [[ $FREE -lt  10000000 ]]; then               # 10G = 10*1024*1024k
      
      if [ ! -f /opt/AmigaVision/AmigaVision-MegaAGS-2023-04-05.7z ]; then
       clear
+      toilet Amiga --metal
+      echo " "
       echo -e "$GREEN "
       echo "Installing AmigaVision ..."
-      echo -e "$GREY "
+      echo -e "$BLUE "
       echo "Download AmigaVision"
       echo -e "$GREY "
       echo " "
@@ -115,20 +118,22 @@ if [[ $FREE -lt  10000000 ]]; then               # 10G = 10*1024*1024k
       wget https://archive.org/download/amigavision/AmigaVision-MegaAGS-2023-04-05.7z
       
       fi
-cd /opt/AmigaVision/
+      cd /opt/AmigaVision/
 
 if [ ! -d /opt/AmigaVision/games/Amiga/ ]; then
-clear
-  
+     clear
+      toilet Amiga --metal
+      echo " "
       echo -e "$BLUE AmiRock-OS ROM Operating System and Libraries" 
       echo -e "$GREEN Extracting files .."
       echo -e "$GREY "
 
   7z x ./AmigaVision-MegaAGS-2023-04-05.7z
-  clear
- 
+      clear
+      toilet Amiga --metal
+      echo " "
       echo -e "$BLUE AmiRock-OS ROM Operating System and Libraries" 
-      echo -e "$GREEN Extracting files .."
+      echo -e "$GREEN Extracting ready .."
       echo -e "$GREY "
     
     
