@@ -6,12 +6,17 @@
       
 if [ ! -f /opt/Amiga/amiberry ]; then
  
-	     
+sudo rm -rf /opt/Amiga
 	     sudo mkdir /opt/Amiga
-	     chmod -R 777 /opt/Amiga
-	     ln -s /opt/Amiga/ ~/Amiga
-	     cd /opt/
-             unzip -u  /opt/RetroPie_Rock5b/Amiga/Amiga.zip
+	    
+	     cd /opt/Amiga
+             sudo unzip -u  /opt/RetroPie_Rock5b/Amiga/Amiga.zip
+       clear
+       toilet „Amiga“ --metal
+      echo " "
+      echo " "
+      echo "  First installation "
+      echo " "
       clear
       toilet Amiga --metal
       echo " "
