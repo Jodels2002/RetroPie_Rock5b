@@ -6,7 +6,7 @@
       
 if [ ! -f /opt/Amiga/amiberry ]; then
  
-sudo rm -rf /opt/Amiga
+sudo rm -rf /opt/
 	     sudo mkdir /opt/Amiga
 	    
 	     cd /opt/Amiga
