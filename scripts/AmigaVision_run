@@ -13,14 +13,14 @@
       
       if [ ! -d /opt/AmigaVision/ ]; then
  
-         cd /user/local/bin/
+         cd /usr/local/bin/
  
          ./vision
  
        fi
         if [ ! -d /opt/Amiga/data/ ]; then
  
-         cd /user/local/bin/
+         cd /usr/local/bin/
  
          ./vision
  
