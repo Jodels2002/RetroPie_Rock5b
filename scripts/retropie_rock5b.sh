@@ -52,6 +52,7 @@ clear
       echo " "
       sudo chmod -R 777 /usr/share/applications/
       cp -rf /opt/RetroPie_Rock5b/Amiga/AmigaVision/AmigaVision.desktop /usr/share/applications/ 
+      cp -rf /opt/RetroPie_Rock5b/Amiga/AmigaVision/AmigaVision.desktop ~/Desktop 
       cp -rf /opt/RetroPie_Rock5b/Amiga/AmigaVision/AmigaVision.uae /opt/Amiga/conf/
      
       
