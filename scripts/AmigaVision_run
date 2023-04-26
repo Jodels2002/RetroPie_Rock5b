@@ -17,7 +17,15 @@
  
          ./vision
  
- fi
+       fi
+        if [ ! -d /opt/Amiga/data/ ]; then
+ 
+         cd /user/local/bin/
+ 
+         ./vision
+ 
+       fi
+       
        echo "Starting AmigaVision"
       
  cd /opt/Amiga/
