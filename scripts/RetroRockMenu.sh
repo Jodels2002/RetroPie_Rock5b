@@ -142,13 +142,11 @@ case $CHOICE in
             cd
             sudo rm -rf ~/amiberry
             git clone https://github.com/midwan/amiberry
-            cd amiberry
-
-
+	    cd amiberry
+            sudo chmod -R 777 ~/amiberry
+            power
      	    make -j8 PLATFORM=rk3588
-            
-	    sudo chmod -R 777 $HOME/amiberry
-	    
+
 	    mkdir /opt/Amiga/
             cp -rf /opt/Amiga/amiberry  /opt/Amiga/amiberry_old
             cp -rf ~/amiberry/*  /opt/Amiga/
@@ -187,25 +185,30 @@ case $CHOICE in
        p)
            #***********************************************  #RetroRock-OS install script  ***********************************
            #************************************************  Compile Amiberry DEV        ************************************** 
-	        sudo apt install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libserialport0
-		sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev	   clear
-      		toilet "AmiRock" --metal
+	        clear
+           
+             sudo apt -y install libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libserialport0
+	     sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev
+          
+	    clear
+            
+           clear
+      		toilet "RetroRock-OS" --metal
       		echo " "
       		echo " "
        		echo "Compiling now ...Amiberry :-)"
-
-            sudo rm -rf amiberry
+            cd
+            sudo rm -rf ~/amiberry
             git clone -b dev https://github.com/midwan/amiberry
             cd amiberry
+            sudo chmod -R 777 ~/amiberry
+            power
+     	    make -j8 PLATFORM=rk3588
 
-
-     	make -j8 PLATFORM=rk3588
-            
-	    sudo chmod -R 777 $HOME/amiberry
-	    
 	    mkdir /opt/Amiga/
             cp -rf /opt/Amiga/amiberry  /opt/Amiga/amiberry_old
-            cp -rf /opt/amiberry/*  /opt/Amiga/
+            cp -rf ~/amiberry/*  /opt/Amiga/
+	    
              sudo rm -rf $HOME/amiberry
 	     sudo rm -rf /opt/Amiga/abr
 	     sudo rm -rf /opt/Amiga/cmake
@@ -234,7 +237,7 @@ case $CHOICE in
              
 	
             cd
-            sudo rm -rf amiberry
+            sudo rm -rf ~/amiberry
          
             ;;  
             
