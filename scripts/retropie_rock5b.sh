@@ -37,6 +37,29 @@ sudo  ./retropie_setup.sh basic_install
 
 
 fi
+
+if [ -d /opt/AmigaVision/games/Amiga/ ]; then
+clear
+ toilet "AmigaVision" --metal
+      echo -e "$GREY RetroRock-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 AmiRock-OS "
+      echo " No Rights Reserved.  "
+      echo " "
+      echo -e "$BLUE"
+      echo " AmigaVision"
+      echo -e "$GREEN ready  --- have fun :-)"
+      echo -e "$GREY "
+      echo " "
+      sudo chmod -R 777 /usr/share/applications/
+      cp -rf /opt/RetroPie_Rock5b/Amiga/AmigaVision/AmigaVision.desktop /usr/share/applications/ 
+      cp -rf /opt/RetroPie_Rock5b/Amiga/AmigaVision/AmigaVision.uae /opt/Amiga/conf/
+     
+      
+      cp -rf /opt/AmigaVision/games/Amiga/*.rom /opt/Amiga/kickstarts/
+      cp -rf /opt/AmigaVision/games/Amiga500/*.rom /opt/Amiga/kickstarts/
+     
+fi 
+
 clear
       toilet "RetroRock" --metal
       
