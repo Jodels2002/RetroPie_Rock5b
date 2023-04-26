@@ -23,7 +23,7 @@ sudo chmod -R 777 /opt/
 
 if [ ! -d /opt/retropie/emulators/retroarch/ ]; then
 rm -rf ~/RetroPie-Setup
-
+sudo apt install -y p7zip-full
 cd ~
 git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
 sudo chmod -R 777 ~/RetroPie-Setup
