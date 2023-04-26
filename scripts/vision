@@ -6,9 +6,9 @@
       
 if [ ! -f /opt/Amiga/amiberry ]; then
  
-sudo rm -rf /opt/
-	     sudo mkdir /opt/Amiga
-	    
+             sudo rm -rf /opt/Amiga
+	     sudo mkdir -p /opt/Amiga
+	     sudo chmod -R 777 /opt/Amiga
 	     cd /opt/Amiga
              sudo unzip -u  /opt/RetroPie_Rock5b/Amiga/Amiga.zip
        clear
