@@ -206,36 +206,9 @@ case $CHOICE in
      	    make -j8 PLATFORM=rk3588
 
 	    mkdir /opt/Amiga/
-            cp -rf /opt/Amiga/amiberry  /opt/Amiga/amiberry_old
-            cp -rf ~/amiberry/*  /opt/Amiga/
-	    
-             sudo rm -rf $HOME/amiberry
-	     sudo rm -rf /opt/Amiga/abr
-	     sudo rm -rf /opt/Amiga/cmake
-	     sudo rm -rf /opt/Amiga/external
-	     sudo rm -rf /opt/Amiga/src
-	     sudo rm -rf /opt/Amiga/Android.mk
-	     sudo rm -rf /opt/Amiga/whdboot-src
-	     sudo rm -rf /opt/Amiga/VSLinux
-	     sudo rm -rf /opt/Amiga/Info.plist.template
-	     sudo rm -rf /opt/Amiga/CMakeSettings.json
-	     sudo rm -rf /opt/Amiga/Makefile
-	     sudo rm -rf /opt/Amiga/Entitlements.plist
-	     sudo rm -rf /opt/Amiga/CMakeLists.txt
-	     sudo rm -rf /opt/Amiga/PULL_REQUEST_TEMPLATE
-	     sudo rm -rf /opt/Amiga/macos_init_amiberry.zsh
-	     sudo rm -rf /opt/Amiga/make-bundle.sh
-	    
-	      mkdir /opt/Backup
-	    
-	    # Backup
-	 
-	    cp -rf  /opt/Amiga/amiberry_old /opt/Backup
-            cp -rf  /opt/Amiga/amiberry /opt/Backup
-	    cp -rf  /opt/Amiga/amiberry_dev /opt/Backup
-	    cp -rf  /opt/Amiga/data/amiberry.png /usr/share/applications/ 
-             
-	
+            sudo rm -rf /opt/Amiga/amiberry_dev
+	    mv -f ~/amiberry/amiberry  /opt/Amiga/amiberry_dev
+            
             cd
             sudo rm -rf ~/amiberry
          
