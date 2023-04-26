@@ -139,8 +139,8 @@ case $CHOICE in
       		echo " "
       		echo " "
        		echo "Compiling now ...Amiberry :-)"
-
-            sudo rm -rf amiberry
+            cd
+            sudo rm -rf ~/amiberry
             git clone https://github.com/midwan/amiberry
             cd amiberry
 
@@ -151,8 +151,8 @@ case $CHOICE in
 	    
 	    mkdir /opt/Amiga/
             cp -rf /opt/Amiga/amiberry  /opt/Amiga/amiberry_old
-            cp -rf /opt/amiberry/*  /opt/Amiga/
-             sudo rm -rf $HOME/amiberry
+            cp -rf ~/amiberry/*  /opt/Amiga/
+             
 	     sudo rm -rf /opt/Amiga/abr
 	     sudo rm -rf /opt/Amiga/cmake
 	     sudo rm -rf /opt/Amiga/external
@@ -180,7 +180,7 @@ case $CHOICE in
              
 	
             cd
-            #sudo rm -rf amiberry
+            #sudo rm -rf ~/amiberry
            
             ;;  
        
