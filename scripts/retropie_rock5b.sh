@@ -6,6 +6,7 @@
       RED='\033[1;31m'
       GREY='\033[1;30m'
 power
+sudo raspi-config nonint do_expand_rootfs
 clear
 rm -rf /opt/RetroPie_Rock5b
 sudo rm -rf /etc/update-motd.d/*
