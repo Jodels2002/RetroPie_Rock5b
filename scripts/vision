@@ -131,6 +131,8 @@ if [[ $FREE -lt  10000000 ]]; then               # 10G = 10*1024*1024k
       wget https://archive.org/download/amigavision/AmigaVision-MegaAGS-2023-04-05.7z
       
       fi
+      sudo apt install -y p7zip-full
+
       cd /opt/AmigaVision/
 
 if [ ! -d /opt/AmigaVision/games/Amiga/ ]; then
@@ -141,7 +143,7 @@ if [ ! -d /opt/AmigaVision/games/Amiga/ ]; then
       echo -e "$GREEN Extracting files .."
       echo -e "$GREY "
 
-  7z x ./AmigaVision-MegaAGS-2023-04-05.7z
+    7z x ./AmigaVision-MegaAGS-2023-04-05.7z
       clear
       toilet Amiga --metal
       echo " "
