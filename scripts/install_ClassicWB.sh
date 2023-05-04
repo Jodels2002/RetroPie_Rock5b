@@ -200,8 +200,8 @@ if [ ! -d /opt/Amiga/dir/System_ADVSP ]; then
       cp -rf /opt/RetroPie_Rock5b/Amiga/ClassicWB/ClassicWB-ADVSP.uae /opt/Amiga/conf/
       cp -rf /opt/Amiga/dir/Work/Software /opt/Amiga/dir/System_ADVSP/System/
       
-      cp -rf /opt/RetroPie_Rock5b/config/ClassicWB-ADVSP.desktop /home/$USER/Desktop/
-         cp -rf /opt/RetroPie_Rock5b/config/ClassicWB-ADVSP.desktop /usr/share/applications/
+      cp -rf /opt/RetroPie_Rock5b/Amiga/ClassicWB/ClassicWB-ADVSP.desktop /home/$USER/Desktop/
+         cp -rf /opt/RetroPie_Rock5b/Amiga/ClassicWB/ClassicWB-ADVSP.desktop /usr/share/applications/
       clear
       toilet "RetroPie_Rock5b-OS" --metal
       echo -e "$GREY RetroPie_Rock5b-OS ROM Operating System and Libraries" 
@@ -340,7 +340,7 @@ fi
 
 if [ -d /opt/Amiga/dir/System_P96/ ]; then
 
-         cp -rf /opt/RetroPie_Rock5b/config/ClassicWB-P96.desktop /usr/share/applications/
+         cp -rf /opt/RetroPie_Rock5b/Amiga/ClassicWB/ClassicWB-P96.desktop /usr/share/applications/
          cp -rf /opt/RetroPie_Rock5b/Amiga/ClassicWB/ClassicWB-P96.uae /opt/Amiga/conf
       cd /opt/Amiga/dir/System_P96/System/Devs
       unzip -u  /opt/RetroPie_Rock5b/Amiga/ks.zip
@@ -351,7 +351,7 @@ fi
 if [ -d /opt/Amiga/dir/System_ADVSP/ ]; then
     
  
-      cp -rf /opt/RetroPie_Rock5b/config/ClassicWB-ADVSP.desktop /usr/share/applications/
+      cp -rf /opt/RetroPie_Rock5b/Amiga/ClassicWB/ClassicWB-ADVSP.desktop /usr/share/applications/
       cp -rf /opt/RetroPie_Rock5b/Amiga/ClassicWB/ClassicWB-ADVSP.uae /opt/Amiga/conf
       cd /opt/Amiga/dir/System_ADVSP/System/Devs
       unzip -u  /opt/RetroPie_Rock5b/Amiga/ks.zip
