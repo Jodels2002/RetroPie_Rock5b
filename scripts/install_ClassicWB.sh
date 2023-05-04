@@ -1,6 +1,6 @@
 #!/bin/bash
-#***********************************************  #AmiRock install script  ***********************************
-# Install AmiRock
+#***********************************************  #RetroPie_Rock5b install script  ***********************************
+# Install RetroPie_Rock5b
 # B.Titze 2023
 
 #************************************************************************************************************
@@ -15,29 +15,29 @@ GREY='\033[1;30m'
       chmod -R 777 /opt
       power
       clear
-      toilet "AmiRock-OS" --metal
-      echo -e "$GREY AmiRock-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 AmiRock-OS "
+      toilet "RetroPie_Rock5b-OS" --metal
+      echo -e "$GREY RetroPie_Rock5b-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 RetroPie_Rock5b-OS "
       echo " No Rights Reserved.  "
       
       sudo apt install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libserialport0
       clear
-      toilet "AmiRock-OS" --metal
-      echo -e "$GREY AmiRock-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 AmiRock-OS "
+      toilet "RetroPie_Rock5b-OS" --metal
+      echo -e "$GREY RetroPie_Rock5b-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 RetroPie_Rock5b-OS "
       echo " No Rights Reserved.  "
       sudo apt install python3-pip  python3-dev  -y
       clear
-      toilet "AmiRock-OS" --metal
-      echo -e "$GREY AmiRock-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 AmiRock-OS "
+      toilet "RetroPie_Rock5b-OS" --metal
+      echo -e "$GREY RetroPie_Rock5b-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 RetroPie_Rock5b-OS "
       echo " No Rights Reserved.  "
       sudo python3 -m pip install -U setuptools
       sudo python3 -m pip install -U amitools   
       clear
-      toilet "AmiRock-OS" --metal
-      echo -e "$GREY AmiRock-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 AmiRock-OS "
+      toilet "RetroPie_Rock5b-OS" --metal
+      echo -e "$GREY RetroPie_Rock5b-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 RetroPie_Rock5b-OS "
       echo " No Rights Reserved.  "
 
 
@@ -48,9 +48,9 @@ GREY='\033[1;30m'
       mkdir -p /opt/Amiga/dir/Software
       mkdir -p /opt/Amiga/Install/
       clear
-      toilet "AmiRock-OS" --metal
-      echo -e "$BLUE AmiRock-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 AmiRock-OS "
+      toilet "RetroPie_Rock5b-OS" --metal
+      echo -e "$BLUE RetroPie_Rock5b-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 RetroPie_Rock5b-OS "
       echo " No Rights Reserved.  "
   	 
       echo ""   
@@ -61,11 +61,11 @@ GREY='\033[1;30m'
      
       #CreateDF0
          mkdir /opt/Amiga/Install/DF0
-      cd /opt/AmiRock/Amiga/ClassicWB/
+      cd /opt/RetroPie_Rock5b/Amiga/ClassicWB/
       unzip -o -q ./DF0.zip
-         mv /opt/AmiRock/Amiga/ClassicWB/DF0/* /opt/Amiga/Install/DF0
+         mv /opt/RetroPie_Rock5b/Amiga/ClassicWB/DF0/* /opt/Amiga/Install/DF0
          chmod -R 777 /opt/Amiga/Install/DF0
-      rm -d -r /opt/AmiRock/Amiga/ClassicWB/DF0/
+      rm -d -r /opt/RetroPie_Rock5b/Amiga/ClassicWB/DF0/
       rm -d -r /opt/Amiga/Install/DF0/*.info
  fi 
 
@@ -73,9 +73,9 @@ ClassicWB()
 {
      
       clear
-      toilet "AmiRock-OS" --metal
-      echo "AmiRock-OS ROM Operating System and Libraries" 
-      echo "Version V1.5 2020-2021 AmiRock-OS "
+      toilet "RetroPie_Rock5b-OS" --metal
+      echo "RetroPie_Rock5b-OS ROM Operating System and Libraries" 
+      echo "Version V1.5 2020-2021 RetroPie_Rock5b-OS "
       echo "No Rights Reserved.  "
       echo ""
       echo -e -n "$GREEN Found Amiga Files ..."
@@ -88,9 +88,9 @@ ClassicWB()
     
       
       clear
-      toilet "AmiRock-OS" --metal
-      echo -e "$GREY AmiRock-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 AmiRock-OS "
+      toilet "RetroPie_Rock5b-OS" --metal
+      echo -e "$GREY RetroPie_Rock5b-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 RetroPie_Rock5b-OS "
       echo " No Rights Reserved.  "
       echo " "
       echo -e -n "$BLUE Downloading  ClassicWB_UAE_v28..."
@@ -105,9 +105,9 @@ ClassicWB()
     
         
       clear
-      toilet "AmiRock-OS" --metal
-      echo -e "$GREY AmiRock-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 AmiRock-OS "
+      toilet "RetroPie_Rock5b-OS" --metal
+      echo -e "$GREY RetroPie_Rock5b-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 RetroPie_Rock5b-OS "
       echo " No Rights Reserved.  "
       echo " "
       echo -e -n "$BLUE Downloading  ClassicWB_UAE_v28..."
@@ -126,9 +126,9 @@ ClassicWB()
       
       
       clear
-      toilet "AmiRock-OS" --metal
-      echo -e "$GREY AmiRock-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 AmiRock-OS "
+      toilet "RetroPie_Rock5b-OS" --metal
+      echo -e "$GREY RetroPie_Rock5b-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 RetroPie_Rock5b-OS "
       echo " No Rights Reserved.  "
       echo " "
       echo "ClassicWB extracting... "
@@ -139,9 +139,9 @@ ClassicWB()
       
     else 
       clear
-      toilet "AmiRock-OS" --metal
-      echo -e "$GREY AmiRock-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 AmiRock-OS "
+      toilet "RetroPie_Rock5b-OS" --metal
+      echo -e "$GREY RetroPie_Rock5b-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 RetroPie_Rock5b-OS "
       echo " No Rights Reserved.  "
       echo " "
         echo "ClassicWB already downloaded"
@@ -152,9 +152,9 @@ if [ ! -d /opt/Amiga/Install/ClassicWB_LITE_v28/ ]; then
       
 
       clear
-      toilet "AmiRock-OS" --metal
-      echo -e "$GREY AmiRock-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 AmiRock-OS "
+      toilet "RetroPie_Rock5b-OS" --metal
+      echo -e "$GREY RetroPie_Rock5b-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 RetroPie_Rock5b-OS "
       echo " No Rights Reserved.  "
       echo " "
       echo "ClassicWB_LITE_v28 extracting... "
@@ -176,9 +176,9 @@ if [ ! -d /opt/Amiga/dir/System_ADVSP ]; then
 
    
      clear
-      toilet "AmiRock-OS" --metal
-      echo -e "$GREY AmiRock-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 AmiRock-OS "
+      toilet "RetroPie_Rock5b-OS" --metal
+      echo -e "$GREY RetroPie_Rock5b-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 RetroPie_Rock5b-OS "
       echo " No Rights Reserved.  "
       echo " "
       echo " "
@@ -189,23 +189,23 @@ if [ ! -d /opt/Amiga/dir/System_ADVSP ]; then
       cd "/opt/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/"
       xdftool System_ADVSP.hdf unpack /opt/Amiga/dir/System_ADVSP
      
-      cp -rf /opt/AmiRock/Amiga/ClassicWB/CWB3.pac /opt/Amiga/dir/System_ADVSP/System/T/
+      cp -rf /opt/RetroPie_Rock5b/Amiga/ClassicWB/CWB3.pac /opt/Amiga/dir/System_ADVSP/System/T/
       cd /opt/Amiga/dir/System_ADVSP/System/T/
       unzip -u /opt/Amiga/dir/System_ADVSP/System/T/CWB3.pac
-      cp -rf /opt/AmiRock/Amiga/ClassicWB/Startup-Sequence /opt/Amiga/dir/System_ADVSP/System/S/
+      cp -rf /opt/RetroPie_Rock5b/Amiga/ClassicWB/Startup-Sequence /opt/Amiga/dir/System_ADVSP/System/S/
       
-      cp -rf /opt/AmiRock/Amiga/ClassicWB/Activate /opt/Amiga/dir/System_ADVSP/System/S/
-      cp -rf /opt/AmiRock/Amiga/ClassicWB/Science /opt/Amiga/dir/System_ADVSP/System/S/
+      cp -rf /opt/RetroPie_Rock5b/Amiga/ClassicWB/Activate /opt/Amiga/dir/System_ADVSP/System/S/
+      cp -rf /opt/RetroPie_Rock5b/Amiga/ClassicWB/Science /opt/Amiga/dir/System_ADVSP/System/S/
       
-      cp -rf /opt/AmiRock/Amiga/ClassicWB/ClassicWB-ADVSP.uae /opt/Amiga/conf/
+      cp -rf /opt/RetroPie_Rock5b/Amiga/ClassicWB/ClassicWB-ADVSP.uae /opt/Amiga/conf/
       cp -rf /opt/Amiga/dir/Work/Software /opt/Amiga/dir/System_ADVSP/System/
       
-      cp -rf /opt/AmiRock/config/ClassicWB-ADVSP.desktop /home/$USER/Desktop/
-         cp -rf /opt/AmiRock/config/ClassicWB-ADVSP.desktop /usr/share/applications/
+      cp -rf /opt/RetroPie_Rock5b/config/ClassicWB-ADVSP.desktop /home/$USER/Desktop/
+         cp -rf /opt/RetroPie_Rock5b/config/ClassicWB-ADVSP.desktop /usr/share/applications/
       clear
-      toilet "AmiRock-OS" --metal
-      echo -e "$GREY AmiRock-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 AmiRock-OS "
+      toilet "RetroPie_Rock5b-OS" --metal
+      echo -e "$GREY RetroPie_Rock5b-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 RetroPie_Rock5b-OS "
       echo " No Rights Reserved.  "
       echo " "
   	 
@@ -225,9 +225,9 @@ if [ ! -d /opt/Amiga/dir/System_ADVSP ]; then
      
       
       clear
-      toilet "AmiRock-OS" --metal
-      echo -e "$GREY AmiRock-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 AmiRock-OS "
+      toilet "RetroPie_Rock5b-OS" --metal
+      echo -e "$GREY RetroPie_Rock5b-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 RetroPie_Rock5b-OS "
       echo " No Rights Reserved.  "
       echo " "
       echo -e -n "$BLUE "
@@ -236,25 +236,25 @@ if [ ! -d /opt/Amiga/dir/System_ADVSP ]; then
       
       cd "/opt/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/"
       xdftool System_P96.hdf unpack /opt/Amiga/dir/System_P96
-      cp -rf /opt/AmiRock/Amiga/ClassicWB/CWB3.pac /opt/Amiga/dir/System_P96/System/T/
+      cp -rf /opt/RetroPie_Rock5b/Amiga/ClassicWB/CWB3.pac /opt/Amiga/dir/System_P96/System/T/
       cd /opt/Amiga/dir/System_P96/System/T/
       unzip -o -q /opt/Amiga/dir/System_P96/System/T/CWB3.pac
       
-      cp -rf /opt/AmiRock/Amiga/ClassicWB/Startup-Sequence /opt/Amiga/dir/System_P96/System/S/
-      cp -rf /opt/AmiRock/Amiga/ClassicWB/Science /opt/Amiga/dir/System_P96/System/S/
-      cp -rf /opt/AmiRock/Amiga/ClassicWB/Activate /opt/Amiga/dir/System_P96/System/S/
-      cp -rf /opt/AmiRock/Amiga/ClassicWB/screenmode.prefs /opt/Amiga/dir/System_P96/System/Prefs/Env-Archive/Sys/
-      cp -rf /opt/AmiRock/Amiga/ClassicWB/ClassicWB-P96.uae /opt/Amiga/conf/
+      cp -rf /opt/RetroPie_Rock5b/Amiga/ClassicWB/Startup-Sequence /opt/Amiga/dir/System_P96/System/S/
+      cp -rf /opt/RetroPie_Rock5b/Amiga/ClassicWB/Science /opt/Amiga/dir/System_P96/System/S/
+      cp -rf /opt/RetroPie_Rock5b/Amiga/ClassicWB/Activate /opt/Amiga/dir/System_P96/System/S/
+      cp -rf /opt/RetroPie_Rock5b/Amiga/ClassicWB/screenmode.prefs /opt/Amiga/dir/System_P96/System/Prefs/Env-Archive/Sys/
+      cp -rf /opt/RetroPie_Rock5b/Amiga/ClassicWB/ClassicWB-P96.uae /opt/Amiga/conf/
     
           
       
-      cp -rf /opt/AmiRock/config/ClassicWB-P96.desktop /home/$USER/Desktop/
-         cp -rf /opt/AmiRock/config/ClassicWB-P96.desktop /usr/share/applications/
+      cp -rf /opt/RetroPie_Rock5b/config/ClassicWB-P96.desktop /home/$USER/Desktop/
+         cp -rf /opt/RetroPie_Rock5b/config/ClassicWB-P96.desktop /usr/share/applications/
       cp -rf /opt/Amiga/dir/System_P96/System/Prefs/Patterns/Amiga_1024x768.jpg /opt/Amiga/dir/System_P96/System/Prefs/Patterns/bsg_pm2_800x600.png
       clear
-      toilet "AmiRock-OS" --metal
-      echo -e "$GREY AmiRock-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 AmiRock-OS "
+      toilet "RetroPie_Rock5b-OS" --metal
+      echo -e "$GREY RetroPie_Rock5b-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 RetroPie_Rock5b-OS "
       echo " No Rights Reserved.  "
       echo " "
   	#ClassicWB-P96_run 
@@ -263,8 +263,8 @@ if [ ! -d /opt/Amiga/dir/System_ADVSP ]; then
  
  if [ ! -d /opt/Amiga/dir/Amiga1000/ ]; then
    cd /opt/Amiga/dir/
-   unzip -u /opt/AmiRock/Amiga/Amiga1000.zip
-   cp -rf "/opt/AmiRock/Amiga/ClassicWB/Amiga1000.uae" /opt/Amiga/conf/
+   unzip -u /opt/RetroPie_Rock5b/Amiga/Amiga1000.zip
+   cp -rf "/opt/RetroPie_Rock5b/Amiga/ClassicWB/Amiga1000.uae" /opt/Amiga/conf/
    
    
  fi  
@@ -275,9 +275,9 @@ ClassicWB13()
 
 
       clear
-      toilet "AmiRock-OS" --metal
-      echo -e "$GREY AmiRock-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 AmiRock-OS "
+      toilet "RetroPie_Rock5b-OS" --metal
+      echo -e "$GREY RetroPie_Rock5b-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 RetroPie_Rock5b-OS "
       echo " No Rights Reserved.  "
       echo " "
       
@@ -291,9 +291,9 @@ if [ ! -f /opt/Amiga/Install/ClassicWB_LITE_v28.zip ]; then
       wget http://download.abime.net/classicwb/ClassicWB_LITE_v28.zip
 
       clear
-      toilet "AmiRock-OS" --metal
-      echo -e "$GREY AmiRock-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 AmiRock-OS "
+      toilet "RetroPie_Rock5b-OS" --metal
+      echo -e "$GREY RetroPie_Rock5b-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 RetroPie_Rock5b-OS "
       echo " No Rights Reserved.  "
       echo " "
       echo "ClassicWB extracting... "
@@ -316,7 +316,7 @@ ClassicWB13
 
 else
 clear
-          toilet "AmiRock-OS" --metal
+          toilet "RetroPie_Rock5b-OS" --metal
           echo " "
 	  echo " "
 	  whiptail --msgbox "Information: AmigaForever * by Cloanto 
@@ -340,10 +340,10 @@ fi
 
 if [ -d /opt/Amiga/dir/System_P96/ ]; then
 
-         cp -rf /opt/AmiRock/config/ClassicWB-P96.desktop /usr/share/applications/
-         cp -rf /opt/AmiRock/Amiga/ClassicWB/ClassicWB-P96.uae /opt/Amiga/conf
+         cp -rf /opt/RetroPie_Rock5b/config/ClassicWB-P96.desktop /usr/share/applications/
+         cp -rf /opt/RetroPie_Rock5b/Amiga/ClassicWB/ClassicWB-P96.uae /opt/Amiga/conf
       cd /opt/Amiga/dir/System_P96/System/Devs
-      unzip -u  /opt/AmiRock/Amiga/ks.zip
+      unzip -u  /opt/RetroPie_Rock5b/Amiga/ks.zip
       cd
 
 fi
@@ -351,10 +351,10 @@ fi
 if [ -d /opt/Amiga/dir/System_ADVSP/ ]; then
     
  
-      cp -rf /opt/AmiRock/config/ClassicWB-ADVSP.desktop /usr/share/applications/
-      cp -rf /opt/AmiRock/Amiga/ClassicWB/ClassicWB-ADVSP.uae /opt/Amiga/conf
+      cp -rf /opt/RetroPie_Rock5b/config/ClassicWB-ADVSP.desktop /usr/share/applications/
+      cp -rf /opt/RetroPie_Rock5b/Amiga/ClassicWB/ClassicWB-ADVSP.uae /opt/Amiga/conf
       cd /opt/Amiga/dir/System_ADVSP/System/Devs
-      unzip -u  /opt/AmiRock/Amiga/ks.zip
+      unzip -u  /opt/RetroPie_Rock5b/Amiga/ks.zip
       cd
 fi 
        
@@ -365,9 +365,9 @@ fi
          chmod -R 777 /opt/Amiga
       cd
       clear
-      toilet "AmiRock-OS" --metal
-      echo -e "$GREY AmiRock-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 AmiRock-OS "
+      toilet "RetroPie_Rock5b-OS" --metal
+      echo -e "$GREY RetroPie_Rock5b-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 RetroPie_Rock5b-OS "
       echo " No Rights Reserved.  "
       echo " "      
       echo -e "$BLACK  "
