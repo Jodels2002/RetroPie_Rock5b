@@ -1,0 +1,24 @@
+ BLACK='\033[0;39m'
+      BLUE='\033[1;34m'
+      GREEN='\033[1;32m'
+      RED='\033[1;31m'
+      GREY='\033[1;30m'
+      power
+      clear
+      toilet "AmiRock-OS" --metal
+      echo -e "$GREY AmiRock-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 AmiRock-OS "
+      echo " No Rights Reserved.  "
+      echo " "
+      
+      if [ ! -d /opt/Amiga/dir/System_ADVSP/ ]; then
+ 
+         cd /user/local/bin/
+ 
+         ./install_ClassicWB.sh
+ 
+ fi
+      
+ cd /opt/Amiga/
+      ./amiberry --config conf/ClassicWB-ADVSP.uae -G
+      cd
