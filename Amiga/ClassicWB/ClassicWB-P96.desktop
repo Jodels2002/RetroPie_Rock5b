@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=ClassicWB-P96
+Exec=ClassicWB-P96_run
+Icon=/opt/Amiga/data/amiberry.png
+Path=/opt/Amiga
+Terminal=true
+Type=Application
+Keywords=file manager;console;
