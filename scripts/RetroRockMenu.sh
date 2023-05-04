@@ -22,7 +22,7 @@ OPTIONS=(e "EMULATIONSTATION (Retropie)                           "
          r "Retropie Setup                                        "
 	       m "Download & Install MegaAGS 2022                       "
 	       v "Download & Install AmigaVision (MegaAGS 2023)         "
-	       w "Download & Install WHDL Games&Demos                   "
+	       w "Install ClasicWB (Amiga)                        "
 	       o "Install OLED                                          "
          u "Update AmiRock-OS                                     "
          n "Update Amiberry                                       "
@@ -112,7 +112,7 @@ case $CHOICE in
 	   w)
             #update
             clear
-            whd
+            install_ClassicWB.sh
             ;; 
 	    
 	    q)
