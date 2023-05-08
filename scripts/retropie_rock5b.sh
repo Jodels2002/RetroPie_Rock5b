@@ -58,7 +58,8 @@ clear
       
       cp -rf /opt/AmigaVision/games/Amiga/*.rom /opt/Amiga/kickstarts/
       cp -rf /opt/AmigaVision/games/Amiga500/*.rom /opt/Amiga/kickstarts/
-     
+      cd
+      sudo ln -s /opt/Amiga/ Amiga
 fi 
 
 clear
