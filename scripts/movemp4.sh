@@ -10,7 +10,7 @@ destination_dir="/home/pi/RetroPie_MP4/"
 mkdir -p "$destination_dir"
 
 # Move all .m4 files to the destination directory while preserving subdirectories
-find "$source_dir" -name "*.m4" -type f -exec sh -c '
+find "$source_dir" -name "*.mp4" -type f -exec sh -c '
   for file do
     dest="$destination_dir/${file#$source_dir/}"
     mkdir -p "$(dirname "$dest")"
