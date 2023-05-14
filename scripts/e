@@ -60,10 +60,7 @@ fi
        
         
         emulationstation
-else
-    whiptail --msgbox " First run, please connect to internet ..." 20 50 1
- 
- fi
+
 cd
 toilet "RetroRock" --metal
       echo -e "$BLUE RetroRock ROM Operating System and Libraries" 
