@@ -20,7 +20,7 @@ if [ ! -d /etc/emulationstation/themes/magazinemadness/ ]; then
 
       sudo chmod -R 777 /etc/emulationstation
       git clone --recursive --depth 1 --branch master "https://github.com/RetroHursty69/es-theme-magazinemadness.git" "/etc/emulationstation/themes/magazinemadness"
-
+fi
 
 if [ ! -d ~/RetroPie/BIOS/mame2003/ ]; then
     mkdir ~/RetroPie
