@@ -6,14 +6,10 @@
       RED='\033[1;31m'
       GREY='\033[1;30m'
 
-mpv  --no-osc --no-input-default-bindings --fs /usr/share/boot-video/boot-video.mp4 
+#mpv  --no-osc --no-input-default-bindings --fs /usr/share/boot-video/boot-video.mp4 
 
 clear
 
-
-wget -q --spider http://google.com
-
- if [ $? -eq 0 ]; then
 
 #First install
 if [ ! -d /etc/emulationstation/themes/magazinemadness/ ]; then
@@ -24,7 +20,7 @@ if [ ! -d /etc/emulationstation/themes/magazinemadness/ ]; then
 
       sudo chmod -R 777 /etc/emulationstation
       git clone --recursive --depth 1 --branch master "https://github.com/RetroHursty69/es-theme-magazinemadness.git" "/etc/emulationstation/themes/magazinemadness"
-fi
+
 
 if [ ! -d ~/RetroPie/BIOS/mame2003/ ]; then
     mkdir ~/RetroPie
