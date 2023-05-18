@@ -41,7 +41,7 @@ fi
       sudo chmod -R 777 ~/RetroPie
       cd /home/$USER/RetroPie
       wget https://archive.org/download/archive_20190819/Romset.zip
-          
+      sudo mkdir -p ~/RetroPie/roms  
       cd ~/RetroPie/roms
       sudo unzip -o  /home/$USER/RetroPie/Romset.zip
       rm -rf /home/$USER/RetroPie/Romset.zip
