@@ -15,10 +15,10 @@ sudo cp -rf ~/RetroPie_Rock5b/config/rc.local /etc/
 cp -rf ~/RetroPie_Rock5b/config/.bashrc ~/
 
 clear
-mkdir -p /etc/emulationstation
+sudo mkdir -p /etc/emulationstation
 sudo chmod -R 777 /etc/emulationstation
 mkdir -p /opt/retropie/emulators
-sudo chmod -R 777 /opt/
+sudo chmod -R 777 /opt
 
 
 if [ ! -d /opt/retropie/emulators/retroarch/ ]; then
