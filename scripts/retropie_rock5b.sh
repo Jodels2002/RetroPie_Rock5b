@@ -72,11 +72,12 @@ clear
       sudo chmod -R 777 /opt 
       sudo chmod -R 777 ~/RetroPie
       sudo chmod -R 777 ~/RetroPie-Setup
-      sudo apt install walker -y
+      sudo apt install worker -y
       mkdir -p ~/.worker 
       sudo cp -rf /opt/AmiRock/config/config ~/.worker/   
       cp -rf /opt/RetroPie_Rock5b/retropie/Retropie.desktop /usr/share/applications/ 
       sudo apt install autofs -y
+      sudo apt install -y gparted ntfs-3g nemo
       rm -rf ~/RetroPie_Rock5b
      
 
