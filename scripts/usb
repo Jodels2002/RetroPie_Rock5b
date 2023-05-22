@@ -1,0 +1,7 @@
+sudo chmod -R 777 /media
+sudo umount /dev/sda1
+sudo mkdir /media/sda1
+sudo mount /dev/sda1 /media/sda1
+sudo umount /dev/sda2
+sudo mkdir /media/sda2
+sudo mount /dev/sda2 /media/sda2
