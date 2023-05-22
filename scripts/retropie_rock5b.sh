@@ -74,6 +74,8 @@ clear
       sudo chmod -R 777 ~/RetroPie-Setup
       sudo apt install worker -y
       mkdir -p ~/.worker 
+      cd
+      sudo unzip -o  /opt/RetroPie_Rock5b/config/worker.zip 
       sudo cp -rf /opt/AmiRock/config/config ~/.worker/   
       cp -rf /opt/RetroPie_Rock5b/retropie/Retropie.desktop /usr/share/applications/ 
       sudo apt install autofs -y
