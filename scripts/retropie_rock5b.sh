@@ -63,7 +63,7 @@ clear
 fi 
 
 clear
-      toilet "RetroRock" --metal
+      sudo mkdir -p /media/pi
       
 clear
       toilet "RetroRock" --metal
