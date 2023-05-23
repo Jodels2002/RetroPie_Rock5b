@@ -3,16 +3,21 @@
       GREEN='\033[1;32m'
       RED='\033[1;31m'
       GREY='\033[1;30m'
-      
-if [ ! -f /opt/Amiga/amiberry ]; then
+  
+  sudo apt install -y pulseaudio-*
+  sudo apt install -y pavucontrol
+  sudo apt install -y csound-u*  
+  sudo apt install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libserialport0
+  sudo apt install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev
+    
+    if [ ! -f /opt/Amiga/amiberry ]; then
  
              sudo rm -rf /opt/Amiga
 	     sudo mkdir -p /opt/Amiga
 	     sudo chmod -R 777 /opt/Amiga
 	     cd /opt/
              sudo unzip -u  /opt/RetroPie_Rock5b/Amiga/Amiga.zip
-	     sudo apt -y install libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libserialport0
-	     sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev
+	     
 	     clear
        toilet „Amiga“ --metal
       echo " "
