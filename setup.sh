@@ -48,8 +48,8 @@ sudo apt-get update -y
   sudo apt install -y pavucontrol
   sudo apt install -y csound-u*
   sudo apt install -y ntfs-3g 
-  #sudo apt install autofs -y
-  #sudo apt install -y autoconf 
+  sudo apt install autofs -y
+  sudo apt install -y autoconf 
   sudo apt install -y build-essential 
   sudo apt install libegl-mesa0 libegl1-mesa-dev libgbm-dev libgl1-mesa-dev libgles2-mesa-dev libglx-mesa0 mesa-common-dev mesa-vulkan-drivers -y  
         wget https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/raspi-config_20230214_all.deb
@@ -77,7 +77,7 @@ sudo dpkg -i fan-control*.deb
 sudo systemctl enable fan-control
 sudo systemctl start fan-control 
 #************************************************  Install RetroRock        **************************************   
-  sudo apt-get install libsdl2-dev libfreeimage-dev libfreetype6-dev libcurl4-openssl-dev rapidjson-dev \
+  sudo apt-get install -y libsdl2-dev libfreeimage-dev libfreetype6-dev libcurl4-openssl-dev rapidjson-dev \
   libasound2-dev libgles2-mesa-dev build-essential cmake fonts-droid-fallback libvlc-dev \
   libvlccore-dev vlc-bin
   cd
