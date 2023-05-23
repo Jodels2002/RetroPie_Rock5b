@@ -55,8 +55,6 @@ sudo apt-get update -y
         wget https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/raspi-config_20230214_all.deb
 	sudo dpkg -i raspi-config_20230214_all.deb
 	rm -rf raspi-config_20230214_all.deb    
-	sudo apt-get -y install pi-bluetooth
-	sudo apt-get -y install bluez bluez-firmware baobab 
 	sudo usermod -G bluetooth -a pi
         sudo usermod -G audio -a pi
         sudo usermod -G video -a pi  
