@@ -170,7 +170,7 @@ case $CHOICE in
 	    
 	     
             cd
-            sudo rm -rf ~/amiberry
+            # sudo rm -rf ~/amiberry
            
             ;;  
        
