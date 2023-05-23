@@ -55,7 +55,7 @@ sudo apt-get update -y
       mkdir -p ~/.worker 
       cd
       sudo unzip -o  /opt/RetroPie_Rock5b/config/worker.zip 
-      sudo cp -rf /opt/AmiRock/config/config ~/.worker/   
+      sudo cp -rf /opt/RetroPie_Rock5/config/config ~/.worker/   
       cp -rf /opt/RetroPie_Rock5b/retropie/Retropie.desktop /usr/share/applications/ 
      
   
