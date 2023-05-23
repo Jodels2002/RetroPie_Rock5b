@@ -47,10 +47,18 @@ sudo apt-get update -y
   sudo apt install -y pulseaudio-*
   sudo apt install -y pavucontrol
   sudo apt install -y csound-u*
-  sudo apt install -y ntfs-3g 
   sudo apt install autofs -y
+  sudo apt install -y gparted ntfs-3g nemo
   sudo apt install -y autoconf 
   sudo apt install -y build-essential 
+     sudo apt install worker -y
+      mkdir -p ~/.worker 
+      cd
+      sudo unzip -o  /opt/RetroPie_Rock5b/config/worker.zip 
+      sudo cp -rf /opt/AmiRock/config/config ~/.worker/   
+      cp -rf /opt/RetroPie_Rock5b/retropie/Retropie.desktop /usr/share/applications/ 
+     
+  
   sudo apt install libegl-mesa0 libegl1-mesa-dev libgbm-dev libgl1-mesa-dev libgles2-mesa-dev libglx-mesa0 mesa-common-dev mesa-vulkan-drivers -y  
         wget https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/raspi-config_20230214_all.deb
 	sudo dpkg -i raspi-config_20230214_all.deb
