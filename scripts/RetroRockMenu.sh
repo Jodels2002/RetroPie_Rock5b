@@ -149,7 +149,8 @@ case $CHOICE in
 
 	    mkdir /opt/Amiga/
             cp -rf /opt/Amiga/amiberry  /opt/Amiga/amiberry_old
-            cp -rf ~/amiberry/*  /opt/Amiga/
+	    sudo rm -rf /opt/Amiga/amiberry
+            sudo cp -rf ~/amiberry/*  /opt/Amiga/
              
 	     sudo rm -rf /opt/Amiga/abr
 	     sudo rm -rf /opt/Amiga/cmake
