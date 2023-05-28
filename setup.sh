@@ -15,10 +15,12 @@ GREY='\033[1;30m'
       sudo chmod -R 777 /usr/local/bin
       sudo chmod -R 777 /opt/RetroPie_Rock5b/
  
-  
-  	sudo apt install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libserialport0
-  	sudo apt install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev
-  
+       
+      
+#************************************************  Make User pi       **************************************        
+      sudo useradd -m pi
+      sudo usermod -G audio -a pi
+      sudo usermod -G video -a pi  
       sudo update-locale LANG=en_US.UTF-8
       setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,gb,de,fr,it,gr,dk
       sudo echo "pi ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
@@ -59,13 +61,12 @@ sudo apt-get update -y
       cp -rf /opt/RetroPie_Rock5b/retropie/Retropie.desktop /usr/share/applications/ 
      
   
-  sudo apt install libegl-mesa0 libegl1-mesa-dev libgbm-dev libgl1-mesa-dev libgles2-mesa-dev libglx-mesa0 mesa-common-dev mesa-vulkan-drivers -y  
+        #sudo apt install libegl-mesa0 libegl1-mesa-dev libgbm-dev libgl1-mesa-dev libgles2-mesa-dev libglx-mesa0 mesa-common-dev mesa-vulkan-drivers -y  
         wget https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/raspi-config_20230214_all.deb
 	sudo dpkg -i raspi-config_20230214_all.deb
 	rm -rf raspi-config_20230214_all.deb    
-	sudo usermod -G bluetooth -a pi
-        sudo usermod -G audio -a pi
-        sudo usermod -G video -a pi  
+	
+       
 	
  #************************************************  Install Desktop       **************************************   
         sudo apt install -y xserver-xorg xini* 
@@ -84,7 +85,7 @@ make package
 sudo dpkg -i fan-control*.deb
 sudo systemctl enable fan-control
 sudo systemctl start fan-control 
-#************************************************  Install RetroRock        **************************************   
+#************************************************  Install Emulationstation        **************************************   
   sudo apt-get install -y libsdl2-dev libfreeimage-dev libfreetype6-dev libcurl4-openssl-dev rapidjson-dev \
   libasound2-dev libgles2-mesa-dev build-essential cmake fonts-droid-fallback libvlc-dev \
   libvlccore-dev vlc-bin
