@@ -41,8 +41,13 @@ sudo systemctl enable autologin@tty1.service
 echo "Autologin enabled for user pi"
 sudo apt-get update -y
 
-#************************************************  usefull Tools        **************************************  
- 
+#************************************************  Needed stuff        **************************************  
+    wget https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/raspi-config_20230214_all.deb
+	sudo dpkg -i raspi-config_20230214_all.deb
+	rm -rf raspi-config_20230214_all.deb    
+	power
+        sudo raspi-config nonint do_expand_rootfs   
+	
   sudo apt install -y dialog mc zip unzip wget toilet 
   sudo apt install arqiver geany -y
   sudo apt-get -y install pulseaudio p7zip-full
@@ -53,7 +58,12 @@ sudo apt-get update -y
   sudo apt install -y gparted ntfs-3g nemo
   sudo apt install -y autoconf 
   sudo apt install -y build-essential 
-     sudo apt install worker -y
+  
+  	
+  sudo apt install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libserialport0
+  sudo apt install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev  
+  
+  sudo apt install worker -y
       mkdir -p ~/.worker 
       cd
       sudo unzip -o  /opt/RetroPie_Rock5b/config/worker.zip 
@@ -62,11 +72,7 @@ sudo apt-get update -y
      
   
         #sudo apt install libegl-mesa0 libegl1-mesa-dev libgbm-dev libgl1-mesa-dev libgles2-mesa-dev libglx-mesa0 mesa-common-dev mesa-vulkan-drivers -y  
-        wget https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/raspi-config_20230214_all.deb
-	sudo dpkg -i raspi-config_20230214_all.deb
-	rm -rf raspi-config_20230214_all.deb    
-	
-       
+          
 	
  #************************************************  Install Desktop       **************************************   
         sudo apt install -y xserver-xorg xini* 
