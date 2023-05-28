@@ -15,7 +15,8 @@ GREY='\033[1;30m'
       sudo chmod -R 777 /usr/local/bin
       sudo chmod -R 777 /opt/RetroPie_Rock5b/
  
-       
+       sudo apt update -y
+       sudo apt purge lightd* -y
       
 #************************************************  Make User pi       **************************************        
       sudo useradd -m pi
