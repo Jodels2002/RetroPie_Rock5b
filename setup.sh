@@ -92,16 +92,7 @@ make package
 sudo dpkg -i fan-control*.deb
 sudo systemctl enable fan-control
 sudo systemctl start fan-control 
-#************************************************  Install Emulationstation        **************************************   
-  sudo apt-get install -y libsdl2-dev libfreeimage-dev libfreetype6-dev libcurl4-openssl-dev rapidjson-dev \
-  libasound2-dev libgles2-mesa-dev build-essential cmake fonts-droid-fallback libvlc-dev \
-  libvlccore-dev vlc-bin
-  cd
-  git clone --recursive https://github.com/RetroPie/EmulationStation.git
-  cd EmulationStation
-  cmake .
-   make
-cd
+
 sudo chmod -R 775 /usr/share/plymouth/
 	 sudo rm -rf /usr/share/plymouth/themes/spinner/watermark.png
 	 sudo cp -rf /opt/RetroPie_Rock5b/config/Retrorock.png /usr/share/plymouth/themes/spinner/watermark.png
