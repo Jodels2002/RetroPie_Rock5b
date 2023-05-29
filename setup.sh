@@ -19,7 +19,7 @@ GREY='\033[1;30m'
        sudo apt purge lightd* -y
       
 #************************************************  Make User pi       **************************************        
-      #sudo useradd -m pi
+      sudo useradd -m pi
       sudo usermod -G audio -a pi
       sudo usermod -G video -a pi  
       sudo update-locale LANG=en_US.UTF-8
