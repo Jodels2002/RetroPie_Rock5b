@@ -62,6 +62,22 @@ clear
       sudo ln -s /opt/Amiga/ ~/Amiga
 fi 
 
+      #Symbolic Links
+      if [  -d /opt/Amiga/dir/pimiga3/disks/Games ]; then
+      
+      sudo chmod -R 777 /opt/Amiga/dir/Software
+      rm -d -r /opt/Amiga/dir/Software/Games
+      cd /opt/Amiga/dir/pimiga3/disks/Games/WHDLOAD/
+      
+      ln -s /opt/Amiga/dir/pimiga3/disks/Games/WHDLOAD/ /opt/Amiga/dir/Software/Games
+      rm -d -r /opt/Amiga/dir/Software/Demos
+      cd /opt/Amiga/dir/pimiga3/disks/Demos/WHDLOAD/
+      
+      ln -s /opt/Amiga/dir/pimiga3/disks/Demos/WHDLOAD/ /opt/Amiga/dir/Software/Demos
+ fi
+
+
+
 clear
       sudo mkdir -p /media/pi
       
