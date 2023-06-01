@@ -75,9 +75,10 @@ fi
       
       ln -s /opt/Amiga/dir/pimiga3/disks/Demos/WHDLOAD/ /opt/Amiga/dir/Software/Demos
  fi
-
-
-
+ if [  -d /opt/retropie/configs/all/retroarch ]; then
+      rm -d -r /home/$USER/.config/retroarch
+      ln -s /opt/retropie/configs/all/retroarch/ /home/$USER/.config/retroarch
+ fi
 clear
       sudo mkdir -p /media/pi
       
