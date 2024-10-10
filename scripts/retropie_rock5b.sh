@@ -19,8 +19,37 @@ sudo mkdir -p /etc/emulationstation
 sudo chmod -R 777 /etc/emulationstation
 mkdir -p /opt/retropie/emulators
 sudo chmod -R 777 /opt
+#***********************************************  #AmiRock-OS install script  ***********************************
+#************************************************  Amiga        ************************************** 
+cd
+if [ ! -d /opt/Amiga/dir/ ]; then
+sudo rm -rf /opt/Amiga
+
+sudo mkdir /opt/Amiga
+sudo ln -s /opt/Amiga/ Amiga
+
+sudo mkdir ~/Amiberry
+cd ~/Amiberry
+sudo ln -s /opt/Amiga/conf/ conf
+
+cd /opt/
+unzip -u  /opt/AmiRock/Amiga/Amiga.zip
+clear
+toilet "AmiRock-OS" --metal
+echo " "
+echo " "
+echo "  First installation "
+echo " "
+
+sudo rm -rf /opt/Amiga/conf/amiberry.conf
+sudo rm -rf /opt/Amiga/conf/amiberry-osx.conf
+
+sudo apt install worker unadf xdms fonts-amiga -y
+sudo apt install -y cmake libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libserialport0 libportmidi0
+sudo apt install -y cmake libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev 
 
 
+fi
 if [ ! -d /opt/retropie/emulators/retroarch/ ]; then
 rm -rf ~/RetroPie-Setup
 sudo apt install -y p7zip-full
