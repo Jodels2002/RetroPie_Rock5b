@@ -121,110 +121,97 @@ case $CHOICE in
             wine msiexec /i "$(zenity --file-selection)"
             ;;  
 	    
-               
-            
-          n)
+            n)
        
-              #***********************************************  #RetroPie_Rock5b install script  ***********************************
+              #***********************************************  #AmiRock-OS install script  ***********************************
               #************************************************  Compile Amiberry         ************************************** 
             clear
-           
-             sudo apt -y install libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libserialport0
-	     sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev
-          
+             sudo apt install -y cmake libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libserialport0 libportmidi0
+	     sudo apt install -y cmake libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev          
 	    clear
             
            clear
-      		toilet "RetroRock-OS" --metal
+      		toilet "AmiRock" --metal
       		echo " "
       		echo " "
        		echo "Compiling now ...Amiberry :-)"
-            cd
-            sudo rm -rf ~/amiberry
-            git clone https://github.com/midwan/amiberry
-	    cd amiberry
-            sudo chmod -R 777 ~/amiberry
-            power
-     	    make -j8 PLATFORM=rk3588
+        
+	
+            sudo rm -rf amiberry
+            
+	    git clone  https://github.com/midwan/amiberry
+            cd amiberry
 
-	    mkdir /opt/Amiga/
-            cp -rf /opt/Amiga/amiberry  /opt/Amiga/amiberry_old
-	    sudo rm -rf /opt/Amiga/amiberry
-            sudo cp -rf ~/amiberry/*  /opt/Amiga/
-             
-	     sudo rm -rf /opt/Amiga/abr
-	     sudo rm -rf /opt/Amiga/cmake
-	     sudo rm -rf /opt/Amiga/external
-	     sudo rm -rf /opt/Amiga/src
-	     sudo rm -rf /opt/Amiga/Android.mk
-	     sudo rm -rf /opt/Amiga/whdboot-src
-	     sudo rm -rf /opt/Amiga/VSLinux
-	     sudo rm -rf /opt/Amiga/Info.plist.template
-	     sudo rm -rf /opt/Amiga/CMakeSettings.json
-	     sudo rm -rf /opt/Amiga/Makefile
-	     sudo rm -rf /opt/Amiga/Entitlements.plist
-	     sudo rm -rf /opt/Amiga/CMakeLists.txt
-	     sudo rm -rf /opt/Amiga/PULL_REQUEST_TEMPLATE
-	     sudo rm -rf /opt/Amiga/macos_init_amiberry.zsh
-	     sudo rm -rf /opt/Amiga/make-bundle.sh
+            cmake -B build && cmake --build build
+		    # make -j8 PLATFORM=rk3588
+		
+            sudo chmod -R 777 $HOME/amiberry
+	        
+	        cp -rf /opt/Amiga/amiberry /opt/Amiga/amiberry_old
+	        cp -rf $HOME/amiberry/build/amiberry  /opt/Amiga/amiberry
+	        cp -rf $HOME/amiberry/data/ /opt/Amiga/
+	        cp -rf $HOME/amiberry/plugins/ /opt/Amiga/
+	        cp -rf $HOME/amiberry/external/ /opt/Amiga/
+	        cp -rf $HOME/amiberry/whdboot/ /opt/Amiga/
 	    
-	     
+	       # Backup
+	 
+	    cp -rf  /opt/Amiga/amiberry_old /opt/Backup
+            cp -rf  /opt/Amiga/amiberry /opt/Backup
+	    cp -rf  /opt/Amiga/amiberry_dev /opt/Backup
+	    cp -rf  /opt/Amiga/data/amiberry_dev.png /usr/share/applications/
+	    cp -rf  /opt/AmiRock/Amiga/amiberry_dev.png /opt/Amiga/data/
+      
+	    
             cd
-            # sudo rm -rf ~/amiberry
-           
+            rm -rf amiberry
+
+     
             ;;  
        
        p)
-           #***********************************************  #RetroRock-OS install script  ***********************************
+           #***********************************************  #AmiRock-OS install script  ***********************************
            #************************************************  Compile Amiberry DEV        ************************************** 
-	        clear
-           
-             sudo apt -y install libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libserialport0
-	     sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev
-          
-	    clear
-            
-           clear
-      		toilet "RetroRock-OS" --metal
+	     sudo apt install -y cmake libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libserialport0 libportmidi0
+	     sudo apt install -y cmake libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev   
+		clear
+      		toilet "AmiRock" --metal
       		echo " "
       		echo " "
        		echo "Compiling now ...Amiberry :-)"
-            cd
-            sudo rm -rf ~/amiberry
-            git clone -b dev https://github.com/midwan/amiberry
-            cd amiberry
-            sudo chmod -R 777 ~/amiberry
-            power
-     	    make -j8 PLATFORM=rk3588
 
-	    mkdir /opt/Amiga/
-            sudo rm -rf /opt/Amiga/amiberry_dev
-	    cp -rf /opt/Amiga/amiberry  /opt/Amiga/amiberry_old
-	    mv -f ~/amiberry/amiberry  /opt/Amiga/amiberry_dev
+                sudo rm -rf amiberry
             
-             
-             cp -rf ~/amiberry/*  /opt/Amiga/
-             
-	     sudo rm -rf /opt/Amiga/abr
-	     sudo rm -rf /opt/Amiga/cmake
-	     sudo rm -rf /opt/Amiga/external
-	     sudo rm -rf /opt/Amiga/src
-	     sudo rm -rf /opt/Amiga/Android.mk
-	     sudo rm -rf /opt/Amiga/whdboot-src
-	     sudo rm -rf /opt/Amiga/VSLinux
-	     sudo rm -rf /opt/Amiga/Info.plist.template
-	     sudo rm -rf /opt/Amiga/CMakeSettings.json
-	     sudo rm -rf /opt/Amiga/Makefile
-	     sudo rm -rf /opt/Amiga/Entitlements.plist
-	     sudo rm -rf /opt/Amiga/CMakeLists.txt
-	     sudo rm -rf /opt/Amiga/PULL_REQUEST_TEMPLATE
-	     sudo rm -rf /opt/Amiga/macos_init_amiberry.zsh
-	     sudo rm -rf /opt/Amiga/make-bundle.sh
-	
+	    git clone -b preview https://github.com/midwan/amiberry
+            cd amiberry
+
+            cmake -B build && cmake --build build
+		    # make -j8 PLATFORM=rk3588
+		
+            sudo chmod -R 777 $HOME/amiberry
+	        
+	        cp -rf /opt/Amiga/amiberry_dev /opt/Amiga/amiberry_dev_old
+	        cp -rf $HOME/amiberry/build/amiberry  /opt/Amiga/amiberry_dev
+	        cp -rf $HOME/amiberry/data/ /opt/Amiga/
+	        cp -rf $HOME/amiberry/plugins/ /opt/Amiga/
+	        cp -rf $HOME/amiberry/external/ /opt/Amiga/
+	        cp -rf $HOME/amiberry/whdboot/ /opt/Amiga/
+	    
+	       # Backup
+	 
+	    cp -rf  /opt/Amiga/amiberry_dev_old /opt/Backup
+            cp -rf  /opt/Amiga/amiberry /opt/Backup
+	    cp -rf  /opt/Amiga/amiberry_dev /opt/Backup
+	    cp -rf  /opt/Amiga/data/amiberry_dev.png /usr/share/applications/
+	    cp -rf  /opt/AmiRock/Amiga/amiberry_dev.png /opt/Amiga/data/
+      
+	    
             cd
-            sudo rm -rf ~/amiberry
+            rm -rf amiberry
          
-            ;;  
+            ;;    
+            
+          
             
            255) echo "[ESC] key pressed.";;
                            esac
