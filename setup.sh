@@ -56,11 +56,10 @@ sudo apt-get update -y
   sudo apt install autofs -y
   sudo apt install -y gparted ntfs-3g nemo
   sudo apt install -y autoconf 
-  sudo apt install -y build-essential 
+  # sudo apt install -y build-essential 
   
   	
-  sudo apt install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libserialport0
-  sudo apt install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev  
+ 
   
   sudo apt install worker -y
       mkdir -p ~/.worker 
