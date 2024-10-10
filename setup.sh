@@ -105,7 +105,7 @@ sudo chmod -R 775 /usr/share/plymouth/
  #***********************************************  #AmiRock-OS install script  ***********************************
 #************************************************  Amiga        ************************************** 
 cd
-if [ ! -d /opt/Amiga/dir/ ]; then
+
 sudo rm -rf /opt/Amiga
 
 sudo mkdir /opt/Amiga
@@ -132,5 +132,5 @@ sudo apt install -y cmake libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 fl
 sudo apt install -y cmake libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev 
 
 
-fi	
+	
 	~/RetroPie_Rock5b/scripts/retropie_rock5b.sh
