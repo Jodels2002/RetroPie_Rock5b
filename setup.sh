@@ -160,7 +160,7 @@ echo " "
 
 unzip -o  $HOME/RetroPie_Rock5b/config/config.zip
 unzip -o  $HOME/RetroPie_Rock5b/config/worker.zip
-cd $HOME/AmiRock/
+cd $HOME/RetroPie_Rock5b/
 git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
 clear
 
