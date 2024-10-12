@@ -20,10 +20,11 @@ MENU="RetroRock-OS for Rock5b (rk3588):"
 
 OPTIONS=(e "EMULATIONSTATION (Retropie)                           "
          r "Retropie Setup                                        "
-	       m "Download & Install MegaAGS 2022                       "
-	       v "Download & Install AmigaVision (MegaAGS 2023)         "
-	       w "Install ClasicWB (Amiga)                        "
-	       o "Install OLED                                          "
+	 m "Download & Install MegaAGS 2022                       "
+	 v "Download & Install AmigaVision (MegaAGS 2023)         "
+	 w "Install ClasicWB (Amiga)                              "
+	 o "Install OLED                                          "
+	 i "Install Retropie                                      "
          u "Update AmiRock-OS                                     "
          n "Update Amiberry                                       "
          p "Update Amiberry (DEV)                                 "
@@ -80,6 +81,14 @@ case $CHOICE in
 		cd Rock5b_SSD1308
 		./setup.sh		
 	     ;; 
+
+         i)
+             #***********************************************  #RetroRock-OS install script  ***********************************
+             #************************************************  Install Retropei    **************************************
+            clear
+            install_retropie.sh
+            ;; 
+      
          i)
              #***********************************************  #RetroRock-OS install script  ***********************************
              #************************************************  Install ClassicWB     **************************************
