@@ -35,7 +35,7 @@ cd ~/Amiberry
 sudo ln -s /opt/Amiga/conf/ conf
 
 cd /opt/
-unzip -u  /opt/AmiRock/Amiga/Amiga.zip
+unzip -u  /opt/RetroPie_Rock5b/Amiga/Amiga.zip
 clear
 toilet "AmiRock-OS" --metal
 echo " "
