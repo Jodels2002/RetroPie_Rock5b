@@ -43,16 +43,11 @@ echo "Autologin enabled for user pi"
 sudo apt-get update -y
 
 #************************************************  Needed stuff        **************************************  
-    wget https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/raspi-config_20230214_all.deb
-	sudo dpkg -i raspi-config_20230214_all.deb
-	rm -rf raspi-config_20230214_all.deb    
-	power
-        sudo raspi-config nonint do_expand_rootfs   
+  sudo install -y raspi-config
+  sudo raspi-config nonint do_expand_rootfs   
 	
   sudo apt install -y dialog mc zip unzip wget toilet 
   sudo apt install arqiver geany -y
-  sudo apt-get -y install p7zip-full
-  
   sudo apt install autofs -y
   sudo apt install -y gparted ntfs-3g nemo
   sudo apt install -y autoconf 
@@ -61,7 +56,7 @@ sudo apt-get update -y
   	
  
   
-  sudo apt install worker -y
+  sudo apt install -y worker 
       mkdir -p ~/.worker 
       cd
       sudo unzip -o  /opt/RetroPie_Rock5b/config/worker.zip 
@@ -103,33 +98,6 @@ sudo chmod -R 775 /usr/share/plymouth/
 	sudo update-initramfs -u
 
  #***********************************************  #AmiRock-OS install script  ***********************************
-#************************************************  Amiga        ************************************** 
-cd
-
-sudo rm -rf /opt/Amiga
-
-sudo mkdir /opt/Amiga
-sudo ln -s /opt/Amiga/ Amiga
-
-sudo mkdir ~/Amiberry
-cd ~/Amiberry
-sudo ln -s /opt/Amiga/conf/ conf
-
-cd /opt/
-unzip -u  /opt/AmiRock/Amiga/Amiga.zip
-clear
-toilet "AmiRock-OS" --metal
-echo " "
-echo " "
-echo "  First installation "
-echo " "
-
-sudo rm -rf /opt/Amiga/conf/amiberry.conf
-sudo rm -rf /opt/Amiga/conf/amiberry-osx.conf
-
-sudo apt install worker unadf xdms fonts-amiga -y
-sudo apt install -y cmake libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libserialport0 libportmidi0
-sudo apt install -y cmake libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev 
 
 
 	
