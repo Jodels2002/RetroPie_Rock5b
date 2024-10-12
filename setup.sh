@@ -16,7 +16,7 @@ GREY='\033[1;30m'
       sudo chmod -R 777 /opt/RetroPie_Rock5b/
  
        sudo apt update -y
-       sudo apt purge lightd* -y
+       
       
 #************************************************  Make User pi       **************************************        
       sudo useradd -m pi
@@ -46,14 +46,18 @@ sudo apt-get update -y
   sudo install -y raspi-config
   sudo raspi-config nonint do_expand_rootfs   
 	
-  sudo apt install -y dialog mc zip unzip wget toilet 
-  sudo apt install arqiver geany -y
-  sudo apt install autofs -y
-  sudo apt install -y gparted ntfs-3g nemo
-  sudo apt install -y autoconf 
-  # sudo apt install -y build-essential 
-  
-  	
+sudo apt install -y dialog mc zip unzip wget toilet ksnip
+sudo apt install -y gparted ntfs-3g nemo feh
+sudo apt install build-essential -y
+sudo apt install arqiver geany -y
+sudo apt install 7zip -y
+sudo apt purge lightd* -y
+#sudo apt install cockpit -y
+sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
+sudo apt purge -y raspberrypi-ui-mods 
+sudo apt purge -y xser* xor* xin*
+sudo apt purge -y gnome*
+sudo rm -rf /home/$USER/.cache/*  	
  
   
   sudo apt install -y worker 
