@@ -101,6 +101,81 @@ sudo chmod -R 775 /usr/share/plymouth/
   	sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/spinner/spinner.plymouth 500
 	sudo update-initramfs -u
 
+ #************************************************  Amiga Desktop        ************************************** 
+clear
+toilet "AmiRock-OS" --metal
+echo " "
+echo " "
+echo "  First installation "
+echo " "
+
+
+
+
+
+cd /usr/share/icons
+sudo cp -rf ~/RetroPie_Rock5b/config/AMIGAOSLINUX.zip /usr/share/icons
+sudo unzip -u  /usr/share/icons/AMIGAOSLINUX.zip
+
+sudo rm -rf /usr/share/icons/default
+sudo cp -rf /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
+clear
+toilet "AmiRock-OS" --metal
+echo " "
+echo " "
+echo "  First installation "
+echo " "
+cd ~/AmiRock/
+git clone --depth=1 https://github.com/x64k/amitk
+clear
+sudo cp -rf ~/RetroPie_Rock5b/amitk /usr/share/themes
+sudo cp -rf ~/RetroPie_Rock5b/config/Logo/* /usr/share/
+
+clear
+toilet "AmiRock-OS" --metal
+echo " "
+echo " "
+echo "  First installation "
+echo " "
+
+sudo rm -rf /usr/share/backgrounds/u*
+sudo rm -rf /usr/share/backgrounds/j*
+sudo rm -rf /usr/share/backgrounds/J*
+sudo rm -rf /usr/share/backgrounds/w*
+sudo rm -rf /usr/share/backgrounds/o*
+sudo rm -rf /usr/share/backgrounds/Ch*
+sudo rm -rf /usr/share/backgrounds/B*
+cd
+
+#***********************************************  #AmiRock-OS Not Afterburner  ***********************************     
+if [ ! -d /home/rock/wine/share/wine ]; then
+clear
+toilet "AmiRock-OS" --metal
+echo " "
+echo " "
+echo "  First installation"
+echo " "
+
+
+
+unzip -o  $HOME/RetroPie_Rock5b/config/config.zip
+unzip -o  $HOME/RetroPie_Rock5b/config/worker.zip
+cd $HOME/AmiRock/
+git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
+clear
+
+sudo cp -rf ~/RetroPie_Rock5b/amigaos_xfwm4_themes/* /usr/share/themes/
+sudo rm -rf /usr/share/themes/Default/xfwm4/
+sudo cp -rf /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
+sudo cp -rf $HOME/RetroPie_Rock5b/config/rpd-wallpaper/Commodore/* /usr/share/backgrounds/
+cd
+
+else
+
+sudo rm -rf ~/.config/dconf/
+sudo cp -rf ~/RetroPie_Rock5b/config/user $HOME/.config/dconf/
+
+fi
  #***********************************************  #AmiRock-OS install script  ***********************************
 
 cd
