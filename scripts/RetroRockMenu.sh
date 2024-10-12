@@ -134,7 +134,7 @@ case $CHOICE in
       		toilet "AmiRock" --metal
       		echo " "
       		echo " "
-       		echo "Compiling now ...Amiberry :-)"
+       		echo "Compiling now ...Amiberry full :-)"
         
 	
             sudo rm -rf amiberry
@@ -160,7 +160,7 @@ case $CHOICE in
             cp -rf  /opt/Amiga/amiberry /opt/Backup
 	    cp -rf  /opt/Amiga/amiberry_dev /opt/Backup
 	    cp -rf  /opt/Amiga/data/amiberry_dev.png /usr/share/applications/
-	    cp -rf  /opt/AmiRock/Amiga/amiberry_dev.png /opt/Amiga/data/
+	    cp -rf  /opt/RetroPie_Rock5b/Amiga/amiberry_dev.png /opt/Amiga/data/
       
 	    
             cd
@@ -203,7 +203,7 @@ case $CHOICE in
             cp -rf  /opt/Amiga/amiberry /opt/Backup
 	    cp -rf  /opt/Amiga/amiberry_dev /opt/Backup
 	    cp -rf  /opt/Amiga/data/amiberry_dev.png /usr/share/applications/
-	    cp -rf  /opt/AmiRock/Amiga/amiberry_dev.png /opt/Amiga/data/
+	    cp -rf  /opt/RetroPie_Rock5b/Amiga/amiberry_dev.png /opt/Amiga/data/
       
 	    
             cd
