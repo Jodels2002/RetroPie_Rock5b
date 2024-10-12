@@ -146,22 +146,21 @@ case $CHOICE in
        		echo "Compiling now ...Amiberry full :-)"
         
 	
-            sudo rm -rf amiberry
+            sudo rm -rf amiberry-lite
             
-	    git clone  https://github.com/midwan/amiberry
-            cd amiberry
-
-            cmake -B build && cmake --build build
-		    # make -j8 PLATFORM=rk3588
+	    cd ~
+            git clone https://github.com/BlitterStudio/amiberry-lite
+            cd amiberry-lite
+            make -j4 PLATFORM=rk3588
 		
-            sudo chmod -R 777 $HOME/amiberry
+            sudo chmod -R 777 $HOME/amiberry-lite
 	        
 	        cp -rf /opt/Amiga/amiberry /opt/Amiga/amiberry_old
-	        cp -rf $HOME/amiberry/build/amiberry  /opt/Amiga/amiberry
-	        cp -rf $HOME/amiberry/data/ /opt/Amiga/
-	        cp -rf $HOME/amiberry/plugins/ /opt/Amiga/
-	        cp -rf $HOME/amiberry/external/ /opt/Amiga/
-	        cp -rf $HOME/amiberry/whdboot/ /opt/Amiga/
+	        cp -rf $HOME/amiberry-lite/amiberry  /opt/Amiga/amiberry
+	        cp -rf $HOME/amiberry-lite/data/ /opt/Amiga/
+	        cp -rf $HOME/amiberry-lite/plugins/ /opt/Amiga/
+	        cp -rf $HOME/amiberry-lite/external/ /opt/Amiga/
+	        cp -rf $HOME/amiberry-lite/whdboot/ /opt/Amiga/
 	    
 	       # Backup
 	 
@@ -173,7 +172,7 @@ case $CHOICE in
       
 	    
             cd
-            rm -rf amiberry
+            rm -rf amiberry-lite
 
      
             ;;  
