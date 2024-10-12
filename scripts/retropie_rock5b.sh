@@ -8,6 +8,8 @@
 power
 sudo raspi-config nonint do_expand_rootfs
 clear
+sudo apt install -y p7zip-full
+
 rm -rf /opt/RetroPie_Rock5b
 sudo rm -rf /etc/update-motd.d/*
 sudo cp -rf ~/RetroPie_Rock5b /opt/
@@ -44,7 +46,11 @@ echo " "
 sudo rm -rf /opt/Amiga/conf/amiberry.conf
 sudo rm -rf /opt/Amiga/conf/amiberry-osx.conf
 
-sudo apt install worker unadf xdms fonts-amiga -y
+sudo apt install -y worker
+sudo apt install -y unadf
+sudo apt install -y xdms
+sudo apt install -y fonts-amiga
+
 sudo apt install -y cmake libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libserialport0 libportmidi0
 sudo apt install -y cmake libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev 
 
@@ -52,7 +58,7 @@ sudo apt install -y cmake libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-
 fi
 if [ ! -d /opt/retropie/emulators/retroarch/ ]; then
 rm -rf ~/RetroPie-Setup
-sudo apt install -y p7zip-full
+
 cd ~
 git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
 sudo chmod -R 777 ~/RetroPie-Setup
