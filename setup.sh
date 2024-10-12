@@ -103,6 +103,8 @@ sudo chmod -R 775 /usr/share/plymouth/
 
  #***********************************************  #AmiRock-OS install script  ***********************************
 
+cd
+	unzip -o  $HOME/RetroPie_Rock5b/config/config.zip
+	unzip -o  $HOME/RetroPie_Rock5b/config/worker.zip
 
-	
 	~/RetroPie_Rock5b/scripts/retropie_rock5b.sh
