@@ -1,22 +1,24 @@
 #!/bin/bash
+# Install AmiRock-OS
 # B.Titze 2023
-
+# AmiRock-OS updater
 BLACK='\033[0;39m'
 BLUE='\033[1;34m'
 GREEN='\033[1;32m'
 RED='\033[1;31m'
 GREY='\033[1;30m'
 
-      sudo update-locale LANG=en_US.UTF-8
-      #sudo dpkg-reconfigure locales
-      setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,gb,de,fr,it,gr,dk
+
+sudo mkdir -p /tmp/mkstempc
  power
- 
+  sudo rm -rf /opt/Backup/.config
+  sudo cp -f -R /home/$USER/.config /opt/Backup
+
 cd
 clear
-      toilet "RetroRock" --metal
-      echo -e "$BLUE RetroRock-OS ROM Operating System and Libraries" 
-      echo -e "$GREY Version V2.0 2020-2023 RetroRock-OS "
+      toilet "AmiRock-OS" --metal
+      echo -e "$BLUE AmiRock-OS ROM Operating System and Libraries" 
+      echo -e "$GREY Version V2.0 2020-2021 AmiRock-OS "
       echo " No Rights Reserved.  "
       echo " "
       echo -e "$GREY "
@@ -26,70 +28,72 @@ clear
        
 sudo dpkg --configure -a
  clear
-      toilet "RetroRock" --metal
-      echo -e "$BLUE RetroRock-OS ROM Operating System and Libraries" 
-      echo -e "$GREY Version V2.0 2020-2023 RetroRock-OS "
+      toilet "AmiRock-OS" --metal
+      echo -e "$BLUE AmiRock-OS ROM Operating System and Libraries" 
+      echo -e "$GREY Version V2.0 2020-2021 AmiRock-OS "
       echo " No Rights Reserved.  "
       echo " "
 sudo apt -y --fix-broken install
  clear
-      toilet "RetroRock" --metal
-      echo -e "$BLUE RetroRock-OS ROM Operating System and Libraries" 
-      echo -e "$GREY Version V2.0 2020-2023 RetroRock-OS "
+      toilet "AmiRock-OS" --metal
+      echo -e "$BLUE AmiRock-OS ROM Operating System and Libraries" 
+      echo -e "$GREY Version V2.0 2020-2021 AmiRock-OS "
       echo " No Rights Reserved.  "
       echo " "
 sudo apt -f -y install
  clear
-      toilet "RetroRock" --metal
-      echo -e "$BLUE RetroRock-OS ROM Operating System and Libraries" 
-      echo -e "$GREY Version V2.0 2020-2023 RetroRock-OS "
+      toilet "AmiRock-OS" --metal
+      echo -e "$BLUE AmiRock-OS ROM Operating System and Libraries" 
+      echo -e "$GREY Version V2.0 2020-2021 AmiRock-OS "
       echo " No Rights Reserved.  "
       echo " "
 sudo apt-get autoremove -y
  clear
-      toilet "RetroRock" --metal
-      echo -e "$BLUE RetroRock-OS ROM Operating System and Libraries" 
-      echo -e "$GREY Version V2.0 2020-2023 RetroRock-OS "
+      toilet "AmiRock-OS" --metal
+      echo -e "$BLUE AmiRock-OS ROM Operating System and Libraries" 
+      echo -e "$GREY Version V2.0 2020-2021 AmiRock-OS "
       echo " No Rights Reserved.  "
       echo " "
 sudo apt-get autoclean
  clear
-      toilet "RetroRock" --metal
-      echo -e "$BLUE RetroRock-OS ROM Operating System and Libraries" 
-      echo -e "$GREY Version V2.0 2020-2023 RetroRock-OS "
+      toilet "AmiRock-OS" --metal
+      echo -e "$BLUE AmiRock-OS ROM Operating System and Libraries" 
+      echo -e "$GREY Version V2.0 2020-2021 AmiRock-OS "
       echo " No Rights Reserved.  "
       echo " "
-sudo apt-get clean -y
-sudo apt-get update -y
-sudo apt-get upgrade -y
-
+sudo apt-get clean
+sudo apt-get update
+sudo apt-get upgrade
+#sudo update-initramfs -u
 
 #************************** Get update **********************************************************************
 
  clear
-      toilet "RetroRock" --metal
-      echo -e "$BLUE RetroRock-OS ROM Operating System and Libraries" 
-      echo -e "$GREY Version V2.0 2020-2023 RetroRock-OS "
+      toilet "AmiRock-OS" --metal
+      echo -e "$BLUE AmiRock-OS ROM Operating System and Libraries" 
+      echo -e "$GREY Version V2.0 2020-2021 AmiRock-OS "
       echo " No Rights Reserved.  "
       echo " "
 
 
-      sudo rm -rf ~/RetroPie_Rock5b/
-      sudo rm -rf /opt/RetroPie_Rock5b/
+      sudo rm -rf /home/$USER/AmiRock/
+      sudo rm -rf /opt/AmiRock/
 
 
       cd
-      git clone --depth=1 https://github.com/Jodels2002/RetroPie_Rock5b.git
+      git clone --depth=1 https://github.com/Jodels2002/AmiRock.git
       
-      sudo chmod -R 777 RetroPie_Rock5b
+      sudo chmod -R 777 AmiRock
      
       
-      sudo cp -f -R ~/RetroPie_Rock5b/scripts/* /usr/local/bin
-      sudo cp -f -R ~/RetroPie_Rock5b/ /opt
+      sudo cp -f -R /home/$USER/AmiRock/scripts/* /usr/local/bin
+      sudo cp -f -R /home/$USER/AmiRock/ /opt
       sudo chmod -R 777 /usr/local/bin
-      sudo chmod -R 777 /opt/RetroPie_Rock5b/
+      sudo chmod -R 777 /opt/AmiRock/
 
-
+export DISTRO=focal-stable
+wget -O - apt.radxa.com/$DISTRO/public.key | sudo apt-key add -
+echo performance | sudo tee /sys/bus/cpu/devices/cpu[046]/cpufreq/scaling_governor /sys/class/devfreq/dmc/governor /sys/class/devfreq/fb000000.gpu/governor
       
-      ~/RetroPie_Rock5b/scripts/retropie_rock5b.sh
+      /home/$USER/AmiRock/scripts/AmiKickme.sh
  
