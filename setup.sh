@@ -3,183 +3,149 @@
 # B.Titze 2023
 #extraargs="console=tty3 consoleblank=0 loglevel=1 quiet"
 
-BLACK='\033[0;39m'
-BLUE='\033[1;34m'
-GREEN='\033[1;32m'
-RED='\033[1;31m'
-GREY='\033[1;30m'
 
+# =========================================
+# RetroRock5b Installer 
+# =========================================
 
-      sudo cp -f -R ~/RetroPie_Rock5b/scripts/* /usr/local/bin
-      sudo cp -f -R ~/RetroPie_Rock5b/ /opt
-      sudo chmod -R 777 /usr/local/bin
-      sudo chmod -R 777 /opt/RetroPie_Rock5b/
- 
-       sudo apt update -y
-       
-      
-#************************************************  Make User pi       **************************************        
-      sudo useradd -m pi
-      sudo usermod -G audio -a pi
-      sudo usermod -G video -a pi  
-      sudo update-locale LANG=en_US.UTF-8
-      setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,gb,de,fr,it,gr,dk
-      sudo echo "pi ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
-      
-sudo systemctl disable getty@tty1.service
+REPO="$HOME/RetroPie_Rock5b"
+TARGET="/opt/RetroPie_Rock5b"
 
-sudo tee /etc/systemd/system/autologin@.service > /dev/null <<EOT
-[Unit]
-Description=Autologin to console as %I
-After=getty.target
-[Service]
-ExecStart=-/sbin/agetty --autologin pi --noclear %I 38400 linux
-[Install]
-WantedBy=multi-user.target
-EOT
-sudo systemctl daemon-reload
-sudo systemctl enable autologin@tty1.service
-echo "Autologin enabled for user pi"
-sudo apt-get update -y
+echo "==> Copy files"
+sudo mkdir -p "$TARGET"
+sudo cp -r "$REPO/"* "$TARGET/"
+sudo install -m 755 "$REPO/scripts/"* /usr/local/bin/
 
-#************************************************  Needed stuff        **************************************  
-  sudo install -y raspi-config
-  sudo raspi-config nonint do_expand_rootfs   
-	
-sudo apt install -y dialog mc zip unzip wget toilet ksnip
-sudo apt install -y gparted ntfs-3g nemo feh
-sudo apt install build-essential -y
-sudo apt install arqiver geany -y
-sudo apt install 7zip -y
-sudo apt purge lightd* -y
-#sudo apt install cockpit -y
-sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
-sudo apt purge -y raspberrypi-ui-mods 
-sudo apt purge -y xser* xor* xin*
-sudo apt purge -y gnome*
-sudo rm -rf /home/$USER/.cache/*  	
- 
-  
-  sudo apt install -y worker 
-      mkdir -p ~/.worker 
-      cd
-      sudo unzip -o  /opt/RetroPie_Rock5b/config/worker.zip 
-      sudo cp -rf /opt/RetroPie_Rock5/config/config ~/.worker/   
-      cp -rf /opt/RetroPie_Rock5b/retropie/Retropie.desktop /usr/share/applications/ 
-     
-  
-        #sudo apt install libegl-mesa0 libegl1-mesa-dev libgbm-dev libgl1-mesa-dev libgles2-mesa-dev libglx-mesa0 mesa-common-dev mesa-vulkan-drivers -y  
-          
-	
- #************************************************  Install Desktop       **************************************   
-        sudo apt install -y xserver-xorg xini* 
-	#sudo apt install -y xfce4-te* xfce4 xfce4-goodies lxinput
-	#sudo apt install -y chromium gparted
-#************************************************  Fan Control by pymumu        **************************************   
+# =========================================
+# System update 
+# =========================================
+echo "==> System update"
+sudo apt update
+sudo apt upgrade -y
 
-clear
-      		toilet "RetroRock5b" --metal
-      		echo " "
-      		echo " Fan-Control by pymumu"
-          
-git clone https://github.com/pymumu/fan-control-rock5b
-cd fan-control-rock5b
-make package
-sudo dpkg -i fan-control*.deb
-sudo systemctl enable fan-control
-sudo systemctl start fan-control 
-
-sudo chmod -R 775 /usr/share/plymouth/
-	 sudo rm -rf /usr/share/plymouth/themes/spinner/watermark.png
-	 sudo cp -rf /opt/RetroPie_Rock5b/config/Retrorock.png /usr/share/plymouth/themes/spinner/watermark.png
-	 sudo cp -rf /opt/RetroPie_Rock5b/config/Retrorock.png /usr/share/plymouth/ubuntu-logo.png
-	 
-	  sudo rm -rf /usr/share/plymouth/themes/armbian/watermark.png
-	 sudo cp -rf /opt/RetroPie_Rock5b/config/Retrorock.png /usr/share/plymouth/themes/armbian/watermark.png
-	 sudo cp -rf /opt/RetroPie_Rock5b/config/Retrorock.png /usr/share/plymouth/ubuntu-logo.png
-  	
-  	sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/spinner/spinner.plymouth 500
-	sudo update-initramfs -u
-
- #************************************************  Amiga Desktop        ************************************** 
-clear
-toilet "AmiRock-OS" --metal
-echo " "
-echo " "
-echo "  First installation "
-echo " "
-
-
-
-
-
-cd /usr/share/icons
-sudo cp -rf ~/RetroPie_Rock5b/config/AMIGAOSLINUX.zip /usr/share/icons
-sudo unzip -u  /usr/share/icons/AMIGAOSLINUX.zip
-
-sudo rm -rf /usr/share/icons/default
-sudo cp -rf /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
-clear
-toilet "AmiRock-OS" --metal
-echo " "
-echo " "
-echo "  First installation "
-echo " "
-cd ~/AmiRock/
-git clone --depth=1 https://github.com/x64k/amitk
-clear
-sudo cp -rf ~/RetroPie_Rock5b/amitk /usr/share/themes
-sudo cp -rf ~/RetroPie_Rock5b/config/Logo/* /usr/share/
-
-clear
-toilet "AmiRock-OS" --metal
-echo " "
-echo " "
-echo "  First installation "
-echo " "
-
-sudo rm -rf /usr/share/backgrounds/u*
-sudo rm -rf /usr/share/backgrounds/j*
-sudo rm -rf /usr/share/backgrounds/J*
-sudo rm -rf /usr/share/backgrounds/w*
-sudo rm -rf /usr/share/backgrounds/o*
-sudo rm -rf /usr/share/backgrounds/Ch*
-sudo rm -rf /usr/share/backgrounds/B*
-cd
-
-#***********************************************  #AmiRock-OS Not Afterburner  ***********************************     
-if [ ! -d /home/rock/wine/share/wine ]; then
-clear
-toilet "AmiRock-OS" --metal
-echo " "
-echo " "
-echo "  First installation"
-echo " "
-
-
-
-unzip -o  $HOME/RetroPie_Rock5b/config/config.zip
-unzip -o  $HOME/RetroPie_Rock5b/config/worker.zip
-cd $HOME/RetroPie_Rock5b/
-git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
-clear
-
-sudo cp -rf ~/RetroPie_Rock5b/amigaos_xfwm4_themes/* /usr/share/themes/
-sudo rm -rf /usr/share/themes/Default/xfwm4/
-sudo cp -rf /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
-sudo cp -rf $HOME/RetroPie_Rock5b/config/rpd-wallpaper/Commodore/* /usr/share/backgrounds/
-cd
-
-else
-
-sudo rm -rf ~/.config/dconf/
-sudo cp -rf ~/RetroPie_Rock5b/config/user $HOME/.config/dconf/
-
+# =========================================
+# Benutzer anlegen (nur wenn nötig)
+# =========================================
+if ! id "pi" &>/dev/null; then
+    echo "==> Creating user pi"
+    sudo useradd -m -s /bin/bash pi
+    sudo usermod -aG audio,video,sudo pi
 fi
- #***********************************************  #AmiRock-OS install script  ***********************************
 
-cd
-	unzip -o  $HOME/RetroPie_Rock5b/config/config.zip
-	unzip -o  $HOME/RetroPie_Rock5b/config/worker.zip
+echo "pi ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/pi >/dev/null
+sudo chmod 440 /etc/sudoers.d/pi
 
-	~/RetroPie_Rock5b/scripts/retropie_rock5b.sh
+# =========================================
+# Autologin
+# =========================================
+echo "==> Enable autologin"
+sudo mkdir -p /etc/systemd/system/getty@tty1.service.d/
+
+sudo tee /etc/systemd/system/getty@tty1.service.d/autologin.conf >/dev/null <<EOF
+[Service]
+ExecStart=
+ExecStart=-/sbin/agetty --autologin pi --noclear %I \$TERM
+EOF
+
+sudo systemctl daemon-reexec
+sudo systemctl restart getty@tty1
+
+# =========================================
+# Pakete installieren 
+# =========================================
+echo "==> Installing packages"
+
+sudo apt install -y \
+    dialog mc zip unzip wget curl \
+    build-essential git \
+    gparted ntfs-3g nemo feh \
+    geany p7zip-full \
+    xserver-xorg xinit \
+    toilet ksnip
+
+# =========================================
+# Unnötige Desktop-Pakete entfernen
+# =========================================
+echo "==> Cleaning system"
+sudo apt purge -y \
+    lxde* gnome* lightdm* \
+    xserver-xorg-legacy
+
+sudo apt autoremove -y
+sudo apt clean
+
+# =========================================
+# Worker Setup
+# =========================================
+echo "==> Setup worker"
+
+mkdir -p "$HOME/.worker"
+unzip -o "$TARGET/config/worker.zip" -d "$HOME/.worker"
+
+sudo cp -r "$TARGET/config/config/" "$HOME/.worker/"
+
+# =========================================
+# Fan Control (Rock5B)
+# =========================================
+echo "==> Installing fan control"
+
+if [ ! -d "$HOME/fan-control-rock5b" ]; then
+    git clone https://github.com/pymumu/fan-control-rock5b "$HOME/fan-control-rock5b"
+fi
+
+cd "$HOME/fan-control-rock5b"
+make package
+sudo dpkg -i fan-control*.deb || sudo apt -f install -y
+
+sudo systemctl enable fan-control
+sudo systemctl start fan-control
+
+# =========================================
+# Plymouth Theme
+# =========================================
+echo "==> Plymouth setup"
+
+IMG="$TARGET/config/Retrorock.png"
+
+sudo install -m 644 "$IMG" /usr/share/plymouth/themes/spinner/watermark.png
+sudo install -m 644 "$IMG" /usr/share/plymouth/themes/armbian/watermark.png
+
+sudo update-initramfs -u
+
+# =========================================
+# Icons / Theme
+# =========================================
+echo "==> Installing themes"
+
+sudo unzip -o "$TARGET/config/AMIGAOSLINUX.zip" -d /usr/share/icons/
+
+sudo ln -sfn /usr/share/icons/AMIGAOSLINUX /usr/share/icons/default
+
+sudo cp -r "$TARGET/amitk" /usr/share/themes/
+
+# =========================================
+# Wallpapers
+# =========================================
+echo "==> Cleanup wallpapers"
+sudo find /usr/share/backgrounds -type f -delete
+
+sudo cp -r "$TARGET/config/rpd-wallpaper/Commodore/"* /usr/share/backgrounds/
+
+# =========================================
+# AmiRock Setup
+# =========================================
+echo "==> AmiRock setup"
+
+if [ ! -d "$HOME/RetroPie_Rock5b/amigaos_xfwm4_themes" ]; then
+    git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes "$TARGET/amigaos_xfwm4_themes"
+fi
+
+sudo cp -r "$TARGET/amigaos_xfwm4_themes/"* /usr/share/themes/
+
+# =========================================
+# Final script
+# =========================================
+echo "==> Starting RetroPie script"
+"$TARGET/scripts/retropie_rock5b.sh"
+
+echo "==> DONE"
